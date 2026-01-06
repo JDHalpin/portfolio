@@ -1,0 +1,21 @@
+# Credentials and sensitive config
+.mcp.json
+
+# Environment files
+.env
+.env.local
+
+# Figma raw data exports (can be regenerated)
+figma_data.json
+figma_colors.json
+
+# Python cache
+__pycache__/
+*.pyc
+
+# OS files
+.DS_Store
+
+# Editor files
+.vscode/
+.idea/
