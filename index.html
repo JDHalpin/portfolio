@@ -3,320 +3,296 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <!-- Tailwind CSS via CDN – swap for your own build in production -->
+  <title>Jeff Halpin - Portfolio</title>
+  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Lato -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    /* 
-      CUSTOM STYLES
-      - Smooth accordion open/close with max-height transition.
-      - Modal backdrop uses a semi-transparent black.
+    /*
+                              CUSTOM STYLES - Figma Design System (Extracted from Figma API)
+      - off-white: #FFFEF9
+      - white: #FFFFFF
+      - near-black: #181818
+      - light-gray: #F7F7F7
+      - Aquamarine: #61EDD8
+      - Accent: #079E87
+      - Text/Primary: #181818
+      - Text/Secondary: #DFE1E3
+      - Accent/Primary: #61EDD8
+      - Background/Base: #FFFFFF
+      - mid-gray: #DFE1E3
+      - Surface/Default: #FFFEF9
+      - Border/Subtle: #F7F7F7
     */
-    .accordion-content {
-      max-height: 0;
-      overflow: hidden;
-      transition: max-height 0.3s ease-out;
+    body {
+      font-family: 'Lato', sans-serif;
     }
-    .accordion-content.open {
-      /* Large enough to fit content; adjust if needed */
-      max-height: 2000px;
+    
+    .filter-chip {
+      transition: all 0.2s ease;
+    }
+    
+    .filter-chip:hover {
+      background-color: rgba(6, 157, 135, 0.1);
+    }
+
+    .filter-chip.active {
+      background-color: #069D87;
+      color: white;
     }
   </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+                                                  colors: {
+            'off-white': '#FFFEF9',
+            'white': '#FFFFFF',
+            'near-black': '#181818',
+            'light-gray': '#F7F7F7',
+            'aquamarine': '#61EDD8',
+            'accent': '#079E87',
+            'text-primary': '#181818',
+            'text-secondary': '#DFE1E3',
+            'accent-primary': '#61EDD8',
+            'background-base': '#FFFFFF',
+            'mid-gray': '#DFE1E3',
+            'surface-default': '#FFFEF9',
+            'border-subtle': '#F7F7F7',
+          },
+          fontFamily: {
+            'lato': ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
 </head>
-<body class="bg-gray-100 text-gray-800 font-sans min-h-screen">
+<body class="bg-[#FFFEF9] font-lato min-h-screen relative">
 
   <!-- 
     ========================================
-    HEADER
+    HEADER - Responsive Design
     ========================================
-    Update the title/logo text as needed.
+    Mobile: Hamburger menu + name
+    Desktop: Name + navigation links
   -->
-  <header class="bg-white shadow sticky top-0 z-40">
-    <div class="max-w-5xl mx-auto px-4 py-4 flex items-center justify-between">
-      <h1 class="text-xl font-bold tracking-tight">Your Name</h1>
-      <!-- Add nav links here if desired -->
+  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 px-4 py-4">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto">
+      <!-- Left: Hamburger (mobile) + Name -->
+      <div class="flex items-center gap-4">
+        <!-- Hamburger menu icon - mobile only -->
+        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
+          <span class="w-full h-0.5 bg-black"></span>
+          <span class="w-full h-0.5 bg-black"></span>
+          <span class="w-full h-0.5 bg-black"></span>
+        </button>
+        <!-- Name/Logo -->
+        <a href="index.html" class="text-2xl text-black font-normal hover:text-accent transition-colors">Jeff Halpin</a>
+      </div>
+      
+      <!-- Right: Navigation - desktop only -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="about.html" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="leadership.html" class="text-sm text-black hover:text-accent transition-colors">Leadership</a>
+        <a href="resume.html" class="text-sm text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
     </div>
   </header>
 
-  <!-- 
-    ========================================
-    MAIN CONTENT – ACCORDIONS
-    ========================================
-    Each accordion section:
-      1. Button toggles .open on sibling content div.
-      2. Content contains a grid of 4 case-study cards.
-    Greek placeholder titles used; replace with real section names.
-  -->
-  <main class="max-w-5xl mx-auto px-4 py-8 space-y-4">
-
-    <!-- ==================== ACCORDION 1 ==================== -->
-    <div class="accordion bg-white rounded-lg shadow">
-      <!-- Accordion trigger – update title text -->
-      <button
-        class="accordion-trigger w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center focus:outline-none"
-        aria-expanded="false"
-      >
-        <span>Αλφα – Section One</span>
-        <svg class="accordion-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <!-- Accordion content – holds 4 cards -->
-      <div class="accordion-content px-6">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 py-4">
-          <!-- CARD 1 – duplicate/edit for more case studies -->
-          <div
-            class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition"
-            data-title="Case Study Alpha-1"
-            data-body="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum."
-          >
-            <h3 class="font-medium">Case Study 1</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <!-- CARD 2 -->
-          <div
-            class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition"
-            data-title="Case Study Alpha-2"
-            data-body="Cras ultricies ligula sed magna dictum porta. Curabitur arcu erat, accumsan id imperdiet et."
-          >
-            <h3 class="font-medium">Case Study 2</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <!-- CARD 3 -->
-          <div
-            class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition"
-            data-title="Case Study Alpha-3"
-            data-body="Proin eget tortor risus. Donec sollicitudin molestie malesuada."
-          >
-            <h3 class="font-medium">Case Study 3</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <!-- CARD 4 -->
-          <div
-            class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition"
-            data-title="Case Study Alpha-4"
-            data-body="Pellentesque in ipsum id orci porta dapibus. Quisque velit nisi, pretium ut lacinia in."
-          >
-            <h3 class="font-medium">Case Study 4</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== ACCORDION 2 ==================== -->
-    <div class="accordion bg-white rounded-lg shadow">
-      <button
-        class="accordion-trigger w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center focus:outline-none"
-        aria-expanded="false"
-      >
-        <span>Βήτα – Section Two</span>
-        <svg class="accordion-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-content px-6">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 py-4">
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Beta-1" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 1</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Beta-2" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 2</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Beta-3" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 3</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Beta-4" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 4</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== ACCORDION 3 ==================== -->
-    <div class="accordion bg-white rounded-lg shadow">
-      <button
-        class="accordion-trigger w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center focus:outline-none"
-        aria-expanded="false"
-      >
-        <span>Γάμμα – Section Three</span>
-        <svg class="accordion-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-content px-6">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 py-4">
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Gamma-1" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 1</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Gamma-2" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 2</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Gamma-3" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 3</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Gamma-4" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 4</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== ACCORDION 4 ==================== -->
-    <div class="accordion bg-white rounded-lg shadow">
-      <button
-        class="accordion-trigger w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center focus:outline-none"
-        aria-expanded="false"
-      >
-        <span>Δέλτα – Section Four</span>
-        <svg class="accordion-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-content px-6">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 py-4">
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Delta-1" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 1</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Delta-2" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 2</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Delta-3" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 3</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Delta-4" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 4</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- ==================== ACCORDION 5 ==================== -->
-    <div class="accordion bg-white rounded-lg shadow">
-      <button
-        class="accordion-trigger w-full text-left px-6 py-4 font-semibold text-lg flex justify-between items-center focus:outline-none"
-        aria-expanded="false"
-      >
-        <span>Έψιλον – Section Five</span>
-        <svg class="accordion-icon w-5 h-5 transform transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
-          <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
-      <div class="accordion-content px-6">
-        <div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-4 py-4">
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Epsilon-1" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 1</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Epsilon-2" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 2</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Epsilon-3" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 3</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-          <div class="card cursor-pointer bg-gray-50 rounded-lg p-4 hover:shadow-md transition" data-title="Case Study Epsilon-4" data-body="Lorem ipsum…">
-            <h3 class="font-medium">Case Study 4</h3>
-            <p class="text-sm text-gray-500 mt-1">Brief description…</p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-  </main>
-
-  <!-- 
-    ========================================
-    MODAL (FULL-WIDTH EXPANDED CARD VIEW)
-    ========================================
-    Hidden by default. JavaScript populates title/body and shows it when
-    a card is clicked. Clicking backdrop or X closes it.
-  -->
-  <div
-    id="modal"
-    class="fixed inset-0 z-50 hidden items-center justify-center bg-black/60"
-  >
-    <div class="bg-white w-full min-h-screen overflow-y-auto p-8 relative">
-      <!-- Close button -->
-      <button
-        id="modal-close"
-        class="absolute top-4 right-4 text-gray-500 hover:text-gray-800 text-2xl leading-none"
-        aria-label="Close"
-      >&times;</button>
-      <!-- Modal content – filled dynamically -->
-      <h2 id="modal-title" class="text-2xl font-bold mb-4"></h2>
-      <div id="modal-body" class="prose max-w-none text-gray-700"></div>
+  <!-- Mobile Menu Overlay - hidden by default -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="about.html" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="leadership.html" class="text-lg text-black hover:text-accent transition-colors">Leadership</a>
+        <a href="resume.html" class="text-lg text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
     </div>
   </div>
 
-  <!-- 
+  <!--
     ========================================
-    JAVASCRIPT
+    INTRO SECTION
     ========================================
-    1. Accordion toggle: adds/removes .open class + rotates chevron.
-    2. Card click: opens modal with card's data-title and data-body.
-    3. Modal close: hides modal on X or backdrop click.
+    Heading and bio paragraph in side-by-side layout
+  -->
+  <section class="bg-[#FFFEF9] px-4 md:px-[50px] py-12 md:py-16">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12">
+      <!-- Left: Heading -->
+      <h2 class="text-[32px] leading-none text-black font-normal">Hi, I'm Jeff Halpin</h2>
+
+      <!-- Right: Bio -->
+      <p class="text-base leading-normal text-black">
+        I am a User Experience professional who has spent the past 15 years executing products that solve problems efficiently. 
+
+I drive client and agency discovery with a focus on creating seamless, human-centered experiences. My expertise spans content strategy, information architecture, technical specifications, user research, and interaction design.
+<br><br>
+I’ve led distributed, interdisciplinary teams as both a technical lead and UX lead, delivering measurable impact through custom API integrations, AI, XR, and data-driven strategies. Whether shaping brand direction or refining tactical execution, I bring clarity, structure, and problem-solving, <b>always with a team-first mindset</b>.
+<br><br>
+<b>My recent progress and learning</b> has allowed me to code an internal application that was adopted company-wide(!). I have also been working on an plugin leveraging MCP and the Figma API to enhance design and prototyping workflows.
+      </p>
+      
+    </div>
+  </section>
+
+  <!--
+    ========================================
+    FILTERS - Category chips
+    ========================================
+    Horizontally scrollable filter buttons
+  -->
+  <div class="px-4 md:px-[50px] py-4 flex gap-2 overflow-x-auto">
+    <button class="filter-chip active px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap" data-filter="all">
+      All Work
+    </button>
+    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="research">
+      UX Research
+    </button>
+    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="design">
+      Product Design
+    </button>
+    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="strategy">
+      Strategy
+    </button>
+    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="leadership">
+      Leadership
+    </button>
+  </div>
+
+  <!--
+    ========================================
+    MAIN CONTENT – PROJECT CARDS
+    ========================================
+    Grid of case study cards - 2-up on desktop with varying sizes
+  -->
+  <main class="px-4 md:px-[50px] py-4 md:max-w-none">
+    <!-- Desktop: 2-column grid, Mobile: single column -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- ==================== PROJECT CARD 1 ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
+        <!-- Project image -->
+        <img src="images/380_image_TOUJ.png" alt="Toujeo Max SoloStar and SoloStar dosing calculator interface" class="w-full object-cover rounded">
+        <!-- Title -->
+        <h3 class="text-2xl text-black font-normal leading-none"> Sanofi: Toujeo.com Dosing Calculator</h3>
+        <!-- Description -->
+        <p class="text-sm text-black leading-normal">UX Design | Pharmaceuticals | Tools | Insulin dosing interface for glycemic control</p>
+      </article>
+
+      <!-- ==================== PROJECT CARD 2 ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="2">
+        <img src="images/380_image_FASENR.png" alt="FASENRA project" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">AMGEN: Fasenra.com redesign</h3>
+        <p class="text-sm text-black leading-normal">UX Architect Lead | Pharmaceuticals | HCP | Experience Design | HCP website redesign and technica architecture revised.</p>
+      </article>
+
+      <!-- ==================== PROJECT CARD 3 ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
+        <img src="images/380_image_invit.png" alt="Project 380" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">INVITAE: User registraion and quiz experience design</h3>
+        <p class="text-sm text-black leading-normal">Senior UX Architect, Product Design, 2023, consumer-facing testing portal.</p>
+      </article>
+<!-- ==================== PROJECT CARD 4 ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="4">
+        <img src="images/380_image_PRADAX.png" alt="Project 380" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">PRADAXA: AR / Rep-driven Experience</h3>
+        <p class="text-sm text-black leading-normal">Senior UX Architect, Experience Design, 2021, Sales-rep-driven Augmented Reality tactic.</p>
+      </article>
+
+    </div>
+  </main>
+
+  <!--
+    ========================================
+    FOOTER
+    ========================================
+    Copyright and social links
+  -->
+  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 py-6 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+    <p>© 2025 Jeff Halpin</p>
+    <p><a href="https://www.linkedin.com/in/jeffrey-halpin/">LinkedIn</a> | <a href="https://github.com/JDHalpin">GitHub</a> | <a href="mailto:jeff.halpin@gmail.com">Email</a></p>
+  </footer>
+
+  <!--
+    ========================================
+    JAVASCRIPT - Filter & Interactivity
+    ========================================
   -->
   <script>
-    // -------- ACCORDION LOGIC --------
-    document.querySelectorAll('.accordion-trigger').forEach((btn) => {
-      btn.addEventListener('click', () => {
-        const content = btn.nextElementSibling;          // .accordion-content
-        const icon = btn.querySelector('.accordion-icon');
-        const isOpen = content.classList.toggle('open'); // toggle open state
-
-        // Rotate chevron icon
-        icon.classList.toggle('rotate-180', isOpen);
-        // Update ARIA for accessibility
-        btn.setAttribute('aria-expanded', isOpen);
-      });
+    // -------- MOBILE MENU LOGIC --------
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+    
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
     });
-
-    // -------- CARD → MODAL LOGIC --------
-    const modal = document.getElementById('modal');
-    const modalTitle = document.getElementById('modal-title');
-    const modalBody = document.getElementById('modal-body');
-    const modalClose = document.getElementById('modal-close');
-
-    // Open modal when any card is clicked
-    document.querySelectorAll('.card').forEach((card) => {
-      card.addEventListener('click', () => {
-        modalTitle.textContent = card.dataset.title || 'Untitled';
-        modalBody.innerHTML = card.dataset.body || '';
-        modal.classList.remove('hidden');
-        modal.classList.add('flex');
-        document.body.classList.add('overflow-hidden'); // prevent page scroll
-      });
-    });
-
-    // Close modal
-    function closeModal() {
-      modal.classList.add('hidden');
-      modal.classList.remove('flex');
+    
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
-    }
-
-    modalClose.addEventListener('click', closeModal);
-    // Close on backdrop click (but not on inner content)
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) closeModal();
     });
-    // Close on Escape key
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+    
+    // Close menu when clicking outside
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+    
+    // Close menu when clicking nav links
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    // -------- FILTER CHIP LOGIC --------
+    document.querySelectorAll('.filter-chip').forEach((chip) => {
+      chip.addEventListener('click', () => {
+        // Remove active from all chips
+        document.querySelectorAll('.filter-chip').forEach(c => {
+          c.classList.remove('active');
+          c.classList.add('bg-[#FFFEF9]');
+        });
+        // Add active to clicked chip
+        chip.classList.add('active');
+        chip.classList.remove('bg-[#FFFEF9]');
+        
+        const filter = chip.dataset.filter;
+        console.log('Filter selected:', filter);
+        // TODO: Implement actual filtering logic here
+      });
+    });
+
+    // -------- CARD CLICK LOGIC --------
+    const cardLinks = {
+      '1': 'toujeo-dosing-calculator.html',
+      '2': 'fasenra-redesign.html',
+      '3': 'invitae-registration.html',
+      '4': 'pradaxa-ar.html'
+    };
+
+    document.querySelectorAll('article[data-card]').forEach((card) => {
+      card.addEventListener('click', () => {
+        const cardId = card.dataset.card;
+        const link = cardLinks[cardId];
+        if (link) {
+          window.location.href = link;
+        }
+      });
     });
   </script>
 </body>
