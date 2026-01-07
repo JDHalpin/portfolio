@@ -14,6 +14,8 @@ Your Figma → Code sync workflow is now working! Here's everything that's been 
 4. ✅ `.env` file created with your token (gitignored)
 5. ✅ MCP configuration updated (`.mcp.json`)
 
+**Note:** The sync tool is also available as a standalone repository at [figma-design-tokens](https://github.com/JDHalpin/figma-design-tokens) for use in other projects.
+
 ---
 
 ## 🚀 How to Use
