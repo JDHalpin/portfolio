@@ -1,0 +1,67 @@
+[
+  {
+    "id": "9:68",
+    "name": "Text/Primary",
+    "description": "Body copy"
+  },
+  {
+    "id": "1:4",
+    "name": "off-white",
+    "description": "Color/Background/Base - "
+  },
+  {
+    "id": "1:5",
+    "name": "white",
+    "description": "Color/Surface/Default"
+  },
+  {
+    "id": "1:6",
+    "name": "near-black",
+    "description": "Color/Text/Primary"
+  },
+  {
+    "id": "1:7",
+    "name": "mid-gray",
+    "description": "Color/Text/Secondary"
+  },
+  {
+    "id": "1:8",
+    "name": "light-gray",
+    "description": "Color/Border/Subtle"
+  },
+  {
+    "id": "1:9",
+    "name": "Aquamarine",
+    "description": "Color/Accent/Primary"
+  },
+  {
+    "id": "8:62",
+    "name": "Accent",
+    "description": ""
+  },
+  {
+    "id": "9:69",
+    "name": "Text/Secondary",
+    "description": "secondary text"
+  },
+  {
+    "id": "9:70",
+    "name": "Accent/Primary",
+    "description": "accents"
+  },
+  {
+    "id": "9:71",
+    "name": "Background/Base",
+    "description": "background"
+  },
+  {
+    "id": "9:72",
+    "name": "Surface/Default",
+    "description": "surface"
+  },
+  {
+    "id": "9:73",
+    "name": "Border/Subtle",
+    "description": "borders"
+  }
+]

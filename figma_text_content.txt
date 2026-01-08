@@ -1,0 +1,130 @@
+4
+8
+12
+16
+24
+32
+48
+64
+https://www.figma.com/design/vFzy38cYS83Xj5CCqdTvi4/XD-Associate-Director---Portfolio?node-id=8-34&t=Qo4WUniHG5N7AeAQ-4
+“Copy selection”
+Variants themselves should not be inside an Auto Layout container unless there’s a specific reason.
+Only the child components (Default, Hover, Active) should have Auto Layout.
+👉 Fix:
+Select the Nav parent (the dashed purple frame).
+Press Shift + A once to remove auto layout.
+Set:
+Width: Hug
+Height: Hug
+Padding: 0
+Gap: 0
+The parent should simply act as a variant container — not a layout frame.
+https://www.figma.com/design/vFzy38cYS83Xj5CCqdTvi4/XD-Associate-Director---Portfolio?node-id=8-34&t=Qo4WUniHG5N7AeAQ-1
+Node ID of this document
+[Header]
+[Hero Intro Text]
+A few lines about who you are / your focus.
+[Selected Work Header]
+[Project Cards]
+[About Preview Section]
+[Footer]  (we’ll build this later)
+Information Architecture
+Bad habit identified: Right-click menus in Figma often give you an option, but not always the right option. The purple variant bar's + icon is the canonical way to add variants.
+Other common destructive patterns to watch for:
+Duplicating (Cmd+D) instead of creating instances
+Using "Detach instance" instead of overriding properties
+Adding Auto Layout to text instead of wrapping text in a frame first
+Using absolute positioning instead of Auto Layout constraints
+Button
+Button
+Button
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+Project description goes here. This would include the challenge, approach, and outcomes of the work.
+Title
+Role, timeline, brief description
+Project description goes here. This would include the challenge, approach, and outcomes of the work.
+Jeff Halpin
+work
+about
+leadership
+resume
+contact
+Jeff Halpin
+Hi, I’m Jeff Halpin
+I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy.
+Hi, I’m Jeff Halpin
+I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy.
+Hi, I’m Jeff Halpin
+I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy.
+Hi, I’m Jeff Halpin
+I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy.
+© 2025 Jeff Halpin
+LinkedIn | GitHub | Email
+© 2025 Jeff Halpin
+LinkedIn | GitHub | Email
+All Work
+All Work
+All Work
+Jeff Halpin
+Hi, I’m Jeff Halpin
+I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy.
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+© 2025 Jeff Halpin
+LinkedIn | GitHub | Email
+All Work
+UX Research
+Product Design
+Strategy
+Leadership
+Jeff Halpin
+work
+about
+leadership
+resume
+contact
+Hi, I’m Jeff Halpin
+I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy.
+© 2025 Jeff Halpin
+LinkedIn | GitHub | Email
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+Title
+Role, timeline, brief description
+All Work
+UX Research
+Product Design
+Strategy
+Leadership
+Mobile Nav Drawer Specifications:
+Trigger: Tap hamburger icon in mobile header
+Behavior:
+Overlay slides in from left
+Takes 80% of screen width (300px)
+Dark scrim (overlay) covers remaining 20% at 40% opacity
+Tap scrim or close icon dismisses drawer
+Content:
+Navigation links: Work, About, Leadership, Resume, Contact
+Same order as desktop header
+Body text style
+24px vertical spacing between items
+24px padding all sides
+Animation:
+250ms ease-out
+Drawer slides from X: -300 to X: 0
+Scrim fades from 0% to 40% opacity

@@ -1,0 +1,117 @@
+[
+  {
+    "type": "TEXT",
+    "name": "Brand",
+    "text": "Jeff Halpin"
+  },
+  {
+    "type": "TEXT",
+    "name": "work",
+    "text": "work"
+  },
+  {
+    "type": "TEXT",
+    "name": "about",
+    "text": "about"
+  },
+  {
+    "type": "TEXT",
+    "name": "leadership",
+    "text": "leadership"
+  },
+  {
+    "type": "TEXT",
+    "name": "resume",
+    "text": "resume"
+  },
+  {
+    "type": "TEXT",
+    "name": "contact",
+    "text": "contact"
+  },
+  {
+    "type": "TEXT",
+    "name": "Headline",
+    "text": "Hi, I’m Jeff Halpin"
+  },
+  {
+    "type": "TEXT",
+    "name": "Body",
+    "text": "I'm a UX Architect with 15+ years of experience designing products that solve real problems. This portfolio showcases my approach to user research, interaction design, and product strategy."
+  },
+  {
+    "type": "TEXT",
+    "name": "Copyright",
+    "text": "© 2025 Jeff Halpin"
+  },
+  {
+    "type": "TEXT",
+    "name": "Social",
+    "text": "LinkedIn | GitHub | Email"
+  },
+  {
+    "type": "TEXT",
+    "name": "Title",
+    "text": "Title"
+  },
+  {
+    "type": "TEXT",
+    "name": "Subtitle",
+    "text": "Role, timeline, brief description"
+  },
+  {
+    "type": "TEXT",
+    "name": "Title",
+    "text": "Title"
+  },
+  {
+    "type": "TEXT",
+    "name": "Subtitle",
+    "text": "Role, timeline, brief description"
+  },
+  {
+    "type": "TEXT",
+    "name": "Title",
+    "text": "Title"
+  },
+  {
+    "type": "TEXT",
+    "name": "Subtitle",
+    "text": "Role, timeline, brief description"
+  },
+  {
+    "type": "TEXT",
+    "name": "Title",
+    "text": "Title"
+  },
+  {
+    "type": "TEXT",
+    "name": "Subtitle",
+    "text": "Role, timeline, brief description"
+  },
+  {
+    "type": "TEXT",
+    "name": "Label",
+    "text": "All Work"
+  },
+  {
+    "type": "TEXT",
+    "name": "Label",
+    "text": "UX Research"
+  },
+  {
+    "type": "TEXT",
+    "name": "Label",
+    "text": "Product Design"
+  },
+  {
+    "type": "TEXT",
+    "name": "Label",
+    "text": "Strategy"
+  },
+  {
+    "type": "TEXT",
+    "name": "Label",
+    "text": "Leadership"
+  }
+]

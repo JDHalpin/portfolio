@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Invitae Registration Experience - Jeff Halpin</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'surface-default': '#FFFEF9',
+            'accent': '#069D87',
+            'text-primary': '#171718',
+            'text-secondary': '#DFE0E2',
+            'mid-gray': '#DFE0E2',
+            'light-gray': '#F6F6F6',
+            'bg-base': '#FFFFFF',
+          },
+          fontFamily: {
+            'lato': ['Lato', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FFFEF9] font-lato min-h-screen relative">
+
+  <!-- HEADER -->
+  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 px-4 py-4">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto">
+      <div class="flex items-center gap-4">
+        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
+          <span class="w-full h-0.5 bg-black"></span>
+          <span class="w-full h-0.5 bg-black"></span>
+          <span class="w-full h-0.5 bg-black"></span>
+        </button>
+        <a href="index.html" class="text-2xl text-black font-normal hover:text-accent transition-colors">Jeff Halpin</a>
+      </div>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="about.html" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="leadership.html" class="text-sm text-black hover:text-accent transition-colors">Leadership</a>
+        <a href="resume.html" class="text-sm text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="about.html" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="leadership.html" class="text-lg text-black hover:text-accent transition-colors">Leadership</a>
+        <a href="resume.html" class="text-lg text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">INVITAE: User Registration and Quiz Experience</h1>
+
+      <p class="text-lg text-black leading-relaxed">
+        Designing an intuitive and empathetic registration flow for a consumer-facing genetic testing portal, balancing complex medical information with accessibility and user confidence.
+      </p>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
+    <img src="images/380_image_invit.png" alt="Invitae user registration and quiz experience" class="w-full max-w-5xl mx-auto rounded-xl">
+  </section>
+
+  <!-- PROJECT CONTENT & METADATA -->
+  <section class="px-4 md:px-[50px] py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+      <!-- Left: Detailed Description -->
+      <div class="md:col-span-2">
+
+        <h3 class="text-2xl text-black font-normal mb-4">About the Project</h3>
+        <p class="text-base text-black leading-relaxed mb-4">
+          Invitae's consumer portal needed a seamless registration and assessment experience that could guide users through sensitive health decisions. The challenge was creating an interface that felt approachable and supportive while collecting necessary medical history and consent information.
+        </p>
+
+        <p class="text-base text-black leading-relaxed mb-4">
+          As Senior UX Architect, I led the product design for the registration flow and interactive quiz system. This involved extensive user research with potential patients, understanding their concerns about genetic testing, and designing an experience that builds trust through transparency and clear communication.
+        </p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Design Approach</h3>
+        <p class="text-base text-black leading-relaxed mb-4">
+          The registration experience uses progressive disclosure to reduce cognitive overwhelm. Users are guided through a multi-step process that feels conversational rather than clinical. Each step includes contextual help, clear progress indicators, and the ability to save and return later.
+        </p>
+
+        <p class="text-base text-black leading-relaxed mb-4">
+          The quiz component incorporates adaptive questioning based on user responses, personalizing the experience while gathering comprehensive health history. Visual feedback and micro-interactions provide reassurance that the system is working and their information is secure.
+        </p>
+
+        <p class="text-base text-black leading-relaxed mb-4">
+          Accessibility was paramount—ensuring the experience works across devices, assistive technologies, and varying levels of health literacy. We conducted extensive usability testing with diverse user groups to validate our approach.
+        </p>
+      </div>
+
+      <!-- Right: Metadata Sidebar -->
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Client</h4>
+          <p class="text-base text-black">INVITAE</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Discipline</h4>
+          <p class="text-base text-black">Product Design<br>User Experience<br>Consumer Health</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Role</h4>
+          <p class="text-base text-black">Senior UX Architect</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Year</h4>
+          <p class="text-base text-black">2023</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Focus Areas</h4>
+          <p class="text-base text-black">User Registration<br>Interactive Assessments<br>Health Literacy<br>WCAG Compliance</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMAGE GALLERY -->
+  <section class="px-4 md:px-[50px] py-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+      <div class="bg-light-gray rounded-xl h-96 flex items-center justify-center">
+        <p class="text-text-secondary">Registration Flow</p>
+      </div>
+      <div class="bg-light-gray rounded-xl h-96 flex items-center justify-center">
+        <p class="text-text-secondary">Quiz Interface</p>
+      </div>
+      <div class="md:col-span-2 bg-light-gray rounded-xl h-96 flex items-center justify-center">
+        <p class="text-text-secondary">User Journey Map</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- BACK TO WORK -->
+  <section class="px-4 md:px-[50px] py-8 mb-12">
+    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
+      ← Back to Work
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 py-6 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+    <p>© 2025 Jeff Halpin</p>
+    <p><a href="https://www.linkedin.com/in/jeffrey-halpin/">LinkedIn</a> | <a href="https://github.com/JDHalpin">GitHub</a> | <a href="mailto:jeff.halpin@gmail.com">Email</a></p>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  </script>
+</body>
+</html>
