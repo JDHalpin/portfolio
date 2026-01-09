@@ -122,6 +122,75 @@
 
   <!--
     ========================================
+    HERO CAROUSEL SECTION
+    ========================================
+    Auto-rotating carousel with videos and images
+  -->
+  <section class="bg-[#FFFEF9] px-4 md:px-[50px] pt-8 md:pt-12">
+    <div class="w-full max-w-[1440px] mx-auto relative">
+      <!-- Carousel container with 16:9 aspect ratio -->
+      <div id="hero-carousel" class="relative overflow-hidden rounded-lg" style="aspect-ratio: 16/9;">
+
+        <!-- Slide 0: Video -->
+        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
+          <video
+            class="w-full h-full object-cover"
+            autoplay
+            muted
+            loop
+            playsinline
+          >
+            <source src="images/jeffhalpin_montage.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!-- Slide 1: UX Process -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="1">
+          <img src="images/380_image_process.png" alt="UX Process" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 2: Eyedar -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="2">
+          <img src="images/380_image_eyedar.png" alt="Eyedar Application" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 3: Fasenra -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="3">
+          <img src="images/380_image_FASENR.png" alt="Fasenra Redesign" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 4: Toujeo -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="4">
+          <img src="images/380_image_TOUJ.png" alt="Toujeo Dosing Calculator" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 5: Pradaxa AR -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="5">
+          <img src="images/380_image_PRADAX.png" alt="Pradaxa AR" class="w-full h-full object-cover">
+        </div>
+
+        <!-- Slide 6: Invitae -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="6">
+          <img src="images/380_image_invit.png" alt="Invitae" class="w-full h-full object-cover">
+        </div>
+
+      </div>
+
+      <!-- Navigation Dots -->
+      <div class="flex justify-center gap-2 mt-4">
+        <button class="carousel-dot w-2 h-2 rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="3" aria-label="Go to slide 4"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="4" aria-label="Go to slide 5"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="5" aria-label="Go to slide 6"></button>
+        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="6" aria-label="Go to slide 7"></button>
+      </div>
+    </div>
+  </section>
+
+  <!--
+    ========================================
     INTRO SECTION
     ========================================
     Heading and bio paragraph in side-by-side layout
@@ -145,16 +214,16 @@ As a means of improving internal business processes, I shipped an internal appli
 
   <!--
     ========================================
-    FILTERS - Category chips
+    FILTERS - Category chips (COMMENTED OUT - may use as project tags later)
     ========================================
     Horizontally scrollable filter buttons
   -->
-  <div class="px-4 md:px-[50px] py-4 flex gap-2 overflow-x-auto">
+  <!-- <div class="px-4 md:px-[50px] py-4 flex gap-2 overflow-x-auto">
     <button class="filter-chip active px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap" data-filter="all">
       All Work
     </button>
     <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="research">
-      UX Research
+      UX Methodology
     </button>
     <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="design">
       Product Design
@@ -165,7 +234,7 @@ As a means of improving internal business processes, I shipped an internal appli
     <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="leadership">
       Leadership
     </button>
-  </div>
+  </div> -->
 
   <!--
     ========================================
@@ -181,7 +250,7 @@ As a means of improving internal business processes, I shipped an internal appli
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
         <img src="images/380_image_process.png" alt="UX Process - Discovery, wireframing, and prototyping" class="w-full object-cover rounded">
         <h3 class="text-2xl text-black font-normal leading-none">UX Process & Methodology</h3>
-        <p class="text-sm text-black leading-normal">Discovery, wireframing, prototyping, qualitative research, workshops and UI design</p>
+        <p class="text-sm text-black leading-normal">Discovery, wireframing, prototyping, qual/quant research, workshops and UI design collaboration</p>
       </article>
 
       <!-- ==================== PROJECT CARD 2 ==================== -->
@@ -193,30 +262,30 @@ As a means of improving internal business processes, I shipped an internal appli
 
       <!-- ==================== PROJECT CARD 3 ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
-        <img src="images/380_image_PRADAX.png" alt="Pradaxa AR sales tool" class="w-full object-cover rounded">
-        <h3 class="text-2xl text-black font-normal leading-none">AR/XR Experience Design: Pradaxa sales tool (Veeva)</h3>
-        <p class="text-sm text-black leading-normal">Sales-rep-driven Augmented Reality experience for pharmaceutical sales presentations</p>
+        <img src="images/380_image_FASENR.png" alt="Fasenra HCP website redesign" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">User Experience Architecture: Fasenra.com redesign</h3>
+        <p class="text-sm text-black leading-normal">Patient website redesign and technical architecture for pharmaceutical brand experience</p>
       </article>
 
       <!-- ==================== PROJECT CARD 4 ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="4">
-        <img src="images/380_image_invit.png" alt="Invitae user registration and quiz flow" class="w-full object-cover rounded">
-        <h3 class="text-2xl text-black font-normal leading-none">Product Design: Invitae quiz flow and user registration</h3>
-        <p class="text-sm text-black leading-normal">Consumer-facing genetic testing portal with streamlined registration and quiz experience</p>
+        <img src="images/380_image_TOUJ.png" alt="Toujeo dosing calculator" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">Solutions Architecture: Toujeo.com dosing calculator</h3>
+        <p class="text-sm text-black leading-normal">Insulin dosing interface for healthcare professionals managing glycemic control</p>
       </article>
 
       <!-- ==================== PROJECT CARD 5 ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="5">
-        <img src="images/380_image_TOUJ.png" alt="Toujeo dosing calculator" class="w-full object-cover rounded">
-        <h3 class="text-2xl text-black font-normal leading-none">Solutions Architect: Toujeo.com dosing calculator</h3>
-        <p class="text-sm text-black leading-normal">Insulin dosing interface for healthcare professionals managing glycemic control</p>
+        <img src="images/380_image_PRADAX.png" alt="Pradaxa AR sales tool" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">AR/XR Experience Design: Pradaxa sales tool (Veeva)</h3>
+        <p class="text-sm text-black leading-normal">Augmented Reality experience for pharmaceutical sales presentations</p>
       </article>
 
       <!-- ==================== PROJECT CARD 6 ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="6">
-        <img src="images/380_image_FASENR.png" alt="Fasenra HCP website redesign" class="w-full object-cover rounded">
-        <h3 class="text-2xl text-black font-normal leading-none">User Experience Architecture: Fasenra.com redesign</h3>
-        <p class="text-sm text-black leading-normal">HCP website redesign and technical architecture for pharmaceutical brand experience</p>
+        <img src="images/380_image_invit.png" alt="Invitae user registration and quiz flow" class="w-full object-cover rounded">
+        <h3 class="text-2xl text-black font-normal leading-none">Product Design: Invitae quiz flow and user registration</h3>
+        <p class="text-sm text-black leading-normal">Consumer-facing genetic testing portal quiz experience and optimized registration flow.</p>
       </article>
 
     </div>
@@ -229,7 +298,7 @@ As a means of improving internal business processes, I shipped an internal appli
     Copyright and social links
   -->
   <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
-    <p>© 2025 Jeff Halpin</p>
+    <p>© 2026 Jeff Halpin</p>
     <p><a href="https://www.linkedin.com/in/jeffrey-halpin/">LinkedIn</a> | <a href="https://github.com/JDHalpin">GitHub</a> | <a href="mailto:jeff.halpin@gmail.com">Email</a></p>
   </footer>
 
@@ -270,7 +339,8 @@ As a means of improving internal business processes, I shipped an internal appli
       });
     });
 
-    // -------- FILTER CHIP LOGIC --------
+    // -------- FILTER CHIP LOGIC (COMMENTED OUT) --------
+    /*
     document.querySelectorAll('.filter-chip').forEach((chip) => {
       chip.addEventListener('click', () => {
         // Remove active from all chips
@@ -281,21 +351,22 @@ As a means of improving internal business processes, I shipped an internal appli
         // Add active to clicked chip
         chip.classList.add('active');
         chip.classList.remove('bg-[#FFFEF9]');
-        
+
         const filter = chip.dataset.filter;
         console.log('Filter selected:', filter);
         // TODO: Implement actual filtering logic here
       });
     });
+    */
 
     // -------- CARD CLICK LOGIC --------
     const cardLinks = {
       '1': 'ux-methodology.html',
       '2': 'eyedar.html',
-      '3': 'pradaxa-ar.html',
-      '4': 'invitae-registration.html',
-      '5': 'toujeo-dosing-calculator.html',
-      '6': 'fasenra-redesign.html'
+      '3': 'fasenra-redesign.html',
+      '4': 'toujeo-dosing-calculator.html',
+      '5': 'pradaxa-ar.html',
+      '6': 'invitae-registration.html'
     };
 
     document.querySelectorAll('article[data-card]').forEach((card) => {
@@ -307,6 +378,75 @@ As a means of improving internal business processes, I shipped an internal appli
         }
       });
     });
+
+    // -------- HERO CAROUSEL LOGIC --------
+    let currentSlide = 0;
+    let carouselInterval;
+    const slides = document.querySelectorAll('.carousel-slide');
+    const dots = document.querySelectorAll('.carousel-dot');
+    const carousel = document.getElementById('hero-carousel');
+    const SLIDE_DURATION = 5000; // 5 seconds per slide
+
+    function showSlide(index) {
+      // Hide all slides
+      slides.forEach(slide => {
+        slide.style.opacity = '0';
+      });
+
+      // Show current slide
+      slides[index].style.opacity = '100';
+
+      // Update dots
+      dots.forEach((dot, i) => {
+        if (i === index) {
+          dot.classList.remove('bg-mid-gray');
+          dot.classList.add('bg-accent');
+        } else {
+          dot.classList.remove('bg-accent');
+          dot.classList.add('bg-mid-gray');
+        }
+      });
+
+      currentSlide = index;
+    }
+
+    function nextSlide() {
+      const next = (currentSlide + 1) % slides.length;
+      showSlide(next);
+    }
+
+    function startCarousel() {
+      carouselInterval = setInterval(nextSlide, SLIDE_DURATION);
+    }
+
+    function stopCarousel() {
+      clearInterval(carouselInterval);
+    }
+
+    // Navigation dot clicks
+    dots.forEach((dot, index) => {
+      dot.addEventListener('click', () => {
+        showSlide(index);
+        stopCarousel();
+        startCarousel(); // Restart the timer after manual navigation
+      });
+    });
+
+    // Carousel click - navigate to project page of current slide
+    carousel?.addEventListener('click', () => {
+      const currentSlideElement = slides[currentSlide];
+      const cardId = currentSlideElement?.dataset.card;
+      if (cardId && cardLinks[cardId]) {
+        window.location.href = cardLinks[cardId];
+      }
+    });
+
+    // Pause on hover
+    carousel?.addEventListener('mouseenter', stopCarousel);
+    carousel?.addEventListener('mouseleave', startCarousel);
+
+    // Start the carousel
+    startCarousel();
   </script>
 </body>
 </html>
