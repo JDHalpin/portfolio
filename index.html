@@ -81,8 +81,8 @@
     Mobile: Hamburger menu + name
     Desktop: Name + navigation links
   -->
-  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 px-4 py-4">
-    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto">
+  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 h-[60px]">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
       <!-- Left: Hamburger (mobile) + Name -->
       <div class="flex items-center gap-4">
         <!-- Hamburger menu icon - mobile only -->
@@ -126,65 +126,33 @@
     ========================================
     Auto-rotating carousel with videos and images
   -->
-  <section class="bg-[#FFFEF9] px-4 md:px-[50px] pt-8 md:pt-12">
+  <section class="bg-[#FFFEF9] px-4 md:px-[50px]">
     <div class="w-full max-w-[1440px] mx-auto relative">
-      <!-- Carousel container with 16:9 aspect ratio -->
-      <div id="hero-carousel" class="relative overflow-hidden rounded-lg" style="aspect-ratio: 16/9;">
+      <!-- Carousel container with 1440x620 aspect ratio -->
+      <div id="hero-carousel" class="relative overflow-hidden rounded-lg" style="aspect-ratio: 72/31;">
 
-        <!-- Slide 0: Video -->
-        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000">
-          <video
-            class="w-full h-full object-cover"
-            autoplay
-            muted
-            loop
-            playsinline
-          >
-            <source src="images/jeffhalpin_montage.mp4" type="video/mp4">
-          </video>
+        <!-- Slide 0: Hero 01 -->
+        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000 cursor-pointer" data-card="1">
+          <img src="images/hero_01.png" alt="Portfolio showcase 1" class="w-full h-full object-cover">
         </div>
 
-        <!-- Slide 1: UX Process -->
-        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="1">
-          <img src="images/380_image_process.png" alt="UX Process" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Slide 2: Eyedar -->
+        <!-- Slide 1: Hero 02 -->
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="2">
-          <img src="images/380_image_eyedar.png" alt="Eyedar Application" class="w-full h-full object-cover">
+          <img src="images/hero_02.png" alt="Portfolio showcase 2" class="w-full h-full object-cover">
         </div>
 
-        <!-- Slide 3: Fasenra -->
+        <!-- Slide 2: Hero 03 -->
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="3">
-          <img src="images/380_image_FASENR.png" alt="Fasenra Redesign" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Slide 4: Toujeo -->
-        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="4">
-          <img src="images/380_image_TOUJ.png" alt="Toujeo Dosing Calculator" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Slide 5: Pradaxa AR -->
-        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="5">
-          <img src="images/380_image_PRADAX.png" alt="Pradaxa AR" class="w-full h-full object-cover">
-        </div>
-
-        <!-- Slide 6: Invitae -->
-        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="6">
-          <img src="images/380_image_invit.png" alt="Invitae" class="w-full h-full object-cover">
+          <img src="images/hero_03.png" alt="Portfolio showcase 3" class="w-full h-full object-cover">
         </div>
 
       </div>
 
       <!-- Navigation Dots -->
       <div class="flex justify-center gap-2 mt-4">
-        <button class="carousel-dot w-2 h-2 rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
-        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
-        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="3" aria-label="Go to slide 4"></button>
-        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="4" aria-label="Go to slide 5"></button>
-        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="5" aria-label="Go to slide 6"></button>
-        <button class="carousel-dot w-2 h-2 rounded-full bg-mid-gray transition-all" data-slide="6" aria-label="Go to slide 7"></button>
+        <button class="carousel-dot w-[18px] h-[18px] rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="carousel-dot w-[18px] h-[18px] rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot w-[18px] h-[18px] rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
       </div>
     </div>
   </section>
@@ -361,9 +329,9 @@ As a means of improving internal business processes, I shipped an internal appli
 
     // -------- CARD CLICK LOGIC --------
     const cardLinks = {
-      '1': 'ux-methodology.html',
-      '2': 'eyedar.html',
-      '3': 'fasenra-redesign.html',
+      '1': 'eyedar.html',
+      '2': 'ux-methodology.html',
+      '3': 'pradaxa-ar.html',
       '4': 'toujeo-dosing-calculator.html',
       '5': 'pradaxa-ar.html',
       '6': 'invitae-registration.html'
