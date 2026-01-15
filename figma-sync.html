@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Halpin - Figma Design Token Sync Tool</title>
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts: Lato & Playfair Display -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Lato', sans-serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'surface-default': '#FFFEF9',
+            'accent': '#069D87',
+            'text-primary': '#171718',
+            'text-secondary': '#DFE0E2',
+            'mid-gray': '#DFE0E2',
+            'light-gray': '#F6F6F6',
+            'bg-base': '#FFFFFF',
+          },
+          fontFamily: {
+            'lato': ['Lato', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FFFEF9] font-lato min-h-screen relative">
+
+  <!-- HEADER -->
+  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 px-4 py-4">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto">
+      <div class="flex items-center gap-4">
+        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
+          <span class="w-full h-0.5 bg-black"></span>
+          <span class="w-full h-0.5 bg-black"></span>
+          <span class="w-full h-0.5 bg-black"></span>
+        </button>
+        <a href="index.html" class="font-playfair text-2xl text-black font-normal hover:text-accent transition-colors">Jeff Halpin</a>
+      </div>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="about.html" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="leadership.html" class="text-sm text-black hover:text-accent transition-colors">Leadership</a>
+        <a href="resume.html" class="text-sm text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="about.html" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="leadership.html" class="text-lg text-black hover:text-accent transition-colors">Leadership</a>
+        <a href="resume.html" class="text-lg text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">Figma Design Token Sync Tool</h1>
+
+      <p class="text-lg text-black leading-relaxed">
+        An automated workflow that syncs design tokens from Figma to code, keeping the design system and front-end implementation in perfect alignment.
+      </p>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
+    <div class="bg-light-gray rounded-xl h-80 max-w-5xl mx-auto flex items-center justify-center">
+      <p class="text-text-secondary">Hero image: Figma design system panel</p>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT & METADATA -->
+  <section class="px-4 md:px-[50px] py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+      <!-- Left: Detailed Description -->
+      <div class="md:col-span-2">
+
+        <h3 class="text-2xl text-black font-normal mb-4">The Problem</h3>
+        <p class="text-base text-black leading-relaxed mb-4">
+          Keeping design tokens synchronized between Figma and code is a persistent challenge in design-development workflows. Manual updates are error-prone, time-consuming, and often lead to drift between what designers specify and what gets implemented. A color change in Figma might take days to propagate to the codebase, or worse, get transcribed incorrectly.
+        </p>
+
+        <p class="text-base text-black leading-relaxed mb-4">
+          For this portfolio project, I wanted a single source of truth: update colors in Figma, run a command, and have the code update automatically. No copy-pasting hex values, no version mismatches.
+        </p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">The Solution</h3>
+        <p class="text-base text-black leading-relaxed mb-4">
+          I built a Node.js script that connects to the Figma API, extracts all published color styles from my design system file, and automatically updates the Tailwind CSS configuration in my HTML files. The entire sync takes seconds and eliminates manual transcription errors.
+        </p>
+
+        <p class="text-base text-black leading-relaxed mb-4">
+          The script walks Figma's document tree to find nodes with style IDs, extracts RGB values, converts them to hex codes, and generates a Tailwind-compatible color configuration. It also saves JSON files for reference and debugging.
+        </p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Technical Implementation</h3>
+        <p class="text-base text-black leading-relaxed mb-4">
+          During development, I discovered that Figma's API requires the <code class="bg-light-gray px-2 py-1 rounded">X-Figma-Token</code> header rather than the more common <code class="bg-light-gray px-2 py-1 rounded">Authorization: Bearer</code> pattern. This debugging experience reinforced the importance of reading API documentation carefully and testing authentication flows early.
+        </p>
+
+        <p class="text-base text-black leading-relaxed mb-4">
+          The tool has zero external dependencies beyond Node.js itself, making it portable and easy to integrate into any project. It supports both published library colors and document-level style extraction as a fallback.
+        </p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Skills Demonstrated</h3>
+        <p class="text-base text-black leading-relaxed mb-4">
+          This project showcases API integration, design systems knowledge, automation and tooling, documentation, and problem-solving. It bridges the gap between design and development in a practical, reusable way.
+        </p>
+      </div>
+
+      <!-- Right: Metadata Sidebar -->
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Client</h4>
+          <p class="text-base text-black">Personal Project</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Discipline</h4>
+          <p class="text-base text-black">Design Systems<br>Automation<br>API Integration<br>Front-end Development</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Role</h4>
+          <p class="text-base text-black">Developer / UX Engineer</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Year</h4>
+          <p class="text-base text-black">2026</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Technologies</h4>
+          <p class="text-base text-black">Node.js<br>Figma API<br>Tailwind CSS<br>JavaScript</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-text-secondary uppercase mb-2">Deliverables</h4>
+          <p class="text-base text-black">Sync Script<br>Documentation<br>GitHub Repository</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- IMAGE GALLERY -->
+  <section class="px-4 md:px-[50px] py-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+      <div class="bg-light-gray rounded-xl h-96 flex items-center justify-center">
+        <p class="text-text-secondary">Terminal output showing sync</p>
+      </div>
+      <div class="bg-light-gray rounded-xl h-96 flex items-center justify-center">
+        <p class="text-text-secondary">Tailwind config with synced colors</p>
+      </div>
+      <div class="md:col-span-2 bg-light-gray rounded-xl h-96 flex items-center justify-center">
+        <p class="text-text-secondary">Workflow diagram or before/after</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXTERNAL LINK -->
+  <section class="px-4 md:px-[50px] py-8 mb-12">
+    <div class="max-w-5xl mx-auto">
+      <a href="https://github.com/JDHalpin/figma-design-tokens" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-accent hover:underline text-lg">
+        View on GitHub →
+      </a>
+    </div>
+  </section>
+
+  <!-- BACK TO WORK -->
+  <section class="px-4 md:px-[50px] py-8 mb-12">
+    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
+      ← Back to Work
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+    <p>© 2026 Jeff Halpin</p>
+    <p><a href="https://www.linkedin.com/in/jeffrey-halpin/">LinkedIn</a> | <a href="https://github.com/JDHalpin">GitHub</a> | <a href="mailto:jeff.halpin@gmail.com">Email</a></p>
+  </footer>
+
+  <script>
+    // Mobile menu logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+  </script>
+</body>
+</html>
