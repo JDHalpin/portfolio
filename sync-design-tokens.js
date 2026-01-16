@@ -144,27 +144,31 @@ ${entries.join('\n')}
 }
 
 /**
- * Update index.html with new design tokens
+ * Update a single HTML file with new design tokens
  */
-function updateIndexHtml(colors) {
-  const indexPath = path.join(__dirname, 'index.html');
-
-  if (!fs.existsSync(indexPath)) {
-    console.warn('⚠️  Warning: index.html not found, skipping update');
+function updateHtmlFile(filePath, colors) {
+  if (!fs.existsSync(filePath)) {
     return false;
   }
 
-  let html = fs.readFileSync(indexPath, 'utf8');
+  let html = fs.readFileSync(filePath, 'utf8');
 
-  // Update the comment block with color values
-  const colorList = colors.map(c => `      - ${c.name}: ${c.hex}`).join('\n');
-  const commentBlock = `      CUSTOM STYLES - Figma Design System (Extracted from Figma API)
+  // Check if this file has a Tailwind config
+  if (!html.includes('tailwind.config')) {
+    return false;
+  }
+
+  // Update the comment block with color values (only in index.html)
+  if (filePath.endsWith('index.html')) {
+    const colorList = colors.map(c => `      - ${c.name}: ${c.hex}`).join('\n');
+    const commentBlock = `      CUSTOM STYLES - Figma Design System (Extracted from Figma API)
 ${colorList}`;
 
-  html = html.replace(
-    /CUSTOM STYLES - Figma Design System \(Extracted from Figma API\)[^*]*/,
-    commentBlock + '\n    '
-  );
+    html = html.replace(
+      /CUSTOM STYLES - Figma Design System \(Extracted from Figma API\)[^*]*/,
+      commentBlock + '\n    '
+    );
+  }
 
   // Update Tailwind config colors
   const tailwindColors = generateTailwindConfig(colors);
@@ -173,9 +177,32 @@ ${colorList}`;
     tailwindColors
   );
 
-  fs.writeFileSync(indexPath, html, 'utf8');
-  console.log('✅ Updated index.html with new design tokens');
+  fs.writeFileSync(filePath, html, 'utf8');
   return true;
+}
+
+/**
+ * Update ALL HTML files with new design tokens
+ */
+function updateAllHtmlFiles(colors) {
+  const htmlFiles = fs.readdirSync(__dirname)
+    .filter(file => file.endsWith('.html'))
+    .map(file => path.join(__dirname, file));
+
+  let updatedCount = 0;
+
+  console.log('📄 Updating HTML files...');
+
+  for (const filePath of htmlFiles) {
+    const fileName = path.basename(filePath);
+    if (updateHtmlFile(filePath, colors)) {
+      console.log(`   ✅ ${fileName}`);
+      updatedCount++;
+    }
+  }
+
+  console.log(`✅ Updated ${updatedCount} HTML files with design tokens`);
+  return updatedCount;
 }
 
 /**
@@ -262,8 +289,8 @@ async function main() {
     );
     console.log('✅ Saved figma_colors.json');
 
-    // Update index.html
-    updateIndexHtml(colors);
+    // Update ALL HTML files
+    updateAllHtmlFiles(colors);
 
     // Print summary
     console.log('\n📊 Design Token Summary:');
