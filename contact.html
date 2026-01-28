@@ -149,7 +149,7 @@
       <!-- Location -->
       <div class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-6 flex flex-col gap-2">
         <h3 class="text-2xl text-black font-normal leading-none">Location</h3>
-        <p class="text-base text-black">San Francisco Bay Area</p>
+        <p class="text-base text-black">New York City</p>
       </div>
 
     </div>
@@ -164,7 +164,7 @@
     <div class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-8 max-w-2xl">
       <h3 class="text-2xl text-black font-normal mb-6">Send a Message</h3>
 
-      <form class="flex flex-col gap-4">
+      <form action="https://formspree.io/f/xvzrgoga" method="POST" class="flex flex-col gap-4">
         <!-- Name -->
         <div>
           <label for="name" class="block text-sm text-black mb-2">Name</label>
@@ -241,14 +241,7 @@
       });
     });
 
-    // -------- FORM SUBMIT LOGIC --------
-    // Note: You'll need to add form backend processing
-    // This is just a placeholder to prevent default submission
-    document.querySelector('form')?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      alert('Form submission functionality needs to be connected to a backend service.');
-      // TODO: Add form backend (e.g., Formspree, Netlify Forms, custom API)
-    });
+    // Form now submits to Formspree
   </script>
 </body>
 </html>
