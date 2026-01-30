@@ -104,6 +104,28 @@
     </div>
   </div>
 
+  <!-- Password Modal - shown on page load if not authenticated -->
+  <div id="password-modal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+    <div class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-8 w-full max-w-md relative">
+      <h3 class="text-2xl text-black font-normal mb-2">Password Required</h3>
+      <p class="text-base text-black mb-6">Please enter your password to view the resume.</p>
+      <form id="password-form" class="flex flex-col gap-4">
+        <div>
+          <label for="resume-password" class="block text-sm text-black mb-2">Password</label>
+          <input type="password" id="resume-password" name="password" required
+            class="w-full px-4 py-3 border border-light-gray rounded bg-white text-black focus:outline-none focus:border-accent transition-colors">
+        </div>
+        <p id="password-error" class="text-red-500 text-sm hidden">Incorrect password. Please try again.</p>
+        <button type="submit" class="w-full px-8 py-3 bg-accent text-white rounded hover:bg-opacity-90 transition-all font-normal">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Protected Content - hidden until authenticated -->
+  <div id="protected-content" class="hidden">
+
   <!--
     ========================================
     RESUME HEADER
@@ -343,6 +365,8 @@
     </div>
   </section>
 
+  </div><!-- End protected-content -->
+
   <!--
     ========================================
     FOOTER
@@ -388,6 +412,54 @@
         mobileMenu.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       });
+    });
+
+    // -------- PASSWORD PROTECTION LOGIC --------
+    const PORTFOLIO_PASSWORD = 'portfolio2026';
+    const SESSION_KEY = 'portfolio_authenticated';
+
+    const passwordModal = document.getElementById('password-modal');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('resume-password');
+    const passwordError = document.getElementById('password-error');
+    const protectedContent = document.getElementById('protected-content');
+
+    function isAuthenticated() {
+      return sessionStorage.getItem(SESSION_KEY) === 'true';
+    }
+
+    function showContent() {
+      protectedContent.classList.remove('hidden');
+      passwordModal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    }
+
+    function showPasswordModal() {
+      passwordModal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      passwordInput.focus();
+    }
+
+    // Check authentication on page load
+    if (isAuthenticated()) {
+      showContent();
+    } else {
+      showPasswordModal();
+    }
+
+    // Handle password form submit
+    passwordForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const enteredPassword = passwordInput.value;
+
+      if (enteredPassword === PORTFOLIO_PASSWORD) {
+        sessionStorage.setItem(SESSION_KEY, 'true');
+        showContent();
+      } else {
+        passwordError.classList.remove('hidden');
+        passwordInput.value = '';
+        passwordInput.focus();
+      }
     });
   </script>
 </body>
