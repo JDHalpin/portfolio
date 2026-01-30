@@ -6,13 +6,13 @@
   <title>Jeff Halpin - Portfolio</title>
   <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Lato & Playfair Display -->
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     /*
-                                                CUSTOM STYLES - Figma Design System (Extracted from Figma API)
+                                                      CUSTOM STYLES - Figma Design System (Extracted from Figma API)
       - off-white: #FFFEF9
       - white: #FFFFFF
       - near-black: #181818
@@ -29,7 +29,7 @@
       - Text/Tertiary: #526AC2
     */
     body {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Kaisei Opti', serif;
     }
     
     .filter-chip {
@@ -49,7 +49,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                                colors: {
+                                                                                          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -66,6 +66,7 @@
             'text-tertiary': '#526AC2',
           },
           fontFamily: {
+            'kaisei': ['Kaisei Opti', 'serif'],
             'lato': ['Lato', 'sans-serif'],
             'playfair': ['Playfair Display', 'serif'],
             'poppins': ['Poppins', 'sans-serif'],
@@ -75,7 +76,7 @@
     }
   </script>
 </head>
-<body class="bg-[#FFFEF9] font-lato min-h-screen relative">
+<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
 
   <!-- 
     ========================================
@@ -95,7 +96,7 @@
           <span class="w-full h-0.5 bg-black"></span>
         </button>
         <!-- Name/Logo -->
-        <a href="index.html" class="font-poppins text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+        <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       </div>
       
       <!-- Right: Navigation - desktop only -->
@@ -123,6 +124,26 @@
     </div>
   </div>
 
+  <!-- Password Modal - hidden by default -->
+  <div id="password-modal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
+    <div class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-8 w-full max-w-md relative">
+      <button id="password-modal-close" class="absolute top-4 right-4 text-2xl text-black hover:text-accent transition-colors" aria-label="Close modal">&times;</button>
+      <h3 class="text-2xl text-black font-normal mb-2">Password Required</h3>
+      <p class="text-base text-black mb-6">Please enter your password to view this case study.</p>
+      <form id="password-form" class="flex flex-col gap-4">
+        <div>
+          <label for="case-study-password" class="block text-sm text-black mb-2">Password</label>
+          <input type="password" id="case-study-password" name="password" required
+            class="w-full px-4 py-3 border border-light-gray rounded bg-white text-black focus:outline-none focus:border-accent transition-colors">
+        </div>
+        <p id="password-error" class="text-red-500 text-sm hidden">Incorrect password. Please try again.</p>
+        <button type="submit" class="w-full px-8 py-3 bg-accent text-white rounded hover:bg-opacity-90 transition-all font-normal">
+          Submit
+        </button>
+      </form>
+    </div>
+  </div>
+
   <!--
     ========================================
     HERO CAROUSEL SECTION
@@ -135,17 +156,17 @@
       <div id="hero-carousel" class="relative overflow-hidden rounded-lg" style="aspect-ratio: 72/31;">
 
         <!-- Slide 0: Hero 01 -->
-        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000 cursor-pointer" data-card="2">
+        <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000" data-card="2">
           <img src="images/hero_01.png" alt="Portfolio showcase 1" class="w-full h-full object-cover">
         </div>
 
         <!-- Slide 1: Hero 02 -->
-        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="1">
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="1">
           <img src="images/hero_02.png" alt="Portfolio showcase 2" class="w-full h-full object-cover">
         </div>
 
         <!-- Slide 2: Hero 03 -->
-        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000 cursor-pointer" data-card="3">
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="3">
           <img src="images/hero_03.png" alt="Portfolio showcase 3" class="w-full h-full object-cover">
         </div>
 
@@ -347,12 +368,76 @@ I've led interdisciplinary teams as both a UX and technical lead, conducting heu
       '7': 'figma-sync.html',
     };
 
+    // -------- PASSWORD MODAL LOGIC --------
+    const PORTFOLIO_PASSWORD = 'portfolio2026';
+    const SESSION_KEY = 'portfolio_authenticated';
+    let pendingDestination = null;
+
+    const passwordModal = document.getElementById('password-modal');
+    const passwordModalClose = document.getElementById('password-modal-close');
+    const passwordForm = document.getElementById('password-form');
+    const passwordInput = document.getElementById('case-study-password');
+    const passwordError = document.getElementById('password-error');
+
+    function isAuthenticated() {
+      return sessionStorage.getItem(SESSION_KEY) === 'true';
+    }
+
+    function showPasswordModal(destination) {
+      pendingDestination = destination;
+      passwordError.classList.add('hidden');
+      passwordInput.value = '';
+      passwordModal.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+      passwordInput.focus();
+    }
+
+    function hidePasswordModal() {
+      passwordModal.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+      pendingDestination = null;
+      passwordInput.value = '';
+      passwordError.classList.add('hidden');
+    }
+
+    passwordModalClose?.addEventListener('click', hidePasswordModal);
+
+    // Close modal when clicking outside
+    passwordModal?.addEventListener('click', (e) => {
+      if (e.target === passwordModal) {
+        hidePasswordModal();
+      }
+    });
+
+    // Handle password form submit
+    passwordForm?.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const enteredPassword = passwordInput.value;
+
+      if (enteredPassword === PORTFOLIO_PASSWORD) {
+        sessionStorage.setItem(SESSION_KEY, 'true');
+        hidePasswordModal();
+        if (pendingDestination) {
+          window.location.href = pendingDestination;
+        }
+      } else {
+        passwordError.classList.remove('hidden');
+        passwordInput.value = '';
+        passwordInput.focus();
+      }
+    });
+
+    // Card click - show password modal or navigate if authenticated
     document.querySelectorAll('article[data-card]').forEach((card) => {
       card.addEventListener('click', () => {
         const cardId = card.dataset.card;
         const link = cardLinks[cardId];
         if (link) {
-          window.location.href = link;
+          if (isAuthenticated()) {
+            window.location.href = link;
+          } else {
+            showPasswordModal(link);
+          }
         }
       });
     });
@@ -410,14 +495,14 @@ I've led interdisciplinary teams as both a UX and technical lead, conducting heu
       });
     });
 
-    // Carousel click - navigate to project page of current slide
-    carousel?.addEventListener('click', () => {
-      const currentSlideElement = slides[currentSlide];
-      const cardId = currentSlideElement?.dataset.card;
-      if (cardId && cardLinks[cardId]) {
-        window.location.href = cardLinks[cardId];
-      }
-    });
+    // Carousel click - temporarily disabled
+    // carousel?.addEventListener('click', () => {
+    //   const currentSlideElement = slides[currentSlide];
+    //   const cardId = currentSlideElement?.dataset.card;
+    //   if (cardId && cardLinks[cardId]) {
+    //     window.location.href = cardLinks[cardId];
+    //   }
+    // });
 
     // Pause on hover
     carousel?.addEventListener('mouseenter', stopCarousel);

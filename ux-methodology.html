@@ -9,17 +9,17 @@
   <!-- Google Fonts: Lato & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
     body {
-      font-family: 'Lato', sans-serif;
+      font-family: 'Kaisei Opti', serif;
     }
   </style>
   <script>
     tailwind.config = {
       theme: {
         extend: {
-                    colors: {
+                              colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -36,6 +36,7 @@
             'text-tertiary': '#526AC2',
           },
           fontFamily: {
+            'kaisei': ['Kaisei Opti', 'serif'],
             'lato': ['Lato', 'sans-serif'],
             'playfair': ['Playfair Display', 'serif'],
             'poppins': ['Poppins', 'sans-serif'],
@@ -45,7 +46,7 @@
     }
   </script>
 </head>
-<body class="bg-[#FFFEF9] font-lato min-h-screen relative">
+<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
 
   <!-- HEADER -->
   <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 h-[60px]">
@@ -56,7 +57,7 @@
           <span class="w-full h-0.5 bg-black"></span>
           <span class="w-full h-0.5 bg-black"></span>
         </button>
-        <a href="index.html" class="font-poppins text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+        <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       </div>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
