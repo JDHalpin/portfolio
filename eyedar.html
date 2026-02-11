@@ -49,22 +49,19 @@
 <body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
 
   <!-- HEADER -->
-  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 h-[60px]">
+  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
-      <div class="flex items-center gap-4">
-        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-        </button>
-        <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
-      </div>
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
         <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
         <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
     </div>
   </header>
 

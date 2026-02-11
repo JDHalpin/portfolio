@@ -83,26 +83,24 @@
     Mobile: Hamburger menu + name
     Desktop: Name + navigation links
     -->
-  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 h-[60px]">
+  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
-      <!-- Left: Hamburger (mobile) + Name -->
-      <div class="flex items-center gap-4">
-        <!-- Hamburger menu icon - mobile only -->
-        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-        </button>
-        <!-- Name/Logo -->
-        <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
-      </div>
-      
+      <!-- Left: Name/Logo -->
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+
       <!-- Right: Navigation - desktop only -->
-      <nav class="hidden md:flex items-center gap-6">        <a href="#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
         <a href="#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
         <a href="#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
+
+      <!-- Hamburger menu icon - mobile only, right side -->
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
     </div>
   </header>
 
@@ -149,30 +147,39 @@
   <section class="bg-[#FFFEF9] px-4 md:px-[50px]">
     <div class="w-full max-w-[1440px] mx-auto relative">
       <!-- Carousel container with 2880x1120 aspect ratio -->
-      <div id="hero-carousel" class="relative overflow-hidden rounded-lg" style="aspect-ratio: 18/7;">
+      <div id="hero-carousel" class="relative overflow-hidden rounded-lg aspect-[776/700] md:aspect-[18/7] max-h-[350px] md:max-h-none">
 
         <!-- Slide 0: Hero 01 -->
         <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000" data-card="2">
-          <img src="images/hero_01.png" alt="Portfolio showcase 1" class="w-full h-full object-cover">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/hero_01_mobile.png">
+            <img src="images/hero_01.png" alt="Portfolio showcase 1" class="w-full h-full object-cover">
+          </picture>
         </div>
 
         <!-- Slide 1: Product Design and AI Development -->
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="7">
-          <img src="images/hero_04.png" alt="Product Design and AI Development" class="w-full h-full object-cover">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/hero_04_mobile.png">
+            <img src="images/hero_04.png" alt="Product Design and AI Development" class="w-full h-full object-cover">
+          </picture>
         </div>
 
         <!-- Slide 2: Hero 03 -->
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="3">
-          <img src="images/hero_03.png" alt="Portfolio showcase 3" class="w-full h-full object-cover">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/hero_03_mobile.png">
+            <img src="images/hero_03.png" alt="Portfolio showcase 3" class="w-full h-full object-cover">
+          </picture>
         </div>
 
       </div>
 
-      <!-- Navigation Dots -->
-      <div class="flex justify-center gap-2 mt-4">
-        <button class="carousel-dot w-[14px] h-[14px] rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
-        <button class="carousel-dot w-[14px] h-[14px] rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="carousel-dot w-[14px] h-[14px] rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
+      <!-- Navigation Dots - positioned over the carousel from the parent wrapper -->
+      <div class="mt-2 mr-4 flex justify-end gap-2 md:mt-4 md:mr-0 md:justify-center">
+        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
+        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
       </div>
     </div>
   </section>
@@ -182,10 +189,10 @@
     ========================================
     Heading and bio paragraph in side-by-side layout
   -->
-  <section id="about" class="bg-[#FFFEF9] px-4 md:px-[120px] py-12 md:py-16 scroll-mt-[60px]">
+  <section id="about" class="bg-[#FFFEF9] px-4 md:px-[120px] pt-0 pb-0 md:py-16 scroll-mt-[60px]">
     <div class="grid grid-cols-1 md:grid-cols-1 gap-10 md:gap-4">
       <!-- Left: Heading -->
-      <h2 class="text-[32px] leading-none text-black font-normal">About Me</h2>
+      <h2 class="text-[32px] leading-none text-black font-normal pt-[56px] md:pt-0">About Me</h2>
 
       <!-- Center: About-->
       <p class="text-base leading-normal text-black">
@@ -194,19 +201,29 @@ I'm a User Experience Architect with 10+ years designing products that balance u
 I specialize in complex, regulated environments: healthcare/pharmaceutical products, accessibility-first mobile applications, API integrations, and emerging technology (XR/AI). I've shipped award-winning products (Cannes Lion, 4 Clio Golds) used by thousands of patients and healthcare professionals.
 <br/><br/>
 My approach combines deep user research with technical fluency. I understand how systems work, not just how they look. I build design systems, automate 
-workflows, and bridge the gap between design intent and engineering implementation. </br> <br/>
+workflows, and bridge the gap between design intent and engineering implementation. <br/> <br/>
 I'm currently seeking Product Design or UX Engineering roles in tech/healthtech where I can leverage my domain expertise and systems thinking at scale.
-
  </p>
+    </div>
+  </section>
+
+  <!--
+    ========================================
+    TECHNICAL CAPABILITIES
+    ========================================
+    Heading and copy in side-by-side layout
+  -->
+  <section id="capabilities" class="bg-[#FFFEF9] px-4 md:px-[120px] pt-0 pb-12 md:py-16 scroll-mt-[60px]">
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-10 md:gap-4">
 <!-- Left: Heading -->
       <h2 class="text-[32px] leading-none text-black font-normal">Technical Capabilities</h2>
 <!--center: Technical capabilities-->
-<p class="text-base leading-normal text-black">Design & Systems:Figma, design tokens, component architecture, design system governance</p>
-<p class="text-base leading-normal text-black">Development: HTML, CSS, JavaScript, Figma API, Model Context Protocol</p>
-<p class="text-base leading-normal text-black">Specialized: XR/AR/VR development, LIDAR integration, AI model integration</p>
-<p class="text-base leading-normal text-black">Methods:User research, usability testing, information architecture, interaction design, prototyping.</p>
+<p class="text-base leading-normal text-black">Design & Systems:Figma, design tokens, component architecture, design system governance<br/>
+  Development: HTML, CSS, JavaScript, Figma API, Model Context Protocol<br/> 
+<p class="text-base leading-normal text-black">Specialized: XR/AR/VR development, LIDAR integration, AI model integration<br/>
+<p class="text-base leading-normal text-black">Methods:User research, usability testing, information architecture, interaction design, prototyping.<br/>
 <p class="text-base leading-normal text-black">📍 Based in New York, open to remote and hybrid roles<br/>
-💼 Currently seeking product design opportunities in tech/healthtech<br/>
+💼 Currently seeking product design opportunities in tech/health tech<br/>
 📧 Available for interviews immediately</p> 
     </div>
   </section>
@@ -303,20 +320,16 @@ I'm currently seeking Product Design or UX Engineering roles in tech/healthtech 
       <h2 class="text-[32px] leading-none text-black font-normal">Approach</h2>
 <!-- Copy -->
 <p class="text-base leading-normal text-black">
-My leadership approach centers on empowering teams through clear communication, trust, and a collaborative mindset. I believe the best solutions emerge when diverse perspectives come together with a shared purpose.
-</p>
-      <p class="text-base leading-normal text-black">
-I've led cross-functional teams of designers, developers, researchers, and strategists to deliver impactful products. My focus is always on creating an environment where everyone can do their best work.
-</p>
-      <p class="text-base leading-normal text-black">     
-Team Building, strategic vision and cross-functional collaboration are the pillars of my leadership philosophy.
+I start every project by understanding the business case. Before sketching screens, I assess what exists: functionality gaps, usability issues, technical constraints. This groundwork builds credibility with stakeholders and prevents wasted cycles.</p>
 <p class="text-base leading-normal text-black">
-In my experience, the way to lead is by actively championing experimentation and continuous learning. If the individual demonstrates the process of pitching, doing and creating, it fosters a culture where failure is a learning opportunity and innovation thrives through iterative improvement.
-      </p>
+I build systems, not just screens. Design tokens, interaction specifications, research frameworks—artifacts that scale beyond a single project and keep teams aligned as products evolve.
+</p>
+<p class="text-base leading-normal text-black">
+I lead through demonstration. Pitching, doing, creating. When I advocate for a direction, I show the work. This approach invites collaboration rather than debate, and it moves teams from ambiguity to execution faster.</p> 
     </div>
 
     <!-- Brand Logos -->
-    <div class="mt-16">
+    <div class="mt-24">
       <h3 class="text-lg text-black font-normal mb-8">Brands I've Worked With</h3>
       <div class="flex flex-wrap justify-center gap-8 items-center">
         <img src="images/a23_logo.webp" alt="A23 logo" class="h-10 object-contain">
