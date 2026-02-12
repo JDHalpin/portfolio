@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Halpin - AR Sales Presentation: Pradaxa Veeva CLM</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kaisei Opti', serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+                              colors: {
+            'off-white': '#FFFEF9',
+            'white': '#FFFFFF',
+            'near-black': '#181818',
+            'light-gray': '#F7F7F7',
+            'aquamarine': '#61EDD8',
+            'accent': '#079E87',
+            'text-primary': '#181818',
+            'text-secondary': '#DFE1E3',
+            'accent-primary': '#61EDD8',
+            'background-base': '#FFFFFF',
+            'mid-gray': '#DFE1E3',
+            'surface-default': '#FFFEF9',
+            'border-subtle': '#F7F7F7',
+            'text-tertiary': '#526AC2',
+          },
+          fontFamily: {
+            'kaisei': ['Kaisei Opti', 'serif'],
+            'lato': ['Lato', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+</head>
+<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
+
+  <!-- HEADER -->
+  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
+    <div class="max-w-5xl mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">AR Sales Presentation: Pradaxa Veeva CLM</h1>
+
+      <p class="text-lg text-black leading-relaxed">
+        An augmented reality sales tool for iPad that transformed standard KOL video content into an immersive, interactive experience for pharmaceutical sales representatives.
+      </p>
+    </div>
+  </section>
+
+  <!-- HERO IMAGE -->
+  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
+    <div class="max-w-5xl mx-auto">
+      <figure>
+        <img src="images/pradaxa_example_01.png" alt="AR sales presentation featuring KOL with animated clinical data visualizations in a spatial environment" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+        <figcaption class="text-sm text-neutral-600 mt-3 text-center">
+          AR sales presentation featuring KOL with animated clinical data visualizations in a spatial environment.
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT & METADATA -->
+  <section class="px-4 md:px-[50px] py-8">
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+
+      <!-- Left: Detailed Description -->
+      <div class="md:col-span-2">
+
+        <h3 class="text-2xl text-black font-normal mb-4">The Challenge</h3>
+        <p class="text-base text-black leading-relaxed mb-4">Boehringer Ingelheim had just issued 6th generation iPad Pros to their entire sales force and wanted an AR experience to mark the upgrade. The brief was open-ended: "build something in AR." My job was to turn that into a focused, compliant, and effective sales tool that reps could actually use in HCP conversations.</p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">My Role</h3>
+        <p class="text-base text-black leading-relaxed mb-4">Senior UX Architect, responsible for competitive research, interaction design, wireframes, and KOL performance direction. I collaborated with creative on storyboards and guided the experience through regulatory review.</p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Research & Discovery</h3>
+        <p class="text-base text-black leading-relaxed mb-4">I audited existing AR experiences in the pharmaceutical and broader healthcare market, documenting interaction patterns, technical approaches, and engagement mechanics. I reviewed findings with the internal team and client to establish a shared understanding of what "good" looked like in this space.</p>
+        <p class="text-base text-black leading-relaxed mb-4">Stakeholder interviews with the brand team clarified priorities: the experience needed to support the sales narrative, not distract from it. Reps needed something that enhanced their conversations with HCPs, not a novelty that would get used once and forgotten.</p>
+
+        <!-- Storyboard Image with Caption -->
+        <figure class="my-8 md:flex md:flex-col md:items-center">
+          <img src="images/pradaxa_storyboard.png" alt="Storyboard frames with visual descriptions and messaging"
+               class="w-full md:max-w-2xl rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+          <figcaption class="text-sm text-neutral-600 mt-3 text-center">
+            Storyboard frames with visual descriptions and messaging, used to guide KOL performance and align with regulatory review.
+          </figcaption>
+        </figure>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Key Design Decisions</h3>
+        <p class="text-base text-black leading-relaxed mb-4"><strong>1. Animated bar charts as a presentation mechanic</strong><br>
+I advocated for animating data visualizations in AR, borrowing a pattern we'd used successfully on web to bring infographics to life. In an AR context, this gave the KOL something to gesture toward during the presentation. The animation created natural pauses and visual anchors that supported the sales narrative rather than competing with it.</p>
+        <p class="text-base text-black leading-relaxed mb-4"><strong>2. KOL gesture choreography</strong><br>
+The AR content would be triggered alongside a KOL video. I diagrammed specific gestures and motions the KOL could make, which the creative and production teams used to direct the performance. This ensured the human presenter and the AR elements worked together rather than feeling like separate layers.</p>
+        <p class="text-base text-black leading-relaxed mb-4"><strong>3. QR-triggered activation</strong><br>
+The experience launched when reps scanned a QR code on a print piece. This kept the barrier to entry low and tied the digital experience to existing sales materials, making it easy for reps to integrate into their workflow.</p>
+
+        <!-- Wireframes Image with Caption -->
+        <figure class="my-8 md:flex md:flex-col md:items-center">
+          <img src="images/380_image_PRADAX.png" alt="Final AR experience alongside interaction wireframes"
+               class="w-full md:max-w-2xl rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+          <figcaption class="text-sm text-neutral-600 mt-3 text-center">
+            Final AR experience alongside interaction wireframes documenting drag-and-drop and touch scenarios.
+          </figcaption>
+        </figure>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Outcome</h3>
+        <p class="text-base text-black leading-relaxed mb-4">The brand team at Boehringer Ingelheim praised the execution. Engagement with the Veeva CLM platform increased approximately 20% year over year. For its time, this was an innovative application of AR in pharmaceutical sales enablement.</p>
+
+        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Reflection</h3>
+        <p class="text-base text-black leading-relaxed mb-4">This project reinforced that product design thinking applies beyond apps and websites. A talking-head KOL video is standard pharma creative. By applying interaction design principles, spatial UX, and user-centered framing, we transformed it into an immersive experience that actually held attention. The tools change; the discipline doesn't.</p>
+      </div>
+
+      <!-- Right: Metadata Sidebar -->
+      <div class="space-y-6">
+        <div>
+          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
+          <p class="text-base text-black">Boehringer Ingelheim</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
+          <p class="text-base text-black">AR/Spatial UX<br>Interaction Design<br>Sales Enablement</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
+          <p class="text-base text-black">Senior UX Architect</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
+          <p class="text-base text-black">2022</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-accent uppercase mb-2">Technologies</h4>
+          <p class="text-base text-black">Augmented Reality<br>Veeva CLM<br>iPad Pro (6th Gen)<br>iOS</p>
+        </div>
+
+        <div>
+          <h4 class="text-sm text-accent uppercase mb-2">Deliverables</h4>
+          <p class="text-base text-black">Competitive Research<br>Wireframes<br>Storyboards<br>KOL Gesture Direction</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BACK TO WORK -->
+  <section class="px-4 md:px-[50px] py-8 mb-12">
+    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
+      ← Back to Work
+    </a>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+    <p>© 2026 Jeff Halpin</p>
+    <p><a href="https://www.linkedin.com/in/jeffrey-halpin/">LinkedIn</a> | <a href="https://github.com/JDHalpin">GitHub</a> | <a href="mailto:jeff.halpin@gmail.com">Email</a></p>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
+
+  <script>
+    // Mobile menu logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  </script>
+</body>
+</html>
