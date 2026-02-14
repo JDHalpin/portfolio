@@ -18,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                              colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -77,109 +77,129 @@
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">Interaction Design: Fasenra.com Redesign</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/FAS_hero.png" alt="Fasenra sitemap and information architecture" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">Interaction Design: Fasenra.com Redesign</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
         Information architecture optimization for a multi-indication pharmaceutical website, focused on simplifying self-injection instructions for patients managing chronic conditions.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <img src="images/FAS_sitemap.png" alt="Fasenra sitemap and information architecture" class="w-full max-w-5xl mx-auto rounded-xl">
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: MainContent -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">The Challenge</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Fasenra is a biologic medication used to treat severe eosinophilic asthma, EGPA, and hypereosinophilic syndrome (HES). The existing patient website served multiple indications through a shared navigation system, but the HES experience inherited legacy patterns that created friction for patients seeking critical self-care information.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-          The primary challenge was the Instructions for Use (IFU) experience. Patients learning to self-administer injections were navigating a fragmented flow spread across multiple HTML pages, with each step requiring a full page load. For users already managing a complex health condition, this added unnecessary cognitive load to an already stressful task.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">The Challenge</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            Fasenra is a biologic medication used to treat severe eosinophilic asthma, EGPA, and hypereosinophilic syndrome (HES). The existing patient website served multiple indications through a shared navigation system, but the HES experience inherited legacy patterns that created friction for patients seeking critical self-care information.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            The primary challenge was the Instructions for Use (IFU) experience. Patients learning to self-administer injections were navigating a fragmented flow spread across multiple HTML pages, with each step requiring a full page load. For users already managing a complex health condition, this added unnecessary cognitive load to an already stressful task.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">My Role</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          UX Architect Lead, responsible for synthesizing existing audit findings into actionable recommendations, defining information architecture improvements, and presenting the case for change to senior stakeholders. I collaborated with brand UX researchers and accessibility specialists throughout the approval process.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My Role</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            UX Architect Lead, responsible for synthesizing existing audit findings into actionable recommendations, defining information architecture improvements, and presenting the case for change to senior stakeholders. I collaborated with brand UX researchers and accessibility specialists throughout the approval process.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Research & Discovery</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          The AstraZeneca team had already conducted comprehensive heuristic and accessibility audits of the existing site. My task was to synthesize these findings into prioritized recommendations focused on critical-path improvements. The audits revealed consistent patterns: users were losing context during multi-page IFU flows, accessibility issues compounded navigation friction, and the anchor-link patterns used elsewhere on the site weren't serving the HES audience effectively.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Through expert review against industry standards and competitive analysis of similar pharmaceutical patient portals, I built an evidence-based case for architectural changes. The goal was to reduce friction at critical decision points without requiring a full site rebuild.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Research & Discovery</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            The AstraZeneca team had already conducted comprehensive heuristic and accessibility audits of the existing site. My task was to synthesize these findings into prioritized recommendations focused on critical-path improvements. The audits revealed consistent patterns: users were losing context during multi-page IFU flows, accessibility issues compounded navigation friction, and the anchor-link patterns used elsewhere on the site weren't serving the HES audience effectively.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            Through expert review against industry standards and competitive analysis of similar pharmaceutical patient portals, I built an evidence-based case for architectural changes. The goal was to reduce friction at critical decision points without requiring a full site rebuild.
+          </p>
+        </div>
 
         <!-- Wireframes Image with Caption -->
-        <figure class="my-8 md:flex md:flex-col md:items-center">
+        <figure>
           <img src="images/FAS_wires_02.png" alt="IFU accordion component design"
-               class="w-full md:max-w-2xl rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+               class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
           <figcaption class="text-sm text-neutral-600 mt-3 text-center">
             The redesigned Instructions for Use component. An accordion pattern keeps users oriented within a single view while revealing step-by-step injection guidance.
           </figcaption>
         </figure>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Key Design Decisions</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          1. Accordion-based IFU over multi-page flow:<br>
-          The existing IFU spread injection instructions across multiple HTML pages, each requiring a full page load. I replaced this with an accordion component that keeps users oriented within a single view. Each section includes contextual illustrations and expands only the content relevant to the user's current task. The tradeoff was increased initial page weight, but testing confirmed users preferred the single-page experience.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-          2. Single-page HES experience over anchor links:<br>
-          The broader Fasenra site used anchor-link patterns for navigation between indication-specific content. For HES, I advocated for a dedicated single-page approach. This reduced navigation complexity and allowed patients to scan the full scope of information without disorientation. The pattern proved particularly valuable for users who needed to reference multiple sections during a single session.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-          3. Progressive disclosure over comprehensive views:<br>
-          Rather than presenting all injection steps simultaneously, the accordion reveals content progressively as users advance through the process. This reduces cognitive load while ensuring patients can easily backtrack if needed. Each expanded section maintains visual hierarchy through consistent typography and illustration placement.
-        </p>
+        <!-- Pull Quote -->
+        <blockquote class="py-[48px] px-0 text-center">
+          <p class="text-2xl md:text-[28px] leading-relaxed text-accent italic">
+            "This is a great solution. We appreciate the thinking and hard work."
+          </p>
+          <cite class="block mt-4 text-base text-accent not-italic">- Senior Brand Client</cite>
+        </blockquote>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Outcome</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          The redesigned HES experience shipped within a single quarter from research synthesis to production. The IFU accordion pattern I designed was adopted into AstraZeneca's global component library for use across future product sites. Client stakeholders, brand UX researchers, and accessibility specialists all signed off on the recommendations.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            1. Accordion-based IFU over multi-page flow:<br>
+            The existing IFU spread injection instructions across multiple HTML pages, each requiring a full page load. I replaced this with an accordion component that keeps users oriented within a single view. Each section includes contextual illustrations and expands only the content relevant to the user's current task. The tradeoff was increased initial page weight, but testing confirmed users preferred the single-page experience.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            2. Single-page HES experience over anchor links:<br>
+            The broader Fasenra site used anchor-link patterns for navigation between indication-specific content. For HES, I advocated for a dedicated single-page approach. This reduced navigation complexity and allowed patients to scan the full scope of information without disorientation. The pattern proved particularly valuable for users who needed to reference multiple sections during a single session.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            3. Progressive disclosure over comprehensive views:<br>
+            Rather than presenting all injection steps simultaneously, the accordion reveals content progressively as users advance through the process. This reduces cognitive load while ensuring patients can easily backtrack if needed. Each expanded section maintains visual hierarchy through consistent typography and illustration placement.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Reflection</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          This project reinforced that impactful UX work doesn't always require original research. Sometimes the most valuable contribution is synthesizing existing findings into a clear case for change and navigating the stakeholder landscape to get improvements approved. The IFU pattern's adoption into the global component library extended the project's impact well beyond the original scope.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Outcome</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            The redesigned HES experience shipped within a single quarter from research synthesis to production. The IFU accordion pattern I designed was adopted into AstraZeneca's global component library for use across future product sites. Client stakeholders, brand UX researchers, and accessibility specialists all signed off on the recommendations.
+          </p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Reflection</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            This project reinforced that impactful UX work doesn't always require original research. Sometimes the most valuable contribution is synthesizing existing findings into a clear case for change and navigating the stakeholder landscape to get improvements approved. The IFU pattern's adoption into the global component library extended the project's impact well beyond the original scope.
+          </p>
+        </div>
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
-          <p class="text-base text-black">AstraZeneca</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Client</h4>
+          <p class="text-base text-text-primary">AstraZeneca</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
-          <p class="text-base text-black">Information Architecture<br>Interaction Design<br>UX Strategy</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Discipline</h4>
+          <p class="text-base text-text-primary">Information Architecture<br>Content Strategy<br>Interaction Design<br>Product Design</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
-          <p class="text-base text-black">UX Architect Lead</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Role</h4>
+          <p class="text-base text-text-primary">UX Architect Lead<br>Product Designer</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
-          <p class="text-base text-black">2025</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Year</h4>
+          <p class="text-base text-text-primary">2025</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Deliverables</h4>
-          <p class="text-base text-black">IA Recommendations<br>Wireframes<br>Component Specifications</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Deliverables</h4>
+          <p class="text-base text-text-primary">IA Recommendations<br>Lightweight prototyping<br>Wireframes<br>Component Specifications</p>
         </div>
       </div>
 
@@ -187,8 +207,8 @@
   </section>
 
   <!-- EXTERNAL LINK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="max-w-5xl mx-auto">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
       <a href="https://www.fasenra.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-accent hover:underline text-lg">
         Visit Fasenra.com →
       </a>
@@ -196,10 +216,12 @@
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
