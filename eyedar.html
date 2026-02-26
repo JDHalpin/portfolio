@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeff Halpin - Interaction Design, User Experience, Product Design, UX Research, UX Writing: Eyedar mobile application</title>
   <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Lato & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                      colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -55,8 +53,8 @@
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
       <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
@@ -72,126 +70,134 @@
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
       </nav>
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">Interaction Design: EYEDAR Mobile Application</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/Eyedar_hero.png" alt="Eyedar Mobile Application" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">Interaction Design: EYEDAR Mobile Application</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
         A LIDAR-based navigation application that translates spatial data into audio signals, enabling blind and visually impaired users to navigate their environment through sound.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <img src="images/Eyedar_hero.png" alt="Eyedar Mobile Application" class="w-full max-w-5xl mx-auto rounded-xl">
-  </section>
-
-  <!-- DETAIL IMAGE WITH CAPTION -->
-  <section class="px-4 md:px-[50px] pb-8">
-    <div class="max-w-5xl mx-auto">
-      <figure class="my-8">
-        <img src="images/eyedar_wires_01_sm.png" alt="Complete interaction specification for Eyedar"
-             class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
-        <figcaption class="text-sm text-neutral-600 mt-3 text-center">
-          Complete interaction specification documenting gesture controls, VoiceOver feedback, and screen flows across the application.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: Main Content -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">The Challenge</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Designing for blind users isn't about adding accessibility features to a visual interface. It requires abandoning visual paradigms entirely. Eyedar needed an interaction model that blind and visually impaired users could learn, trust, and operate confidently while moving through physical space.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-          The core constraint: every interaction had to be discoverable and executable without sight. No buttons. No screen hierarchy. No visual confirmation. The interface would live entirely in gesture, sound, and haptic feedback.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">The Challenge</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            Designing for blind users isn't about adding accessibility features to a visual interface. It requires abandoning visual paradigms entirely. Eyedar needed an interaction model that blind and visually impaired users could learn, trust, and operate confidently while moving through physical space.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            The core constraint: every interaction had to be discoverable and executable without sight. No buttons. No screen hierarchy. No visual confirmation. The interface would live entirely in gesture, sound, and haptic feedback.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">My Role</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-        Senior UX Architect, responsible for interaction design, user flows, and UX writing. I led user testing sessions with blind participants and created all training materials and instructions-for-use documentation.</p>
-       
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Research & Discovery</h3>
-        <p class="text-base text-black leading-relaxed mb-4">Our research combined interviews, usability testing, and field observation with blind users. I synthesized findings into design documentation that guided both product design and development. Early testing challenged our assumptions quickly. One example: the placement of the audio cue for "end of section" wasn't registering clearly. For a sighted user, this would be like scrolling past the content into empty space without realizing the page had ended. Under tight deadlines, we rapidly prototyped and tested multiple options to ensure that the cue was landing in the expected location. Small details like this carried outsized weight when every interface signal had to land without visual backup.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">Users also told us they needed a slower ramp. The audio landscape vocabulary was learnable, but not instantly. This insight drove a multi-stage onboarding process that introduced capabilities progressively rather than all at once. We conducted four rounds of usability testing with blind users, iterating on the interaction model and audio vocabulary until we achieved a flow that was both effective and delightful.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My Role</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+          Senior UX Architect, responsible for interaction design, user flows, and UX writing. I led user testing sessions with blind participants and created all training materials and instructions-for-use documentation.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Research & Discovery</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Our research combined interviews, usability testing, and field observation with blind users. I synthesized findings into design documentation that guided both product design and development. Early testing challenged our assumptions quickly. One example: the placement of the audio cue for "end of section" wasn't registering clearly. For a sighted user, this would be like scrolling past the content into empty space without realizing the page had ended. Under tight deadlines, we rapidly prototyped and tested multiple options to ensure that the cue was landing in the expected location. Small details like this carried outsized weight when every interface signal had to land without visual backup.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">Users also told us they needed a slower ramp. The audio landscape vocabulary was learnable, but not instantly. This insight drove a multi-stage onboarding process that introduced capabilities progressively rather than all at once. We conducted four rounds of usability testing with blind users, iterating on the interaction model and audio vocabulary until we achieved a flow that was both effective and delightful.
+          </p>
+        </div>
 
         <!-- Wireframes Image with Caption -->
-        <figure class="my-8 md:flex md:flex-col md:items-center">
+        <figure>
+          <img src="images/eyedar_wires_01_sm.png" alt="Complete interaction specification for Eyedar"
+               class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+          <figcaption class="text-sm text-neutral-600 mt-3 text-center">
+            Complete interaction specification documenting gesture controls, VoiceOver feedback, and screen flows across the application.
+          </figcaption>
+        </figure>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+1. Gesture vocabulary over menu hierarchy:<br>
+Traditional mobile interfaces rely on spatial memory: users remember where buttons live on screen. That model fails completely for blind users in motion. I relied on user feedback to design a gesture vocabulary using swipe patterns and tap zones that users could execute confidently without visual reference. The tradeoff: learnability. Although we were leveraging standard Speak Screen and VoiceOver functionality, each new application requires upfront training and familiarization that a visual menu does not. This led directly to the onboarding approach below.
+</p>
+<p class="text-base text-text-primary leading-relaxed mb-4">2. Audio landscape as primary feedback:
+Our developer leveraged LiDAR data and spatial audio to create a 3D soundscape that represented the user's environment. I worked closely with the team on audio engineering to refine how different sounds would represent various objects and distances. For example, closer objects produced louder, more distinct sounds, while distant objects were softer and more diffuse. This design choice allowed users to build a mental map of their surroundings through auditory cues alone. Speed of scan, frequency and sound type were all variables we tested and refined through user feedback.
+          </p>
+<p class="text-base text-text-primary leading-relaxed">
+3. Progressive onboarding through documentation:
+Because the interface had no visual safety net, users needed to build confidence before real-world use. I developed the Instructions For Use at a sixth-grade reading level that introduced the audio vocabulary incrementally. I advocated for an incremental approach that built on blind users' existing spatial navigation abilities. Familiar skills reinforced new learning, building confidence before introducing complexity. We ensured that testers could successfully navigate simple environments before progressing to more complex scenarios.
+          </p>
+        </div>
+
+        <!-- Onboarding Image with Caption -->
+        <figure>
           <img src="images/eyedar_bpig_screen_01.png" alt="Annotated wireframes for Eyedar onboarding and scanning"
-               class="w-full md:max-w-2xl rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+               class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
           <figcaption class="text-sm text-neutral-600 mt-3 text-center">
             Annotated wireframes for onboarding and active scanning. The Welcome screen introduces the gesture vocabulary; the scan screen shows the LIDAR view with spatial audio cues mapped to user actions.
           </figcaption>
         </figure>
 
-  <h3 class="text-2xl text-black font-normal mb-4 mt-8">Key Design Decisions</h3>
-        <p class="text-base text-black leading-relaxed mb-4">      
-1. Gesture vocabulary over menu hierarchy:<br>
-Traditional mobile interfaces rely on spatial memory: users remember where buttons live on screen. That model fails completely for blind users in motion. I relied on user feedback to design a gesture vocabulary using swipe patterns and tap zones that users could execute confidently without visual reference. The tradeoff: learnability. Although we were leveraging standard Speak Screen and VoiceOver functionality, each new application requires upfront training and familiarization that a visual menu does not. This led directly to the onboarding approach below.
-</p>
-<p class="text-base text-black leading-relaxed mb-4">2. Audio landscape as primary feedback: 
-Our developer leveraged LiDAR data and spatial audio to create a 3D soundscape that represented the user's environment. I worked closely with the team on audio engineering to refine how different sounds would represent various objects and distances. For example, closer objects produced louder, more distinct sounds, while distant objects were softer and more diffuse. This design choice allowed users to build a mental map of their surroundings through auditory cues alone. Speed of scan, frequency and sound type were all variables we tested and refined through user feedback.
-        </p>
-<p class="text-base text-black leading-relaxed mb-4">
-3. Progressive onboarding through documentation:
-Because the interface had no visual safety net, users needed to build confidence before real-world use. I developed the Instructions For Use at a sixth-grade reading level that introduced the audio vocabulary incrementally. I advocated for an incremental approach that built on blind users' existing spatial navigation abilities. Familiar skills reinforced new learning, building confidence before introducing complexity. We ensured that testers could successfully navigate simple environments before progressing to more complex scenarios.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Outcome</h3>
+          <p class="text-base text-text-primary leading-relaxed">Eyedar launched as a functional application and received industry recognition including 2x Grand Clio Health, 2x Gold Clio Health, Silver Pencil at One Show, Silver Cannes Lion, and a Manny Award.</p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Outcome</h3>
-        <p class="text-base text-black leading-relaxed mb-4">Eyedar launched as a functional application and received industry recognition including 2x Grand Clio Health, 2x Gold Clio Health, Silver Pencil at One Show, Silver Cannes Lion, and a Manny Award.</p>
-
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Reflection</h3>
-        <p class="text-base text-black leading-relaxed mb-4">This project fundamentally changed how I approach accessibility. Compliance checklists are a starting point, not a destination. The real work is designing for lived experience, which requires direct collaboration with the people you're designing for. I've carried that principle into every project since.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Reflection</h3>
+          <p class="text-base text-text-primary leading-relaxed">This project fundamentally changed how I approach accessibility. Compliance checklists are a starting point, not a destination. The real work is designing for lived experience, which requires direct collaboration with the people you're designing for. I've carried that principle into every project since.</p>
+        </div>
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
-          <p class="text-base text-black">Horizon Pharmaceuticals</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Client</h4>
+          <p class="text-base text-text-primary">Horizon Pharmaceuticals</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
-          <p class="text-base text-black">Accessibility Design<br>Application Design<br>Interaction Design<br>UX Writing</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Discipline</h4>
+          <p class="text-base text-text-primary">Accessibility Design<br>Application Design<br>Interaction Design<br>UX Writing</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
-          <p class="text-base text-black">Senior UX Architect</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Role</h4>
+          <p class="text-base text-text-primary">Senior UX Architect</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
-          <p class="text-base text-black">2022</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Year</h4>
+          <p class="text-base text-text-primary">2022</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Technologies</h4>
-          <p class="text-base text-black">LIDAR Sensors<br>Spatial Audio<br>iOS<br>Scan Speak<br>VoiceOver</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Technologies</h4>
+          <p class="text-base text-text-primary">LIDAR Sensors<br>Spatial Audio<br>iOS<br>Scan Speak<br>VoiceOver</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Awards</h4>
-          <p class="text-base text-black">
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Awards</h4>
+          <p class="text-base text-text-primary">
             2x Grand Clio Health<br>
             2x Gold Clio Health<br>
             3x Gold Pencil, One Show<br>
@@ -205,10 +211,10 @@ Because the interface had no visual safety net, users needed to build confidence
   </section>
 
   <!-- SPATIAL AUDIO DEMO -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="max-w-5xl mx-auto">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
       <figure class="my-8">
-        <img src="images/eyedar_nick_01.png" alt="Eyedar demonstration"class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+        <img src="images/eyedar_nick_01.png" alt="Eyedar demonstration" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
         <figcaption class="text-sm text-neutral-600 mt-3 text-center">
           User testing session with blind participant Nick demonstrating Eyedar's spatial audio navigation.
         </figcaption>
@@ -217,8 +223,8 @@ Because the interface had no visual safety net, users needed to build confidence
   </section>
 
   <!-- EXTERNAL LINK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="max-w-5xl mx-auto">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
       <a href="https://eye-dar.com/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-accent hover:underline text-lg">
         Visit Eyedar.com →
       </a>
@@ -226,10 +232,12 @@ Because the interface had no visual safety net, users needed to build confidence
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->

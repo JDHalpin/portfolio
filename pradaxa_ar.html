@@ -18,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                      colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -53,8 +53,8 @@
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
       <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
@@ -70,116 +70,121 @@
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
       </nav>
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">AR Sales Presentation: Pradaxa Veeva CLM</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/pradaxa_example_01.png" alt="AR sales presentation featuring KOL with animated clinical data visualizations in a spatial environment" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">AR Sales Presentation: Pradaxa Veeva CLM</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
         An augmented reality sales tool for iPad that transformed standard KOL video content into an immersive, interactive experience for pharmaceutical sales representatives.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <div class="max-w-5xl mx-auto">
-      <figure>
-        <img src="images/pradaxa_example_01.png" alt="AR sales presentation featuring KOL with animated clinical data visualizations in a spatial environment" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
-        <figcaption class="text-sm text-neutral-600 mt-3 text-center">
-          AR sales presentation featuring KOL with animated clinical data visualizations in a spatial environment.
-        </figcaption>
-      </figure>
-    </div>
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: Main Content -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">The Challenge</h3>
-        <p class="text-base text-black leading-relaxed mb-4">Boehringer Ingelheim had just issued 6th generation iPad Pros to their entire sales force and wanted an AR experience to mark the upgrade. The brief was open-ended: "build something in AR." My job was to turn that into a focused, compliant, and effective sales tool that reps could actually use in HCP conversations.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">The Challenge</h3>
+          <p class="text-base text-text-primary leading-relaxed">Boehringer Ingelheim had just issued 6th generation iPad Pros to their entire sales force and wanted an AR experience to mark the upgrade. The brief was open-ended: "build something in AR." My job was to turn that into a focused, compliant, and effective sales tool that reps could actually use in HCP conversations.</p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">My Role</h3>
-        <p class="text-base text-black leading-relaxed mb-4">Senior UX Architect, responsible for competitive research, interaction design, wireframes, and KOL performance direction. I collaborated with creative on storyboards and guided the experience through regulatory review.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My Role</h3>
+          <p class="text-base text-text-primary leading-relaxed">Senior UX Architect, responsible for competitive research, interaction design, wireframes, and KOL performance direction. I collaborated with creative on storyboards and guided the experience through regulatory review.</p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Research & Discovery</h3>
-        <p class="text-base text-black leading-relaxed mb-4">I audited existing AR experiences in the pharmaceutical and broader healthcare market, documenting interaction patterns, technical approaches, and engagement mechanics. I reviewed findings with the internal team and client to establish a shared understanding of what "good" looked like in this space.</p>
-        <p class="text-base text-black leading-relaxed mb-4">Stakeholder interviews with the brand team clarified priorities: the experience needed to support the sales narrative, not distract from it. Reps needed something that enhanced their conversations with HCPs, not a novelty that would get used once and forgotten.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Research & Discovery</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">I audited existing AR experiences in the pharmaceutical and broader healthcare market, documenting interaction patterns, technical approaches, and engagement mechanics. I reviewed findings with the internal team and client to establish a shared understanding of what "good" looked like in this space.</p>
+          <p class="text-base text-text-primary leading-relaxed">Stakeholder interviews with the brand team clarified priorities: the experience needed to support the sales narrative, not distract from it. Reps needed something that enhanced their conversations with HCPs, not a novelty that would get used once and forgotten.</p>
+        </div>
 
         <!-- Storyboard Image with Caption -->
-        <figure class="my-8 md:flex md:flex-col md:items-center">
+        <figure>
           <img src="images/pradaxa_storyboard.png" alt="Storyboard frames with visual descriptions and messaging"
-               class="w-full md:max-w-2xl rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+               class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
           <figcaption class="text-sm text-neutral-600 mt-3 text-center">
             Storyboard frames with visual descriptions and messaging, used to guide KOL performance and align with regulatory review.
           </figcaption>
         </figure>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Key Design Decisions</h3>
-        <p class="text-base text-black leading-relaxed mb-4"><strong>1. Animated bar charts as a presentation mechanic</strong><br>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4"><strong>1. Animated bar charts as a presentation mechanic</strong><br>
 I advocated for animating data visualizations in AR, borrowing a pattern we'd used successfully on web to bring infographics to life. In an AR context, this gave the KOL something to gesture toward during the presentation. The animation created natural pauses and visual anchors that supported the sales narrative rather than competing with it.</p>
-        <p class="text-base text-black leading-relaxed mb-4"><strong>2. KOL gesture choreography</strong><br>
+          <p class="text-base text-text-primary leading-relaxed mb-4"><strong>2. KOL gesture choreography</strong><br>
 The AR content would be triggered alongside a KOL video. I diagrammed specific gestures and motions the KOL could make, which the creative and production teams used to direct the performance. This ensured the human presenter and the AR elements worked together rather than feeling like separate layers.</p>
-        <p class="text-base text-black leading-relaxed mb-4"><strong>3. QR-triggered activation</strong><br>
+          <p class="text-base text-text-primary leading-relaxed"><strong>3. QR-triggered activation</strong><br>
 The experience launched when reps scanned a QR code on a print piece. This kept the barrier to entry low and tied the digital experience to existing sales materials, making it easy for reps to integrate into their workflow.</p>
+        </div>
 
         <!-- Wireframes Image with Caption -->
-        <figure class="my-8 md:flex md:flex-col md:items-center">
+        <figure>
           <img src="images/380_image_PRADAX.png" alt="Final AR experience alongside interaction wireframes"
-               class="w-full md:max-w-2xl rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+               class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
           <figcaption class="text-sm text-neutral-600 mt-3 text-center">
             Final AR experience alongside interaction wireframes documenting drag-and-drop and touch scenarios.
           </figcaption>
         </figure>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Outcome</h3>
-        <p class="text-base text-black leading-relaxed mb-4">The brand team at Boehringer Ingelheim praised the execution. Engagement with the Veeva CLM platform increased approximately 20% year over year. For its time, this was an innovative application of AR in pharmaceutical sales enablement.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Outcome</h3>
+          <p class="text-base text-text-primary leading-relaxed">The brand team at Boehringer Ingelheim praised the execution. Engagement with the Veeva CLM platform increased approximately 20% year over year. For its time, this was an innovative application of AR in pharmaceutical sales enablement.</p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Reflection</h3>
-        <p class="text-base text-black leading-relaxed mb-4">This project reinforced that product design thinking applies beyond apps and websites. A talking-head KOL video is standard pharma creative. By applying interaction design principles, spatial UX, and user-centered framing, we transformed it into an immersive experience that actually held attention. The tools change; the discipline doesn't.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Reflection</h3>
+          <p class="text-base text-text-primary leading-relaxed">This project reinforced that product design thinking applies beyond apps and websites. A talking-head KOL video is standard pharma creative. By applying interaction design principles, spatial UX, and user-centered framing, we transformed it into an immersive experience that actually held attention. The tools change; the discipline doesn't.</p>
+        </div>
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
-          <p class="text-base text-black">Boehringer Ingelheim</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Client</h4>
+          <p class="text-base text-text-primary">Boehringer Ingelheim</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
-          <p class="text-base text-black">AR/Spatial UX<br>Interaction Design<br>Sales Enablement</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Discipline</h4>
+          <p class="text-base text-text-primary">AR/Spatial UX<br>Interaction Design<br>Sales Enablement</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
-          <p class="text-base text-black">Senior UX Architect</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Role</h4>
+          <p class="text-base text-text-primary">Senior UX Architect</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
-          <p class="text-base text-black">2022</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Year</h4>
+          <p class="text-base text-text-primary">2022</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Technologies</h4>
-          <p class="text-base text-black">Augmented Reality<br>Veeva CLM<br>iPad Pro (6th Gen)<br>iOS</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Technologies</h4>
+          <p class="text-base text-text-primary">Augmented Reality<br>Veeva CLM<br>iPad Pro (6th Gen)<br>iOS</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Deliverables</h4>
-          <p class="text-base text-black">Competitive Research<br>Wireframes<br>Storyboards<br>KOL Gesture Direction</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Deliverables</h4>
+          <p class="text-base text-text-primary">Competitive Research<br>Wireframes<br>Storyboards<br>KOL Gesture Direction</p>
         </div>
       </div>
 
@@ -187,10 +192,12 @@ The experience launched when reps scanned a QR code on a print piece. This kept 
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -250,6 +257,7 @@ The experience launched when reps scanned a QR code on a print piece. This kept 
     const lightboxImg = document.getElementById('lightbox-img');
     const lightboxClose = document.getElementById('lightbox-close');
 
+    // Open lightbox on image click
     document.querySelectorAll('.lightbox-trigger').forEach(img => {
       img.addEventListener('click', () => {
         lightboxImg.src = img.src;
@@ -259,11 +267,13 @@ The experience launched when reps scanned a QR code on a print piece. This kept 
       });
     });
 
+    // Close lightbox on close button click
     lightboxClose?.addEventListener('click', () => {
       lightbox.classList.add('hidden');
       document.body.classList.remove('overflow-hidden');
     });
 
+    // Close lightbox on backdrop click
     lightbox?.addEventListener('click', (e) => {
       if (e.target === lightbox) {
         lightbox.classList.add('hidden');
@@ -271,6 +281,7 @@ The experience launched when reps scanned a QR code on a print piece. This kept 
       }
     });
 
+    // Close lightbox on Escape key
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
         lightbox.classList.add('hidden');

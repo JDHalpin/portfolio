@@ -4,10 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Jeff Halpin - Figma Design Token Sync Tool</title>
- <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
- <!-- Tailwind CSS via CDN -->
+  <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Lato & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                      colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -55,8 +53,8 @@
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
       <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
@@ -72,108 +70,118 @@
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
       </nav>
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">Figma Design Token Sync Tool</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/figma_sync_loop.gif" alt="Figma Design Token Sync loop" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">Figma Design Token Sync Tool</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
         An automated workflow that syncs design tokens from Figma to code, keeping the design system and front-end implementation in perfect alignment.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <img src="images/figma_sync_loop.gif" alt="Figma Design Token Sync loop" class="w-full max-w-5xl mx-auto rounded-xl">
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: Main Content -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">The Challenge</h3>
-       <p class="text-base text-black leading-relaxed mb-4">Keeping design tokens synchronized between Figma and code is a persistent challenge in design-development workflows. Manual updates are error-prone, time-consuming, and often lead to drift between what designers specify and what gets implemented. A color change in Figma might take days to propagate to the codebase, or worse, get transcribed incorrectly.</p>
-<p class="text-base text-black leading-relaxed mb-4">For this portfolio project, I wanted a single source of truth: update colors in Figma, run a command, and have the code update automatically. No copy-pasting hex values, no version mismatches.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">The Challenge</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Keeping design tokens synchronized between Figma and code is a persistent challenge in design-development workflows. Manual updates are error-prone, time-consuming, and often lead to drift between what designers specify and what gets implemented. A color change in Figma might take days to propagate to the codebase, or worse, get transcribed incorrectly.</p>
+          <p class="text-base text-text-primary leading-relaxed">For this portfolio project, I wanted a single source of truth: update colors in Figma, run a command, and have the code update automatically. No copy-pasting hex values, no version mismatches.</p>
+        </div>
 
-        
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My Role</h3>
+          <p class="text-base text-text-primary leading-relaxed">Solo developer and designer. I scoped the requirements, evaluated existing solutions, designed the workflow, and built the tool.</p>
+        </div>
 
-       <h3 class="text-2xl text-black font-normal mb-4 mt-8">My Role</h3>
-<p class="text-base text-black leading-relaxed mb-4">Solo developer and designer. I scoped the requirements, evaluated existing solutions, designed the workflow, and built the tool.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Research & Discovery</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">I evaluated existing solutions including Tokens Studio, Style Dictionary, and Figma's native Variables. These tools are powerful but optimized for enterprise workflows: multi-platform output, version control integration, and team collaboration features. For a solo portfolio project with a single output target (Tailwind CSS), they introduced unnecessary complexity.</p>
+          <p class="text-base text-text-primary leading-relaxed">I needed something simpler: pull colors from Figma, update Tailwind config, done. No plugins, no build pipeline, no dependencies beyond Node.js.</p>
+        </div>
 
-<h3 class="text-2xl text-black font-normal mb-4 mt-8">Research & Discovery</h3>
-<p class="text-base text-black leading-relaxed mb-4">I evaluated existing solutions including Tokens Studio, Style Dictionary, and Figma's native Variables. These tools are powerful but optimized for enterprise workflows: multi-platform output, version control integration, and team collaboration features. For a solo portfolio project with a single output target (Tailwind CSS), they introduced unnecessary complexity.</p>
-<p class="text-base text-black leading-relaxed mb-4">I needed something simpler: pull colors from Figma, update Tailwind config, done. No plugins, no build pipeline, no dependencies beyond Node.js.</p>
-
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Key Design Decisions</h3>
-<p class="text-base text-black leading-relaxed mb-4"><strong>1. Direct API integration over plugin abstraction</strong><br>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4"><strong>1. Direct API integration over plugin abstraction</strong><br>
 I built a Node.js script that connects to the Figma API directly, extracts all published color styles from my design system file, and updates the Tailwind CSS configuration. During development, I discovered that Figma's API requires the X-Figma-Token header rather than the more common Authorization: Bearer pattern. This debugging experience reinforced the importance of reading API documentation carefully and testing authentication flows early.</p>
-<p class="text-base text-black leading-relaxed mb-4"><strong>2. Zero external dependencies</strong><br>
+          <p class="text-base text-text-primary leading-relaxed mb-4"><strong>2. Zero external dependencies</strong><br>
 The tool has no dependencies beyond Node.js itself, making it portable and easy to integrate into any project. It supports both published library colors and document-level style extraction as a fallback.</p>
-<p class="text-base text-black leading-relaxed mb-4"><strong>3. Tailwind-native output</strong><br>
+          <p class="text-base text-text-primary leading-relaxed"><strong>3. Tailwind-native output</strong><br>
 Rather than generating intermediate JSON that requires further transformation, the script outputs a Tailwind-compatible color configuration directly. This eliminates an entire step from the workflow and reduces potential points of failure.</p>
+        </div>
 
-<h3 class="text-2xl text-black font-normal mb-4 mt-8">Outcome</h3>
-<p class="text-base text-black leading-relaxed mb-4">The tool actively powers this portfolio. Every color on jeffhalpin.com syncs directly from my Figma design system file. When I adjust a color in Figma, a single terminal command updates the Tailwind configuration across the entire site.</p>
-<p class="text-base text-black leading-relaxed mb-4">The real value is time saved on consistency maintenance. Without automation, keeping hex values aligned between design files and code requires manual checking and transcription. That work now takes seconds instead of minutes, and eliminates transcription errors entirely.</p>
-<p class="text-base text-black leading-relaxed mb-4">The tool is open source and available on GitHub.</p>
-<h3 class="text-2xl text-black font-normal mb-4 mt-8">Reflection</h3>
-<p class="text-base text-black leading-relaxed mb-4">Existing tools like Tokens Studio and Style Dictionary are powerful, but they come with learning curves and configuration overhead. For a focused use case with a clear output target, building a custom solution taught me more about the underlying systems than configuring someone else's tool would have.</p>
-<p class="text-base text-black leading-relaxed mb-4">Understanding the Figma API directly, rather than through a plugin abstraction, gave me insight into how design data is structured and accessed. That knowledge transfers to future projects in ways that plugin configuration does not.</p>
-<p class="text-base text-black leading-relaxed mb-4">Next steps include expanding the tool to sync typography and spacing tokens.</p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Outcome</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">The tool actively powers this portfolio. Every color on jeffhalpin.com syncs directly from my Figma design system file. When I adjust a color in Figma, a single terminal command updates the Tailwind configuration across the entire site.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">The real value is time saved on consistency maintenance. Without automation, keeping hex values aligned between design files and code requires manual checking and transcription. That work now takes seconds instead of minutes, and eliminates transcription errors entirely.</p>
+          <p class="text-base text-text-primary leading-relaxed">The tool is open source and available on GitHub.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Reflection</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Existing tools like Tokens Studio and Style Dictionary are powerful, but they come with learning curves and configuration overhead. For a focused use case with a clear output target, building a custom solution taught me more about the underlying systems than configuring someone else's tool would have.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Understanding the Figma API directly, rather than through a plugin abstraction, gave me insight into how design data is structured and accessed. That knowledge transfers to future projects in ways that plugin configuration does not.</p>
+          <p class="text-base text-text-primary leading-relaxed">Next steps include expanding the tool to sync typography and spacing tokens.</p>
+        </div>
 
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
-          <p class="text-base text-black">Personal Project</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Client</h4>
+          <p class="text-base text-text-primary">Personal Project</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
-          <p class="text-base text-black">Design Systems<br>Automation<br>API Integration<br>Front-end Development</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Discipline</h4>
+          <p class="text-base text-text-primary">Design Systems<br>Automation<br>API Integration<br>Front-end Development</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
-          <p class="text-base text-black">Developer / UX Engineer</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Role</h4>
+          <p class="text-base text-text-primary">Developer / UX Engineer</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
-          <p class="text-base text-black">2025</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Year</h4>
+          <p class="text-base text-text-primary">2025</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Technologies</h4>
-          <p class="text-base text-black">Node.js<br>Figma API<br>Tailwind CSS<br>JavaScript</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Technologies</h4>
+          <p class="text-base text-text-primary">Node.js<br>Figma API<br>Tailwind CSS<br>JavaScript</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Deliverables</h4>
-          <p class="text-base text-black">Sync Script<br>Documentation<br>GitHub Repository</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Deliverables</h4>
+          <p class="text-base text-text-primary">Sync Script<br>Documentation<br>GitHub Repository</p>
         </div>
       </div>
 
     </div>
   </section>
 
-
   <!-- EXTERNAL LINK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="max-w-5xl mx-auto">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
       <a href="https://github.com/JDHalpin/figma-design-tokens" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-accent hover:underline text-lg">
         View on GitHub →
       </a>
@@ -181,10 +189,12 @@ Rather than generating intermediate JSON that requires further transformation, t
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -202,6 +212,12 @@ Rather than generating intermediate JSON that requires further transformation, t
 </svg></a>
     </div>
   </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
 
   <script>
     // Mobile menu logic
@@ -231,6 +247,43 @@ Rather than generating intermediate JSON that requires further transformation, t
         mobileMenu.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    // Close lightbox on close button click
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    // Close lightbox on backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
     });
   </script>
 </body>

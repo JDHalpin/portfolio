@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Toujeo Dosing Calculator - Jeff Halpin</title>
   <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Lato & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                      colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -50,22 +48,19 @@
 <body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
 
   <!-- HEADER -->
-  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 h-[60px]">
+  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
-      <div class="flex items-center gap-4">
-        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-        </button>
-        <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
-      </div>
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
     </div>
   </header>
 
@@ -75,76 +70,79 @@
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
       </nav>
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">Sanofi: Toujeo.com Dosing Calculator</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/380_image_TOUJ.png" alt="Toujeo Max SoloStar and SoloStar dosing calculator interface" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">Sanofi: Toujeo.com Dosing Calculator</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
         A comprehensive insulin dosing calculator designed to help healthcare professionals determine optimal glycemic control strategies for patients using Toujeo Max SoloStar and SoloStar delivery systems.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <img src="images/380_image_TOUJ.png" alt="Toujeo Max SoloStar and SoloStar dosing calculator interface" class="w-full max-w-5xl mx-auto rounded-xl">
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: MainContent -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">About the Project</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          This digital tool was developed to streamline the complex process of insulin dosing calculations for healthcare providers. The interface needed to be precise, compliant with pharmaceutical regulations, and intuitive enough for quick clinical decision-making.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">About the Project</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            This digital tool was developed to streamline the complex process of insulin dosing calculations for healthcare providers. The interface needed to be precise, compliant with pharmaceutical regulations, and intuitive enough for quick clinical decision-making.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            Working closely with medical advisors and the Sanofi team, we created a user experience that balances regulatory requirements with usability. The calculator guides users through a step-by-step process, ensuring accuracy while minimizing cognitive load during patient consultations.
+          </p>
+        </div>
 
-        <p class="text-base text-black leading-relaxed mb-4">
-          Working closely with medical advisors and the Sanofi team, we created a user experience that balances regulatory requirements with usability. The calculator guides users through a step-by-step process, ensuring accuracy while minimizing cognitive load during patient consultations.
-        </p>
-
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Design Approach</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          The design prioritizes clarity and precision through clean typography, generous white space, and a logical information hierarchy. Interactive elements provide real-time feedback, while the stepped workflow prevents errors and ensures all necessary information is collected before generating dosing recommendations.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Design Approach</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            The design prioritizes clarity and precision through clean typography, generous white space, and a logical information hierarchy. Interactive elements provide real-time feedback, while the stepped workflow prevents errors and ensures all necessary information is collected before generating dosing recommendations.
+          </p>
+        </div>
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
-          <p class="text-base text-black">Sanofi</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Client</h4>
+          <p class="text-base text-text-primary">Sanofi</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
-          <p class="text-base text-black">UX Design<br>Product Design<br>Pharmaceuticals</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Discipline</h4>
+          <p class="text-base text-text-primary">UX Design<br>Product Design<br>Pharmaceuticals</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
-          <p class="text-base text-black">Senior UX Architect</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Role</h4>
+          <p class="text-base text-text-primary">Senior UX Architect</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
-          <p class="text-base text-black">2023</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Year</h4>
+          <p class="text-base text-text-primary">2023</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Tools</h4>
-          <p class="text-base text-black">Figma<br>User Testing<br>Prototyping</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Tools</h4>
+          <p class="text-base text-text-primary">Figma<br>User Testing<br>Prototyping</p>
         </div>
       </div>
 
@@ -152,22 +150,24 @@
   </section>
 
   <!-- IMAGE GALLERY -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1200px] mx-auto">
       <div class="rounded-xl overflow-hidden">
-        <img src="images/dosing_calculator_02.png" alt="Toujeo dosing calculator interface detail" class="w-full h-full object-cover">
+        <img src="images/dosing_calculator_02.png" alt="Toujeo dosing calculator interface detail" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
       </div>
       <div class="rounded-xl overflow-hidden">
-        <img src="images/dosing_calculator_03.png" alt="Toujeo dosing calculator workflow" class="w-full h-full object-cover">
+        <img src="images/dosing_calculator_03.png" alt="Toujeo dosing calculator workflow" class="w-full h-full object-cover cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
       </div>
     </div>
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -185,6 +185,12 @@
 </svg></a>
     </div>
   </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
 
   <script>
     // Mobile menu logic
@@ -214,6 +220,43 @@
         mobileMenu.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    // Close lightbox on close button click
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    // Close lightbox on backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
     });
   </script>
 </body>

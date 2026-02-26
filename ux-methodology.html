@@ -5,9 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>UX Process & Methodology - Jeff Halpin</title>
   <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
-  <!-- Tailwind CSS via CDN -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <!-- Google Fonts: Lato & Playfair Display -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -20,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                      colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -50,22 +48,19 @@
 <body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
 
   <!-- HEADER -->
-  <header class="bg-[#FFFEF9] border-b border-neutral-200 sticky top-0 z-40 h-[60px]">
+  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
-      <div class="flex items-center gap-4">
-        <button id="menu-toggle" class="md:hidden w-5 h-3 flex flex-col justify-between" aria-label="Toggle menu">
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-          <span class="w-full h-0.5 bg-black"></span>
-        </button>
-        <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
-      </div>
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
     </div>
   </header>
 
@@ -75,104 +70,113 @@
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
       </nav>
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">UX Process & Methodology</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/380_image_process.png" alt="UX Process - Discovery, wireframing, and prototyping" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">UX Process & Methodology</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
         A comprehensive overview of my user experience design process, from initial discovery through delivery, demonstrating a structured approach to solving complex design challenges.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <img src="images/380_image_process.png" alt="UX Process - Discovery, wireframing, and prototyping" class="w-full max-w-5xl mx-auto rounded-xl">
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: MainContent -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">My UX Approach</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Over 15 years of executing digital products, I've refined a systematic approach to user experience design that balances strategic thinking with practical execution. My methodology adapts to project constraints while maintaining rigor in understanding user needs and validating design decisions.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My UX Approach</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            Over 15 years of executing digital products, I've refined a systematic approach to user experience design that balances strategic thinking with practical execution. My methodology adapts to project constraints while maintaining rigor in understanding user needs and validating design decisions.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Discovery & Research</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Every project begins with understanding the problem space. I conduct stakeholder interviews, competitive analysis, and heuristic evaluations to establish baseline understanding. When possible, I conduct qualitative research with end users—interviews, contextual inquiry, and usability testing sessions that reveal not just what users do, but why they do it.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Discovery & Research</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            Every project begins with understanding the problem space. I conduct stakeholder interviews, competitive analysis, and heuristic evaluations to establish baseline understanding. When possible, I conduct qualitative research with end users—interviews, contextual inquiry, and usability testing sessions that reveal not just what users do, but why they do it.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            I facilitate collaborative workshops with cross-functional teams to align on goals, constraints, and success metrics before any design work begins. This upfront investment prevents costly pivots later and ensures we're solving the right problems.
+          </p>
+        </div>
 
-        <p class="text-base text-black leading-relaxed mb-4">
-          I facilitate collaborative workshops with cross-functional teams to align on goals, constraints, and success metrics before any design work begins. This upfront investment prevents costly pivots later and ensures we're solving the right problems.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Wireframing & Information Architecture</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            With research insights in hand, I develop information architectures and user flows that map to real user mental models. Low-fidelity wireframes allow rapid iteration on structure and hierarchy without getting distracted by visual polish. I work in close collaboration with product managers and developers during this phase to ensure technical feasibility.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Wireframing & Information Architecture</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          With research insights in hand, I develop information architectures and user flows that map to real user mental models. Low-fidelity wireframes allow rapid iteration on structure and hierarchy without getting distracted by visual polish. I work in close collaboration with product managers and developers during this phase to ensure technical feasibility.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Prototyping & Validation</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            Interactive prototypes transform static wireframes into testable experiences. I use Figma for high-fidelity prototyping, building realistic flows that stakeholders and users can experience. Prototype fidelity matches the validation goal: paper sketches for concept testing, clickable prototypes for usability validation, coded prototypes for technical validation.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            Usability testing happens throughout the design process, not just at the end. I conduct moderated sessions with 5-8 participants per round, observing where designs succeed and where they create friction. These sessions directly inform design iterations, creating a tight feedback loop between hypothesis and validation.
+          </p>
+        </div>
 
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Prototyping & Validation</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Interactive prototypes transform static wireframes into testable experiences. I use Figma for high-fidelity prototyping, building realistic flows that stakeholders and users can experience. Prototype fidelity matches the validation goal: paper sketches for concept testing, clickable prototypes for usability validation, coded prototypes for technical validation.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">UI Design & Handoff</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            Visual design brings the experience to life while respecting established design systems and brand guidelines. I design with mobile-first principles, ensuring experiences work across device contexts. My designs include detailed specifications, interaction states, and edge cases—not just happy path scenarios.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            Developer handoff includes comprehensive documentation, design system tokens, and collaborative sessions where I walk through interaction patterns and answer implementation questions. I remain engaged during development to address questions and validate that the implemented experience matches design intent.
+          </p>
+        </div>
 
-        <p class="text-base text-black leading-relaxed mb-4">
-          Usability testing happens throughout the design process, not just at the end. I conduct moderated sessions with 5-8 participants per round, observing where designs succeed and where they create friction. These sessions directly inform design iterations, creating a tight feedback loop between hypothesis and validation.
-        </p>
-
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">UI Design & Handoff</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Visual design brings the experience to life while respecting established design systems and brand guidelines. I design with mobile-first principles, ensuring experiences work across device contexts. My designs include detailed specifications, interaction states, and edge cases—not just happy path scenarios.
-        </p>
-
-        <p class="text-base text-black leading-relaxed mb-4">
-          Developer handoff includes comprehensive documentation, design system tokens, and collaborative sessions where I walk through interaction patterns and answer implementation questions. I remain engaged during development to address questions and validate that the implemented experience matches design intent.
-        </p>
-
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Iteration & Measurement</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Launch isn't the end—it's the beginning of learning. I work with analytics teams to establish meaningful metrics tied to user and business goals. Post-launch, I monitor quantitative data and qualitative feedback to identify opportunities for improvement. Successful products are never "done"—they evolve based on real-world usage.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Iteration & Measurement</h3>
+          <p class="text-base text-text-primary leading-relaxed">
+            Launch isn't the end—it's the beginning of learning. I work with analytics teams to establish meaningful metrics tied to user and business goals. Post-launch, I monitor quantitative data and qualitative feedback to identify opportunities for improvement. Successful products are never "done"—they evolve based on real-world usage.
+          </p>
+        </div>
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Core Competencies</h4>
-          <p class="text-base text-black">User Research<br>Information Architecture<br>Interaction Design<br>Usability Testing<br>Workshop Facilitation</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Core Competencies</h4>
+          <p class="text-base text-text-primary">User Research<br>Information Architecture<br>Interaction Design<br>Usability Testing<br>Workshop Facilitation</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Research Methods</h4>
-          <p class="text-base text-black">Qualitative Interviews<br>Heuristic Evaluation<br>Usability Testing<br>Contextual Inquiry<br>Competitive Analysis</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Research Methods</h4>
+          <p class="text-base text-text-primary">Qualitative Interviews<br>Heuristic Evaluation<br>Usability Testing<br>Contextual Inquiry<br>Competitive Analysis</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Design Methods</h4>
-          <p class="text-base text-black">Wireframing<br>Prototyping<br>Design Systems<br>Mobile-First Design<br>Accessibility Standards</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Design Methods</h4>
+          <p class="text-base text-text-primary">Wireframing<br>Prototyping<br>Design Systems<br>Mobile-First Design<br>Accessibility Standards</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Tools</h4>
-          <p class="text-base text-black">Figma<br>User Testing Platforms<br>Analytics Tools<br>Prototyping<br>Collaboration Tools</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Tools</h4>
+          <p class="text-base text-text-primary">Figma<br>User Testing Platforms<br>Analytics Tools<br>Prototyping<br>Collaboration Tools</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Experience</h4>
-          <p class="text-base text-black">15+ years<br>Healthcare, Finance, Consumer Tech</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Experience</h4>
+          <p class="text-base text-text-primary">15+ years<br>Healthcare, Finance, Consumer Tech</p>
         </div>
       </div>
 
@@ -180,10 +184,10 @@
   </section>
 
   <!-- CASE STUDIES SECTION -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="max-w-7xl mx-auto">
-      <h3 class="text-2xl text-black font-normal mb-6">See This Process in Action</h3>
-      <p class="text-base text-black leading-relaxed mb-6">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <h3 class="text-2xl text-text-primary font-normal mb-6">See This Process in Action</h3>
+      <p class="text-base text-text-primary leading-relaxed mb-6">
         Each project in my portfolio demonstrates different aspects of this methodology applied to real-world challenges. From accessibility design to pharmaceutical interfaces to AR experiences, the underlying process remains consistent while adapting to unique constraints and opportunities.
       </p>
       <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline text-lg">
@@ -193,10 +197,12 @@
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -214,6 +220,12 @@
 </svg></a>
     </div>
   </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
 
   <script>
     // Mobile menu logic
@@ -243,6 +255,43 @@
         mobileMenu.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    // Close lightbox on close button click
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    // Close lightbox on backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
     });
   </script>
 </body>

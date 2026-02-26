@@ -18,7 +18,7 @@
     tailwind.config = {
       theme: {
         extend: {
-                                                                      colors: {
+          colors: {
             'off-white': '#FFFEF9',
             'white': '#FFFFFF',
             'near-black': '#181818',
@@ -53,8 +53,8 @@
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
         <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-sm text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-sm text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
       </nav>
       <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
@@ -70,91 +70,93 @@
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
-        <a href="index.html" class="text-lg text-black hover:text-accent transition-colors">Work</a>
-        <a href="ux-methodology.html" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="index.html#approach" class="text-lg text-black hover:text-accent transition-colors">Approach</a>
         <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
       </nav>
     </div>
   </div>
 
-  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
-  <section class="px-4 md:px-[50px] pt-8 md:pt-12 pb-4">
-    <div class="max-w-5xl mx-auto">
-      <h1 class="text-[40px] md:text-[48px] leading-tight text-black font-normal mb-6">Experiential Design</h1>
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/experiential_design_hero.png" alt="Experiential Design" class="w-full max-w-[1440px] mx-auto">
+  </section>
 
-      <p class="text-lg text-black leading-relaxed">
-        Through the course of my time as a user experience professional, I have had the pleasure of leading digital tactics for several experiential executions.  These projects were conducted in a variety of settings, including conferences, in-person presentations and trade shows. 
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto">
+      <h1 class="text-[40px] md:text-[48px] leading-tight text-text-primary font-normal mb-6">Experiential Design</h1>
+
+      <p class="text-lg text-text-primary leading-relaxed">
+        Through the course of my time as a user experience professional, I have had the pleasure of leading digital tactics for several experiential executions.  These projects were conducted in a variety of settings, including conferences, in-person presentations and trade shows.
       </p>
     </div>
   </section>
 
-  <!-- HERO IMAGE -->
-  <section class="px-4 md:px-[50px] pt-0 pb-8 md:pb-12">
-    <img src="images/experiential_design_hero.png" alt="Experiential Design" class="w-full max-w-5xl mx-auto rounded-xl">
-  </section>
-
   <!-- PROJECT CONTENT & METADATA -->
-  <section class="px-4 md:px-[50px] py-8">
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1200px] mx-auto flex flex-col md:flex-row gap-[32px] md:gap-[64px]">
 
-      <!-- Left: Detailed Description -->
-      <div class="md:col-span-2">
+      <!-- Left: Main Content -->
+      <div class="md:w-[750px] flex flex-col gap-[32px]">
 
-        <h3 class="text-2xl text-black font-normal mb-4">About the Projects</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          These projects involve designing WCAG-compliant user experiences that are also in compliance with the physical ADA requirements. As UX architect is is my responsibility to lead discovery with accessibility leads to ensure that the team's early concepts are within industry standards.
-        </p>
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">About the Projects</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            These projects involve designing WCAG-compliant user experiences that are also in compliance with the physical ADA requirements. As UX architect is is my responsibility to lead discovery with accessibility leads to ensure that the team's early concepts are within industry standards.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+           For AR, VR and AVP tactics, the primary challenge was creating an AR interface that users could confidently navigate in real-time conference environments and in consultations while maintaining the scientific rigor required for pharmaceutical communications.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+           For interactive touch screens and presentations, the challenge was designing interfaces that are intuitive, engaging, and accessible while supporting complex content and interactions.
+          </p>
+        </div>
 
-        <p class="text-base text-black leading-relaxed mb-4">
-         For AR, VR and AVP tactics, the primary challenge was creating an AR interface that users could confidently navigate in real-time conference environments and in consultations while maintaining the scientific rigor required for pharmaceutical communications.
-        </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-         For interactive touch screens and presentations, the challenge was designing interfaces that are intuitive, engaging, and accessible while supporting complex content and interactions.
-        </p>
-
-        <h3 class="text-2xl text-black font-normal mb-4 mt-8">Design Approach</h3>
-        <p class="text-base text-black leading-relaxed mb-4">
-          The AR/VR experiences center on intuitive gesture controls and spatial navigation that feel natural even to first-time AR users. Sales representatives can seamlessly transition between different modules—mechanism of action, clinical data, patient profiles—using simple tap and swipe interactions.
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Design Approach</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            The AR/VR experiences center on intuitive gesture controls and spatial navigation that feel natural even to first-time AR users. Sales representatives can seamlessly transition between different modules—mechanism of action, clinical data, patient profiles—using simple tap and swipe interactions.
 </p>
-        <p class="text-base text-black leading-relaxed mb-4">
-          Interactive screens can leverage a more tactile approach and, real-world heuristics like visibility, line of sight and unique event requirements to create intuitive and engaging user experiences.
-        </p>
-
-        <p class="text-base text-black leading-relaxed mb-4">
-          All experiential design projects required close collaboration with medical, legal, and regulatory teams to ensure all content met pharmaceutical industry standards while leveraging the unique affordances of spatial computing and industry-leading interactivity functionality.
-        </p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">
+            Interactive screens can leverage a more tactile approach and, real-world heuristics like visibility, line of sight and unique event requirements to create intuitive and engaging user experiences.
+          </p>
+          <p class="text-base text-text-primary leading-relaxed">
+            All experiential design projects required close collaboration with medical, legal, and regulatory teams to ensure all content met pharmaceutical industry standards while leveraging the unique affordances of spatial computing and industry-leading interactivity functionality.
+          </p>
+        </div>
       </div>
 
       <!-- Right: Metadata Sidebar -->
-      <div class="space-y-6">
+      <div class="md:w-[360px] md:flex-shrink-0 p-[24px] flex flex-col gap-[24px] h-fit">
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Client</h4>
-          <p class="text-base text-black">Various</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Client</h4>
+          <p class="text-base text-text-primary">Various</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Discipline</h4>
-          <p class="text-base text-black">Experiential Design<br>Augmented Reality<br>XR Strategy</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Discipline</h4>
+          <p class="text-base text-text-primary">Experiential Design<br>Augmented Reality<br>XR Strategy</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Role</h4>
-          <p class="text-base text-black">Senior UX Architect</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Role</h4>
+          <p class="text-base text-text-primary">Senior UX Architect</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Year</h4>
-          <p class="text-base text-black">2021-2025</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Year</h4>
+          <p class="text-base text-text-primary">2021-2025</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Technologies</h4>
-          <p class="text-base text-black">Augmented Reality<br>iOS<br>Spatial UX<br>3D Visualization</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Technologies</h4>
+          <p class="text-base text-text-primary">Augmented Reality<br>iOS<br>Spatial UX<br>3D Visualization</p>
         </div>
 
         <div>
-          <h4 class="text-sm text-accent uppercase mb-2">Deliverables</h4>
-          <p class="text-base text-black">Stakeholder interviews <br>XR User Flows<br>Interaction Design<br>Wireframes<br>Prototypes</p>
+          <h4 class="text-sm text-accent uppercase mb-2 tracking-wide">Deliverables</h4>
+          <p class="text-base text-text-primary">Stakeholder interviews <br>XR User Flows<br>Interaction Design<br>Wireframes<br>Prototypes</p>
         </div>
       </div>
 
@@ -162,8 +164,8 @@
   </section>
 
   <!-- IMAGE GALLERY -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-7xl mx-auto">
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-[1200px] mx-auto">
       <img src="images/body_of_data.png" alt="Body of Data visualization" class="rounded-xl h-96 w-full object-cover">
       <img src="images/LIL_photo_booth.png" alt="Photo booth experience" class="rounded-xl h-96 w-full object-cover">
       <img src="images/INJ_game_photo.png" alt="Interactive game experience" class="md:col-span-2 rounded-xl h-96 w-full object-cover">
@@ -171,10 +173,12 @@
   </section>
 
   <!-- BACK TO WORK -->
-  <section class="px-4 md:px-[50px] py-8 mb-12">
-    <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline">
-      ← Back to Work
-    </a>
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
   </section>
 
   <!-- FOOTER -->
@@ -193,7 +197,14 @@
     </div>
   </footer>
 
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
+
   <script>
+    // Mobile menu logic
     const menuToggle = document.getElementById('menu-toggle');
     const menuClose = document.getElementById('menu-close');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -220,6 +231,43 @@
         mobileMenu.classList.add('hidden');
         document.body.classList.remove('overflow-hidden');
       });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    // Close lightbox on close button click
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    // Close lightbox on backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
     });
   </script>
 </body>
