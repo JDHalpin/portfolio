@@ -96,7 +96,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Mobile: Hamburger menu + name
     Desktop: Name + navigation links
     -->
-  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
+  <header class="bg-[#FFFEF9] sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
       <!-- Left: Name/Logo -->
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
@@ -160,13 +160,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="bg-[#FFFEF9] px-4 md:px-[50px]">
     <div class="w-full max-w-[1440px] mx-auto relative">
       <!-- Carousel container with 2880x1120 aspect ratio -->
-      <div id="hero-carousel" class="relative overflow-hidden rounded-lg aspect-[776/700] md:aspect-[18/7] max-h-[350px] md:max-h-none">
+      <div id="hero-carousel" class="relative overflow-hidden aspect-[776/700] md:aspect-[18/7] max-h-[350px] md:max-h-none">
 
         <!-- Slide 0: Hero 01 -->
         <div class="carousel-slide absolute inset-0 opacity-100 transition-opacity duration-1000" data-card="2">
           <picture>
             <source media="(max-width: 768px)" srcset="images/hero_01_mobile.png">
-            <img src="images/hero_01.png" alt="Portfolio showcase 1" class="w-full h-full object-cover">
+            <img src="images/hero_01.png" alt="EYEDAR app" class="w-full h-full object-cover">
           </picture>
         </div>
 
@@ -174,7 +174,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="7">
           <picture>
             <source media="(max-width: 768px)" srcset="images/hero_04_mobile.png">
-            <img src="images/hero_04.png" alt="Product Design and AI Development" class="w-full h-full object-cover">
+            <img src="images/hero_02.png" alt="Product Design and AI Development" class="w-full h-full object-cover">
           </picture>
         </div>
 
@@ -182,10 +182,16 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="3">
           <picture>
             <source media="(max-width: 768px)" srcset="images/hero_03_mobile.png">
-            <img src="images/hero_03.png" alt="Portfolio showcase 3" class="w-full h-full object-cover">
+            <img src="images/hero_03.png" alt="Pradaxa AR/VR" class="w-full h-full object-cover">
           </picture>
         </div>
-
+<!-- Slide 3: Hero 04 -->
+        <div class="carousel-slide absolute inset-0 opacity-0 transition-opacity duration-1000" data-card="4">
+          <picture>
+            <source media="(max-width: 768px)" srcset="images/hero_04.gif">
+            <img src="images/hero_04.gif" alt="UX Engineering all up in here" class="w-full h-full object-cover object-left">
+          </picture>
+        </div>
       </div>
 
       <!-- Navigation Dots - positioned over the carousel from the parent wrapper -->
@@ -193,6 +199,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
         <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
         <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
+      <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="3" aria-label="Go to slide 4"></button> 
       </div>
     </div>
   </section>
@@ -272,7 +279,7 @@ I'm currently seeking Product Design or UX Engineering roles in tech/healthtech 
     Grid of case study cards - 2-up on desktop with varying sizes
   -->
   <main id="work" class="px-4 md:pl-[120px] md:pr-[40px] py-4 md:max-w-none scroll-mt-[60px]">
-    <h2 class="text-2xl text-black font-normal mb-6">Case Studies</h2>
+    <h2 class="text-2xl text-black font-normal mb-6">Work</h2>
     <!-- Desktop: 2-column grid, Mobile: single column -->
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
@@ -293,28 +300,28 @@ I'm currently seeking Product Design or UX Engineering roles in tech/healthtech 
       <!-- ==================== PROJECT CARD 1: EYEDAR ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
         <img src="images/380_image_eyedar.png" alt="EYEDAR mobile application" class="w-full object-cover rounded flex-none">
-        <h3 class="text-2xl text-black font-normal leading-none">Interaction Design: Eyedar mobile application</h3>
+        <h3 class="text-2xl text-black font-normal leading-none">Eyedar mobile application</h3>
         <p class="text-sm text-black leading-normal flex-grow">LiDAR-driven echolocation application for visually impaired and blind users to navigate their environment through sound.</p>
       </article>
 
       <!-- ==================== PROJECT CARD 2: FASENRA ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="2">
         <img src="images/380_image_FAS.png" alt="Fasenra.com website redesign" class="w-full object-cover rounded flex-none">
-        <h3 class="text-2xl text-black font-normal leading-none">Interaction Design: Patient website redesign</h3>
+        <h3 class="text-2xl text-black font-normal leading-none">Pharma Patient website redesign</h3>
         <p class="text-sm text-black leading-normal flex-grow">Optimized information architecture and redesigned self-injection instructions for a multi-indication pharmaceutical website. IFU pattern adopted into client's global component library.</p>
       </article>
 
       <!-- ==================== PROJECT CARD 3: AI DEVELOPMENT ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
         <img src="images/380_image_design_system_token_sync.png" alt="Figma Design Token Sync tool" class="w-full object-cover rounded flex-none">
-        <h3 class="text-2xl text-black font-normal leading-none">AI Development, UX Engineering: Figma Design Token Sync Tool</h3>
-        <p class="text-sm text-black leading-normal flex-grow">Automated workflow to sync design tokens from Figma to code, keeping design and development in alignment using Model Context Protocol.</p>
+        <h3 class="text-2xl text-black font-normal leading-none">Figma Design Token Sync Tool</h3>
+        <p class="text-sm text-black leading-normal flex-grow">UX-Engineered automated workflow to sync design tokens from Figma to code, keeping design and development in alignment using Model Context Protocol.</p>
       </article>
 
       <!-- ==================== PROJECT CARD 4: PRADAXA AR ==================== -->
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="4">
         <img src="images/380_image_PRADAX.png" alt="Pradaxa AR sales presentation" class="w-full object-cover rounded flex-none">
-        <h3 class="text-2xl text-black font-normal leading-none">Experiential Product Design, AR/XR: Pradaxa Veeva CLM</h3>
+        <h3 class="text-2xl text-black font-normal leading-none">Pradaxa AR/VR Veeva CLM KOL Journey</h3>
         <p class="text-sm text-black leading-normal flex-grow">An augmented reality sales tool for iPad that transformed standard KOL video content into an immersive, interactive experience for pharmaceutical sales representatives.</p>
       </article>
 
@@ -333,7 +340,7 @@ I'm currently seeking Product Design or UX Engineering roles in tech/healthtech 
       <h2 class="text-[32px] leading-none text-black font-normal">Approach</h2>
 <!-- Copy -->
 <p class="text-base leading-normal text-black">
-I start every project by understanding the business case. Before sketching screens, I assess what exists: functionality gaps, usability issues, technical constraints. This groundwork builds credibility with stakeholders and prevents wasted cycles.</p>
+I start every engagement by understanding the business case. Before beginning sketches or concept development, I assess what exists: functionality gaps, usability issues, technical constraints. This groundwork builds credibility with stakeholders and prevents wasted cycles.</p>
 <p class="text-base leading-normal text-black">
 I build systems, not just screens. Design tokens, interaction specifications, research frameworks and artifacts that scale beyond a single project and keep teams aligned as products evolve.
 </p>
@@ -345,19 +352,24 @@ When it comes to product design and feasibility, I believe in leading by example
     <div class="mt-24">
       <h3 class="text-lg text-black font-normal mb-8">Brands I've Worked With</h3>
       <div class="flex flex-wrap justify-center gap-8 items-center">
-        <img src="images/a23_logo.webp" alt="A23 logo" class="h-10 object-contain">
-        <img src="images/rga_logo.png" alt="RGA logo" class="h-10 object-contain">
-       <img src="images/digitas_health_logo.jpeg" alt="Digitas Health" class="h-10 object-contain">
-        <img src="images/nikon_logo.png" alt="Nikon logo" class="h-10 object-contain">  
-       <img src="images/mlb_logo.png" alt="MLB logo" class="h-10 object-contain">
-        <img src="images/Martha_Stewart_logo.jpg" alt="MSLO logo" class="h-10 object-contain">
-       <img src="images/lilly_logo.png" alt="Lilly logo" class="h-10 object-contain"> 
-        <img src="images/krystexxa.webp" alt="Krystexxa logo" class="h-10 object-contain">
-        <img src="images/Horizon_Logo.webp" alt="Horizon logo" class="h-10 object-contain">
-        <img src="images/bayer_logo.png" alt="Horizon logo" class="h-10 object-contain"><img src="images/invitae_corporation_logo.webp" alt="Invitae logo" class="h-10 object-contain">
-        <img src="images/Toujeo_Max_SoloStar_logo.webp" alt="Toujeo Max SoloStar logo" class="h-10 object-contain">
-        <img src="images/tremfya.webp" alt="Tremfya logo" class="h-10 object-contain">
-        <img src="images/Cannes.webp" alt="Cannes logo" class="h-10 object-contain"> <img src="images/mm_m_logo.png" alt="MM+M logo" class="h-10 object-contain">  <img src="images/manny.webp" alt="Manny Awards logo" class="h-10 object-contain">
+        <img src="images/logos/a23_logo.webp" alt="A23 logo" class="h-10 object-contain">
+        <img src="images/logos/rga_logo.png" alt="RGA logo" class="h-10 object-contain">
+       <img src="images/logos/digitas_health_logo.jpeg" alt="Digitas Health" class="h-10 object-contain">
+        <img src="images/logos/nikon_logo.png" alt="Nikon logo" class="h-10 object-contain">  
+       <img src="images/logos/mlb_logo.png" alt="MLB logo" class="h-10 object-contain">
+        <img src="images/logos/Martha_Stewart_logo.jpg" alt="MSLO logo" class="h-10 object-contain">
+       <img  src="images/logos/MSFT_logo.png" alt="Microsoft logo" class="h-10 object-contain">
+        <img src="images/logos/google_logo.png" alt="Google logo" class="h-10 object-contain">
+        <img src="images/logos/lilly_logo.png" alt="Lilly logo" class="h-10 object-contain"> 
+        <img src="images/logos/krystexxa.webp" alt="Krystexxa logo" class="h-10 object-contain">
+        <img src="images/logos/Horizon_Logo.webp" alt="Horizon logo" class="h-10 object-contain">
+        <img src="images/logos/bayer_logo.png" alt="Horizon logo" class="h-10 object-contain">
+        <img src="images/logos/invitae_corporation_logo.webp" alt="Invitae logo" class="h-10 object-contain">
+        <img src="images/logos/Toujeo_Max_SoloStar_logo.webp" alt="Toujeo Max SoloStar logo" class="h-10 object-contain">
+        <img src="images/logos/tremfya.webp" alt="Tremfya logo" class="h-10 object-contain">
+      
+        <img src="images/logos/SMPA.jpeg" alt="SMPA logo" class="h-10 object-contain">
+        <img src="images/logos/Cannes.webp" alt="Cannes logo" class="h-10 object-contain"> <img src="images/logos/mm_m_logo.png" alt="MM+M logo" class="h-10 object-contain">  <img src="images/logos/manny.webp" alt="Manny Awards logo" class="h-10 object-contain">
       </div>
     </div>
   </section>
@@ -444,8 +456,8 @@ When it comes to product design and feasibility, I believe in leading by example
     const cardLinks = {
       '1': 'eyedar.html',
       '2': 'fasenra-redesign.html',
-      '3': 'figma-sync.html',
-      '4': 'pradaxa_ar.html',
+      '3': 'pradaxa_ar.html',
+      '4': 'figma_sync.html',
     };
 
     // -------- PASSWORD MODAL LOGIC --------
