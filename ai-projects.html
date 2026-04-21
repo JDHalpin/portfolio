@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Halpin: AI Projects</title>
+  <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Kaisei Opti', serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'off-white': '#FFFEF9',
+            'white': '#FFFFFF',
+            'near-black': '#181818',
+            'light-gray': '#F7F7F7',
+            'aquamarine': '#61EDD8',
+            'accent': '#079E87',
+            'text-primary': '#181818',
+            'text-secondary': '#DFE1E3',
+            'accent-primary': '#61EDD8',
+            'background-base': '#FFFFFF',
+            'mid-gray': '#DFE1E3',
+            'surface-default': '#FFFEF9',
+            'border-subtle': '#F7F7F7',
+            'text-tertiary': '#526AC2',
+          },
+          fontFamily: {
+            'kaisei': ['Kaisei Opti', 'serif'],
+            'lato': ['Lato', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLH7LQ');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
+  <!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH7LQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+  <!--
+    ========================================
+    HEADER - Responsive Design
+    ========================================
+  -->
+  <header class="bg-[#FFFEF9] sticky top-0 z-40 h-[60px]">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
+      <!-- Left: Name/Logo -->
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+
+      <!-- Right: Navigation - desktop only -->
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="ai-projects.html" class="text-sm text-accent transition-colors">AI Projects</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+
+      <!-- Hamburger menu icon - mobile only -->
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="ai-projects.html" class="text-lg text-accent transition-colors">AI Projects</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!--
+    ========================================
+    PAGE HEADER
+    ========================================
+  -->
+  <section class="bg-[#FFFEF9] px-4 md:px-[120px] pt-14 md:pt-16 pb-8">
+    <h1 class="text-[32px] leading-none text-black font-normal mb-4">AI Projects</h1>
+    <p class="text-base leading-normal text-black max-w-2xl">Experiments, tools, and products built at the intersection of design and AI. These projects explore how AI can extend UX workflows, automate design-to-development handoff, and create new interaction paradigms.</p>
+  </section>
+
+  <!--
+    ========================================
+    PROJECT CARDS
+    ========================================
+  -->
+  <main class="px-4 md:pl-[120px] md:pr-[40px] py-4 md:max-w-none">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+      <!-- ==================== CARD 1: DRIFT ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow">
+        <div class="w-full aspect-[380/220] rounded bg-[#F7F7F7] flex items-center justify-center">
+          <span class="text-[#DFE1E3] text-sm font-lato">Drift</span>
+        </div>
+        <h3 class="text-2xl text-black font-normal leading-none">Drift</h3>
+        <p class="text-sm text-black leading-normal flex-grow">A native mobile app for adults with ADHD on stimulant medication. Rooted in a March 2026 JNeurosci study identifying local sleep events as the neurological mechanism behind attention lapses. Built in React Native / Expo with a pharmacokinetic curve visualization, live drift-risk scoring, and shame-aware interaction patterns for tracking focus without triggering avoidance.</p>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">React Native</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Expo</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">AI-enabled</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Healthtech</span>
+        </div>
+      </article>
+
+      <!-- ==================== CARD 2: FIGMA DESIGN TOKEN SYNC ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
+        <img src="images/figma_sync_loop_448.gif" alt="Figma Design Token Sync Tool" class="w-full object-cover rounded flex-none">
+        <h3 class="text-2xl text-black font-normal leading-none">Figma Design Token Sync Tool</h3>
+        <p class="text-sm text-black leading-normal flex-grow">A UX-engineered automation that extracts design tokens directly from the Figma API via Model Context Protocol (MCP) and syncs them into a codebase — eliminating manual token transcription and the drift that comes with it.</p>
+        <p class="text-sm text-black leading-normal">Built in Claude Code using the Figma MCP server, the tool reads variable collections (colors, spacing, typography) and writes them to a structured CSS/JSON token file. Changes in Figma propagate to the repo with a single command — no plugin, no third-party sync service.</p>
+        <p class="text-sm text-black leading-normal">This was both a practical tool for my own workflow and a proof of concept for AI-augmented design-to-development handoff at the token layer.</p>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Figma API</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">MCP</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Design Tokens</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Claude Code</span>
+        </div>
+      </article>
+
+      <!-- ==================== CARD 3: ANNOTATE ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" onclick="window.location.href='https://github.com/JDHalpin/FigmaMCP'">
+        <div class="w-full aspect-[380/220] rounded bg-[#F7F7F7] flex items-center justify-center">
+          <span class="text-[#DFE1E3] text-sm font-lato">Coming soon</span>
+        </div>
+        <h3 class="text-2xl text-black font-normal leading-none">Annotate</h3>
+        <p class="text-sm text-black leading-normal flex-grow">A Figma plugin that generates functional annotation frames, scaffolding the starting structure for UX documentation directly inside Figma. Built using the Figma Plugin API, with MCP integration planned for a future phase connecting natural language prompts to frame generation.</p>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Figma API</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">TypeScript</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">MCP</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Design Tooling</span>
+        </div>
+      </article>
+
+      <!-- ==================== CARD 4: PDF Annotation Tool ==================== -->
+      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5">
+        <div class="w-full aspect-[380/220] rounded bg-[#F7F7F7] flex items-center justify-center">
+          <span class="text-[#DFE1E3] text-sm font-lato">PDF Edit
+             Tool</span>
+        </div>
+        <h3 class="text-2xl text-black font-normal leading-none">PDF Edit Tool</h3>
+        <p class="text-sm text-black leading-normal flex-grow">An internal tool released to 500+ global employees in 2025. The PDF Edit Tool is built in Python and allows non-technical users to crop and add margins to PDF documents with ease, streamlining a manual process.</p>
+        <div class="flex flex-wrap gap-2 mt-1">
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Python</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Internal Tooling</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">PDF</span>
+        </div>
+      </article>
+
+    </div>
+  </main>
+
+  <!--
+    ========================================
+    FOOTER
+    ========================================
+  -->
+  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center mt-16">
+    <p>© 2026 Jeff Halpin</p>
+    <div class="flex items-center justify-center gap-6">
+      <a href="https://www.linkedin.com/in/jeffrey-halpin/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+      <a href="https://github.com/JDHalpin" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+</svg></a>
+      <a href="mailto:jeff.halpin@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg></a>
+    </div>
+  </footer>
+
+  <!--
+    ========================================
+    JAVASCRIPT
+    ========================================
+  -->
+  <script>
+    // -------- MOBILE MENU LOGIC --------
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    // -------- CARD CLICK - Figma Sync links to its case study --------
+    document.querySelector('article[data-card="3"]')?.addEventListener('click', () => {
+      window.location.href = 'figma_sync.html';
+    });
+  </script>
+</body>
+</html>
