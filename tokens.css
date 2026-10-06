@@ -1,0 +1,29 @@
+/*
+ * Design tokens for jeffhalpin.com
+ * GENERATED FILE. Do not edit by hand.
+ * Source: Figma file vFzy38cYS83Xj5CCqdTvi4 (Jeff Halpin - XD Portfolio Design System), exported via Figma MCP
+ * Exported: 2026-10-06
+ * Rebuild: node scripts/build-tokens.js
+ */
+:root {
+  --color-accent: #068572; /* accent */
+  --color-text-primary: #181818; /* text/primary */
+  --color-icon-primary: var(--color-text-primary); /* icon/primary */
+  --color-button-default: var(--color-accent); /* button/default */
+  --color-button-hover: #067A67; /* button/hover */
+  --color-button-pressed: #045F51; /* button/pressed */
+  --color-surface-default: #FFFEF9; /* surface/default */
+  --color-surface-muted: #DFE1E3; /* surface/muted */
+  --color-surface-hover: #F7F7F7; /* surface/hover */
+  --color-border-subtle: #F7F7F7; /* border/subtle */
+  --color-text-secondary: #DFE1E3; /* text/secondary */
+  --color-text-on-accent: #FFFFFF; /* text/on-accent */
+  --space-4: 4px; /* space/4 */
+  --space-8: 8px; /* space/8 */
+  --space-12: 12px; /* space/12 */
+  --space-16: 16px; /* space/16 */
+  --space-20: 20px; /* space/20 */
+  --space-24: 24px; /* space/24 */
+  --space-48: 48px; /* space/48 */
+  --space-64: 64px; /* space/64 */
+}

@@ -12,23 +12,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
   <style>
-    /*    CUSTOM STYLES - Figma Design System (Extracted from Figma API)
-      - off-white: #FFFEF9
-      - white: #FFFFFF
-      - near-black: #181818
-      - light-gray: #F7F7F7
-      - Aquamarine: #61EDD8
-      - Accent: #079E87
-      - Text/Primary: #181818
-      - Text/Secondary: #DFE1E3
-      - Accent/Primary: #61EDD8
-      - Background/Base: #FFFFFF
-      - mid-gray: #DFE1E3
-      - Surface/Default: #FFFEF9
-      - Border/Subtle: #F7F7F7
-      - Text/Tertiary: #526AC2
-    */
+    /* Colors and spacing: see tokens.css (generated from Figma). */
     body {
       font-family: 'Kaisei Opti', serif;
     }
@@ -38,12 +24,12 @@
     }
     
     .filter-chip:hover {
-      background-color: rgba(6, 157, 135, 0.1);
+      background-color: var(--color-surface-hover);
     }
 
     .filter-chip.active {
-      background-color: #069D87;
-      color: white;
+      background-color: var(--color-accent);
+      color: var(--color-text-on-accent);
     }
   </style>
   <script>
@@ -51,20 +37,19 @@
       theme: {
         extend: {
                                                   colors: {
-            'off-white': '#FFFEF9',
-            'white': '#FFFFFF',
-            'near-black': '#181818',
-            'light-gray': '#F7F7F7',
-            'aquamarine': '#61EDD8',
-            'accent': '#079E87',
-            'text-primary': '#181818',
-            'text-secondary': '#DFE1E3',
-            'accent-primary': '#61EDD8',
-            'background-base': '#FFFFFF',
-            'mid-gray': '#DFE1E3',
-            'surface-default': '#FFFEF9',
-            'border-subtle': '#F7F7F7',
-            'text-tertiary': '#526AC2',
+            // Generated tokens live in tokens.css (exported from Figma via MCP).
+            'accent': 'var(--color-accent)',
+            'text-primary': 'var(--color-text-primary)',
+            'text-secondary': 'var(--color-text-secondary)',
+            'text-on-accent': 'var(--color-text-on-accent)',
+            'icon-primary': 'var(--color-icon-primary)',
+            'surface-default': 'var(--color-surface-default)',
+            'surface-muted': 'var(--color-surface-muted)',
+            'surface-hover': 'var(--color-surface-hover)',
+            'border-subtle': 'var(--color-border-subtle)',
+            'button-default': 'var(--color-button-default)',
+            'button-hover': 'var(--color-button-hover)',
+            'button-pressed': 'var(--color-button-pressed)',
           },
           fontFamily: {
             'kaisei': ['Kaisei Opti', 'serif'],
@@ -84,7 +69,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PLH7LQ');</script>
 <!-- End Google Tag Manager -->
 </head>
-<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
+<body class="bg-surface-default font-kaisei min-h-screen relative">
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH7LQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -96,7 +81,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Mobile: Hamburger menu + name
     Desktop: Name + navigation links
     -->
-  <header class="bg-[#FFFEF9] sticky top-0 z-40 h-[60px]">
+  <header class="bg-surface-default sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
       <!-- Left: Name/Logo -->
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
@@ -120,7 +105,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Mobile Menu Overlay - hidden by default -->
   <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
-    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+    <div class="bg-surface-default w-4/5 h-full p-6 flex flex-col gap-6">
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
@@ -134,7 +119,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Password Modal - DISABLED
   <div id="password-modal" class="hidden fixed inset-0 z-50 bg-black/50 flex items-center justify-center p-4">
-    <div class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-8 w-full max-w-md relative">
+    <div class="bg-surface-default border border-neutral-200 rounded-xl p-8 w-full max-w-md relative">
       <button id="password-modal-close" class="absolute top-4 right-4 text-2xl text-black hover:text-accent transition-colors" aria-label="Close modal">&times;</button>
       <h3 class="text-2xl text-black font-normal mb-2">Password Required</h3>
       <p class="text-base text-black mb-6">Please enter your password to view this case study.</p>
@@ -142,10 +127,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <label for="case-study-password" class="block text-sm text-black mb-2">Password</label>
           <input type="password" id="case-study-password" name="password" required
-            class="w-full px-4 py-3 border border-light-gray rounded bg-white text-black focus:outline-none focus:border-accent transition-colors">
+            class="w-full px-4 py-3 border border-border-subtle rounded bg-white text-black focus:outline-none focus:border-accent transition-colors">
         </div>
         <p id="password-error" class="text-red-500 text-sm hidden">Incorrect password. Please try again.</p>
-        <button type="submit" class="w-full px-8 py-3 bg-accent text-white rounded hover:bg-opacity-90 transition-all font-normal">
+        <button type="submit" class="w-full px-8 py-3 bg-button-default text-text-on-accent rounded hover:bg-button-hover active:bg-button-pressed transition-all font-normal">
           Submit
         </button>
       </form>
@@ -159,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ========================================
     Auto-rotating carousel with videos and images
   -->
-  <section class="bg-[#FFFEF9] px-4 md:px-[50px]">
+  <section class="bg-surface-default px-4 md:px-[50px]">
     <div class="w-full max-w-[1440px] mx-auto relative">
       <!-- Carousel container with 2880x1120 aspect ratio -->
       <div id="hero-carousel" class="relative overflow-hidden aspect-[776/700] md:aspect-[18/7] max-h-[350px] md:max-h-none">
@@ -199,9 +184,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <!-- Navigation Dots - positioned over the carousel from the parent wrapper -->
       <div class="mt-2 mr-4 flex justify-end gap-2 md:mt-4 md:mr-0 md:justify-center">
         <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-accent transition-all" data-slide="0" aria-label="Go to slide 1"></button>
-        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="1" aria-label="Go to slide 2"></button>
-        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="2" aria-label="Go to slide 3"></button>
-      <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-mid-gray transition-all" data-slide="3" aria-label="Go to slide 4"></button> 
+        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-surface-muted transition-all" data-slide="1" aria-label="Go to slide 2"></button>
+        <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-surface-muted transition-all" data-slide="2" aria-label="Go to slide 3"></button>
+      <button class="carousel-dot w-[10px] h-[10px] md:w-[14px] md:h-[14px] rounded-full bg-surface-muted transition-all" data-slide="3" aria-label="Go to slide 4"></button> 
       </div>
     </div>
   </section>
@@ -211,7 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ========================================
     Heading and bio paragraph in side-by-side layout
   -->
-  <section id="about" class="bg-[#FFFEF9] px-4 md:px-[120px] pt-14 md:pt-16 pb-8 scroll-mt-[60px]">
+  <section id="about" class="bg-surface-default px-4 md:px-[120px] pt-14 md:pt-16 pb-8 scroll-mt-[60px]">
     <div class="grid grid-cols-1 md:grid-cols-1 gap-4">
       <!-- Left: Heading -->
       <h2 class="text-[32px] leading-none text-black font-normal">About Me</h2>
@@ -247,19 +232,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     Horizontally scrollable filter buttons
   -->
   <!-- <div class="px-4 md:px-[50px] py-4 flex gap-2 overflow-x-auto">
-    <button class="filter-chip active px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap" data-filter="all">
+    <button class="filter-chip active px-2 py-1.5 rounded border border-border-subtle text-sm whitespace-nowrap" data-filter="all">
       All Work
     </button>
-    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="research">
+    <button class="filter-chip px-2 py-1.5 rounded border border-border-subtle text-sm whitespace-nowrap bg-surface-default" data-filter="research">
       UX Methodology
     </button>
-    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="design">
+    <button class="filter-chip px-2 py-1.5 rounded border border-border-subtle text-sm whitespace-nowrap bg-surface-default" data-filter="design">
       Product Design
     </button>
-    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="strategy">
+    <button class="filter-chip px-2 py-1.5 rounded border border-border-subtle text-sm whitespace-nowrap bg-surface-default" data-filter="strategy">
       Strategy
     </button>
-    <button class="filter-chip px-2 py-1.5 rounded border border-light-gray text-sm whitespace-nowrap bg-[#FFFEF9]" data-filter="leadership">
+    <button class="filter-chip px-2 py-1.5 rounded border border-border-subtle text-sm whitespace-nowrap bg-surface-default" data-filter="leadership">
       Leadership
     </button>
   </div> -->
@@ -276,42 +261,42 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <!-- ==================== PROJECT CARD 1 (IN CAROUSEL) ==================== -->
-      <!-- <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
+      <!-- <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
         <img src="images/380_image_process.png" alt="UX Process - Discovery, wireframing, and prototyping" class="w-full object-cover rounded">
         <h3 class="text-2xl text-black font-normal leading-none">UX Process & Methodology</h3>
         <p class="text-sm text-black leading-normal">Discovery, wireframing, prototyping, qual/quant research, workshops and UI design collaboration</p>
       </article> -->
 
       <!-- ==================== PROJECT CARD 2 (IN CAROUSEL) ==================== -->
-      <!-- <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="2">
+      <!-- <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="2">
         <img src="images/380_image_eyedar.png" alt="Eyedar LIDAR visualization application for the blind" class="w-full object-cover rounded">
         <h3 class="text-2xl text-black font-normal leading-none">Interaction Design: EYEDAR mobile application</h3>
         <p class="text-sm text-black leading-normal">LIDAR-based audio visualization translating spatial data into sound for navigation, including interface controls, training materials, and documentation</p>
       </article> -->
 
       <!-- ==================== PROJECT CARD 1: EYEDAR ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="1">
         <img src="images/380_image_eyedar.png" alt="EYEDAR mobile application" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Mobile Application Design</h3>
         <p class="text-sm text-black leading-normal flex-grow">The Eyedar application is a LiDAR-driven echolocation tool for visually impaired and blind users to navigate their environment through sound.</p>
       </article>
 
       <!-- ==================== PROJECT CARD 2: FASENRA ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="2">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="2">
         <img src="images/380_image_fasenra.png" alt="Fasenra.com website redesign" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Pharma Patient Website Redesign</h3>
         <p class="text-sm text-black leading-normal flex-grow">Optimized information architecture and redesigned self-injection instructions for a multi-indication pharmaceutical website. IFU pattern adopted into client's global component library.</p>
       </article>
 
       <!-- ==================== PROJECT CARD 3: AI DEVELOPMENT ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
         <img src="images/380_image_figma_sync.png" alt="Figma Design Token Sync tool" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Figma Design Token Sync Tool</h3>
         <p class="text-sm text-black leading-normal flex-grow">UX-engineered workflow that syncs design tokens from Figma to code through the Figma API, keeping design and development in alignment.</p>
       </article>
 
       <!-- ==================== PROJECT CARD 4: PRADAXA AR ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="4">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="4">
         <img src="images/380_image_pradaxa.png" alt="Pradaxa AR sales presentation" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">AR Pharma Sales Tool</h3>
         <p class="text-sm text-black leading-normal flex-grow">A augmented reality tool for the Veeva CLM platform that transformed standard KOL video content into an immersive, interactive experience for pharmaceutical sales representatives.</p>
@@ -325,7 +310,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     BRANDS & RECOGNITION
     ========================================
   -->
-  <section class="bg-[#FFFEF9] px-4 md:px-[120px] py-12 md:py-16">
+  <section class="bg-surface-default px-4 md:px-[120px] py-12 md:py-16">
     <h3 class="text-lg text-black font-normal mb-8">Brands I've Worked With</h3>
     <div class="flex flex-wrap justify-center gap-8 items-center">
       <img src="images/logos/a23_logo.webp" alt="A23 logo" class="h-10 object-contain">
@@ -364,7 +349,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     ========================================
     Copyright and social links
   -->
-  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 mt-16 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+  <footer class="bg-surface-default border-t border-border-subtle px-4 mt-16 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
     <p>© 2026 Jeff Halpin</p>
     <div class="flex items-center justify-center gap-6">
       <a href="https://www.linkedin.com/in/jeffrey-halpin/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
@@ -423,11 +408,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         // Remove active from all chips
         document.querySelectorAll('.filter-chip').forEach(c => {
           c.classList.remove('active');
-          c.classList.add('bg-[#FFFEF9]');
+          c.classList.add('bg-surface-default');
         });
         // Add active to clicked chip
         chip.classList.add('active');
-        chip.classList.remove('bg-[#FFFEF9]');
+        chip.classList.remove('bg-surface-default');
 
         const filter = chip.dataset.filter;
         console.log('Filter selected:', filter);
@@ -534,11 +519,11 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       // Update dots
       dots.forEach((dot, i) => {
         if (i === index) {
-          dot.classList.remove('bg-mid-gray');
+          dot.classList.remove('bg-surface-muted');
           dot.classList.add('bg-accent');
         } else {
           dot.classList.remove('bg-accent');
-          dot.classList.add('bg-mid-gray');
+          dot.classList.add('bg-surface-muted');
         }
       });
 

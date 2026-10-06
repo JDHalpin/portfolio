@@ -12,6 +12,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
   <style>
     body {
       font-family: 'Kaisei Opti', serif;
@@ -22,20 +23,19 @@
       theme: {
         extend: {
           colors: {
-            'off-white': '#FFFEF9',
-            'white': '#FFFFFF',
-            'near-black': '#181818',
-            'light-gray': '#F7F7F7',
-            'aquamarine': '#61EDD8',
-            'accent': '#079E87',
-            'text-primary': '#181818',
-            'text-secondary': '#DFE1E3',
-            'accent-primary': '#61EDD8',
-            'background-base': '#FFFFFF',
-            'mid-gray': '#DFE1E3',
-            'surface-default': '#FFFEF9',
-            'border-subtle': '#F7F7F7',
-            'text-tertiary': '#526AC2',
+            // Generated tokens live in tokens.css (exported from Figma via MCP).
+            'accent': 'var(--color-accent)',
+            'text-primary': 'var(--color-text-primary)',
+            'text-secondary': 'var(--color-text-secondary)',
+            'text-on-accent': 'var(--color-text-on-accent)',
+            'icon-primary': 'var(--color-icon-primary)',
+            'surface-default': 'var(--color-surface-default)',
+            'surface-muted': 'var(--color-surface-muted)',
+            'surface-hover': 'var(--color-surface-hover)',
+            'border-subtle': 'var(--color-border-subtle)',
+            'button-default': 'var(--color-button-default)',
+            'button-hover': 'var(--color-button-hover)',
+            'button-pressed': 'var(--color-button-pressed)',
           },
           fontFamily: {
             'kaisei': ['Kaisei Opti', 'serif'],
@@ -55,7 +55,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PLH7LQ');</script>
 <!-- End Google Tag Manager -->
 </head>
-<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
+<body class="bg-surface-default font-kaisei min-h-screen relative">
   <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH7LQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
@@ -66,7 +66,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     HEADER - Responsive Design
     ========================================
   -->
-  <header class="bg-[#FFFEF9] sticky top-0 z-40 h-[60px]">
+  <header class="bg-surface-default sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
       <!-- Left: Name/Logo -->
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
@@ -90,7 +90,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Mobile Menu Overlay -->
   <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
-    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+    <div class="bg-surface-default w-4/5 h-full p-6 flex flex-col gap-6">
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
@@ -107,7 +107,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     PAGE HEADER
     ========================================
   -->
-  <section class="bg-[#FFFEF9] px-4 md:px-[120px] pt-14 md:pt-16 pb-8">
+  <section class="bg-surface-default px-4 md:px-[120px] pt-14 md:pt-16 pb-8">
     <h1 class="text-[32px] leading-none text-black font-normal mb-4">AI Projects</h1>
     <p class="text-base leading-normal text-black max-w-2xl">Experiments, tools, and products built at the intersection of design and AI. These projects explore how AI can extend UX workflows, automate design-to-development handoff, and create new interaction paradigms.</p>
   </section>
@@ -121,7 +121,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
 
       <!-- ==================== CARD 1: DRIFT ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow">
         <img src="images/drift_sizzle_still.png" alt="Drift app" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Drift</h3>
         <p class="text-sm text-black leading-normal flex-grow">A concept for neurodivergent adults on stimulant medication, built as an interactive HTML prototype. The concept is grounded in a March 2026 JNeurosci study identifying local sleep events as the neurological mechanism behind attention lapses. The prototype includes a pharmacokinetic curve visualization, simulated drift-risk scoring, and shame-aware interaction patterns for tracking focus without triggering avoidance. I defined the concept and research foundation and prototyped it with Claude. The next phase explores wearable EEG integration.</p>
@@ -134,7 +134,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
 
       <!-- ==================== CARD 2: FIGMA DESIGN TOKEN SYNC ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
         <img src="images/figma_sync_screenshot.png" alt="Figma Design Token Sync Tool" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Figma Design Token Sync Tool</h3>
         <p class="text-sm text-black leading-normal flex-grow">A UX-engineered automation that pulls color tokens from my Figma design system through the Figma REST API and writes them into the site's Tailwind configuration, eliminating manual transcription and the drift that comes with it. Built with Claude Code. Changes in Figma reach the site with a single command, with no plugin or third-party sync service. Next phase: moving the sync to Figma Variables and the Figma MCP server.</p>
@@ -146,7 +146,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
 
       <!-- ==================== CARD 3: ANNOTATE ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" onclick="window.location.href='https://github.com/JDHalpin/FigmaMCP'">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" onclick="window.location.href='https://github.com/JDHalpin/FigmaMCP'">
         <img src="images/Annotate_screenshot.png" alt="Annotate Figma plugin" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Annotate</h3>
         <p class="text-sm text-black leading-normal flex-grow">A Figma plugin that generates functional annotation frames, scaffolding the starting structure for UX documentation directly inside Figma. Built using the Figma Plugin API, with MCP integration planned for a future phase connecting natural language prompts to frame generation.</p>
@@ -159,7 +159,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </article>
 
       <!-- ==================== CARD 4: PDF Annotation Tool ==================== -->
-      <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5">
+      <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5">
         <img src="images/PDF_Editor_screenshot.png" alt="PDF Edit Tool" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">PDF Edit Tool</h3>
         <p class="text-sm text-black leading-normal flex-grow">An internal tool released to 500+ global employees in 2025. The PDF Edit Tool is built in Python and allows non-technical users to crop and add margins to PDF documents with ease, streamlining a manual process.</p>
@@ -178,7 +178,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     FOOTER
     ========================================
   -->
-  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center mt-16">
+  <footer class="bg-surface-default border-t border-border-subtle px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center mt-16">
     <p>© 2026 Jeff Halpin</p>
     <div class="flex items-center justify-center gap-6">
       <a href="https://www.linkedin.com/in/jeffrey-halpin/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">

@@ -1,0 +1,26 @@
+{
+  "source": "Figma file vFzy38cYS83Xj5CCqdTvi4 (Jeff Halpin - XD Portfolio Design System), exported via Figma MCP",
+  "exported": "2026-10-06",
+  "variables": [
+    {"collection":"Colors","name":"accent","type":"COLOR","web":"var(--color-accent)","value":"#068572"},
+    {"collection":"Colors","name":"text/primary","type":"COLOR","web":"var(--color-text-primary)","value":"#181818"},
+    {"collection":"Colors","name":"icon/primary","type":"COLOR","web":"var(--color-icon-primary)","value":{"alias":"var(--color-text-primary)"}},
+    {"collection":"Colors","name":"button/default","type":"COLOR","web":"var(--color-button-default)","value":{"alias":"var(--color-accent)"}},
+    {"collection":"Colors","name":"button/hover","type":"COLOR","web":"var(--color-button-hover)","value":"#067a67"},
+    {"collection":"Colors","name":"button/pressed","type":"COLOR","web":"var(--color-button-pressed)","value":"#045f51"},
+    {"collection":"Colors","name":"surface/default","type":"COLOR","web":"var(--color-surface-default)","value":"#fffef9"},
+    {"collection":"Colors","name":"surface/muted","type":"COLOR","web":"var(--color-surface-muted)","value":"#dfe1e3"},
+    {"collection":"Colors","name":"surface/hover","type":"COLOR","web":"var(--color-surface-hover)","value":"#f7f7f7"},
+    {"collection":"Colors","name":"border/subtle","type":"COLOR","web":"var(--color-border-subtle)","value":"#f7f7f7"},
+    {"collection":"Colors","name":"text/secondary","type":"COLOR","web":"var(--color-text-secondary)","value":"#dfe1e3"},
+    {"collection":"Colors","name":"text/on-accent","type":"COLOR","web":"var(--color-text-on-accent)","value":"#ffffff"},
+    {"collection":"Spacing","name":"space/4","type":"FLOAT","web":"var(--space-4)","value":4},
+    {"collection":"Spacing","name":"space/8","type":"FLOAT","web":"var(--space-8)","value":8},
+    {"collection":"Spacing","name":"space/12","type":"FLOAT","web":"var(--space-12)","value":12},
+    {"collection":"Spacing","name":"space/16","type":"FLOAT","web":"var(--space-16)","value":16},
+    {"collection":"Spacing","name":"space/20","type":"FLOAT","web":"var(--space-20)","value":20},
+    {"collection":"Spacing","name":"space/24","type":"FLOAT","web":"var(--space-24)","value":24},
+    {"collection":"Spacing","name":"space/48","type":"FLOAT","web":"var(--space-48)","value":48},
+    {"collection":"Spacing","name":"space/64","type":"FLOAT","web":"var(--space-64)","value":64}
+  ]
+}

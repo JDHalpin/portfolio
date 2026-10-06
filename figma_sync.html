@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Kaisei+Opti&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
   <style>
     body {
       font-family: 'Kaisei Opti', serif;
@@ -19,20 +20,19 @@
       theme: {
         extend: {
           colors: {
-            'off-white': '#FFFEF9',
-            'white': '#FFFFFF',
-            'near-black': '#181818',
-            'light-gray': '#F7F7F7',
-            'aquamarine': '#61EDD8',
-            'accent': '#079E87',
-            'text-primary': '#181818',
-            'text-secondary': '#DFE1E3',
-            'accent-primary': '#61EDD8',
-            'background-base': '#FFFFFF',
-            'mid-gray': '#DFE1E3',
-            'surface-default': '#FFFEF9',
-            'border-subtle': '#F7F7F7',
-            'text-tertiary': '#526AC2',
+            // Generated tokens live in tokens.css (exported from Figma via MCP).
+            'accent': 'var(--color-accent)',
+            'text-primary': 'var(--color-text-primary)',
+            'text-secondary': 'var(--color-text-secondary)',
+            'text-on-accent': 'var(--color-text-on-accent)',
+            'icon-primary': 'var(--color-icon-primary)',
+            'surface-default': 'var(--color-surface-default)',
+            'surface-muted': 'var(--color-surface-muted)',
+            'surface-hover': 'var(--color-surface-hover)',
+            'border-subtle': 'var(--color-border-subtle)',
+            'button-default': 'var(--color-button-default)',
+            'button-hover': 'var(--color-button-hover)',
+            'button-pressed': 'var(--color-button-pressed)',
           },
           fontFamily: {
             'kaisei': ['Kaisei Opti', 'serif'],
@@ -52,13 +52,13 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 })(window,document,'script','dataLayer','GTM-PLH7LQ');</script>
 <!-- End Google Tag Manager -->
 </head>
-<body class="bg-[#FFFEF9] font-kaisei min-h-screen relative">
+<body class="bg-surface-default font-kaisei min-h-screen relative">
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH7LQ"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 <!-- End Google Tag Manager (noscript) -->
   <!-- HEADER -->
-  <header class="bg-[#FFFEF9] border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
+  <header class="bg-surface-default border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
     <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
       <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
       <nav class="hidden md:flex items-center gap-6">
@@ -77,7 +77,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   <!-- Mobile Menu -->
   <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
-    <div class="bg-[#FFFEF9] w-4/5 h-full p-6 flex flex-col gap-6">
+    <div class="bg-surface-default w-4/5 h-full p-6 flex flex-col gap-6">
       <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
       <nav class="flex flex-col gap-4">
         <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
@@ -210,7 +210,7 @@ Rather than generating intermediate JSON that requires further transformation, t
   </section>
 
   <!-- FOOTER -->
-  <footer class="bg-[#FFFEF9] border-t border-[#F6F6F6] px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+  <footer class="bg-surface-default border-t border-border-subtle px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
     <p>© 2026 Jeff Halpin</p>
     <div class="flex items-center justify-center gap-6">
       <a href="https://www.linkedin.com/in/jeffrey-halpin/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
