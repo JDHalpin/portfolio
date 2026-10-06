@@ -137,10 +137,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <article class="bg-[#FFFEF9] border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
         <img src="images/figma_sync_screenshot.png" alt="Figma Design Token Sync Tool" class="w-full object-cover rounded flex-none">
         <h3 class="text-2xl text-black font-normal leading-none">Figma Design Token Sync Tool</h3>
-        <p class="text-sm text-black leading-normal flex-grow">A UX-engineered automation that extracts design tokens directly from the Figma API via Model Context Protocol (MCP) and syncs them into a codebase — eliminating manual token transcription and the drift that comes with it. Built in Claude Code using the Figma MCP server, the tool reads variable collections (colors, spacing, typography) and writes them to a structured CSS/JSON token file. Changes in Figma propagate to the repo with a single command — no plugin, no third-party sync service.</p>
+        <p class="text-sm text-black leading-normal flex-grow">A UX-engineered automation that pulls color tokens from my Figma design system through the Figma REST API and writes them into the site's Tailwind configuration, eliminating manual transcription and the drift that comes with it. Built with Claude Code. Changes in Figma reach the site with a single command, with no plugin or third-party sync service. Next phase: moving the sync to Figma Variables and the Figma MCP server.</p>
         <div class="flex flex-wrap gap-2 mt-1">
           <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Figma API</span>
-          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">MCP</span>
           <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Design Tokens</span>
           <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Claude Code</span>
         </div>
