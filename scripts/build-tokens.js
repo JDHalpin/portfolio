@@ -16,7 +16,8 @@ const lines = src.variables.map(v => {
   return `  ${prop(v.web)}: ${value}; /* ${v.name} */`;
 });
 
-const css = `/*
+function buildCss() {
+  return `/*
  * Design tokens for jeffhalpin.com
  * GENERATED FILE. Do not edit by hand.
  * Source: ${src.source}
@@ -27,5 +28,11 @@ const css = `/*
 ${lines.join('\n')}
 }
 `;
-fs.writeFileSync(path.join(root, 'tokens.css'), css);
-console.log(`tokens.css written with ${lines.length} tokens`);
+}
+
+module.exports = { buildCss, variables: src.variables };
+
+if (require.main === module) {
+  fs.writeFileSync(path.join(root, 'tokens.css'), buildCss());
+  console.log(`tokens.css written with ${lines.length} tokens`);
+}
