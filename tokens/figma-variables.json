@@ -1,6 +1,6 @@
 {
   "source": "Figma file vFzy38cYS83Xj5CCqdTvi4 (Jeff Halpin - XD Portfolio Design System), exported via Figma MCP",
-  "exported": "2026-10-06",
+  "exported": "2026-10-07",
   "variables": [
     {"collection":"Colors","name":"accent","type":"COLOR","web":"var(--color-accent)","value":"#068572"},
     {"collection":"Colors","name":"text/primary","type":"COLOR","web":"var(--color-text-primary)","value":"#181818"},
@@ -12,7 +12,6 @@
     {"collection":"Colors","name":"surface/muted","type":"COLOR","web":"var(--color-surface-muted)","value":"#dfe1e3"},
     {"collection":"Colors","name":"surface/hover","type":"COLOR","web":"var(--color-surface-hover)","value":"#f7f7f7"},
     {"collection":"Colors","name":"border/subtle","type":"COLOR","web":"var(--color-border-subtle)","value":"#f7f7f7"},
-    {"collection":"Colors","name":"text/secondary","type":"COLOR","web":"var(--color-text-secondary)","value":"#dfe1e3"},
     {"collection":"Colors","name":"text/on-accent","type":"COLOR","web":"var(--color-text-on-accent)","value":"#ffffff"},
     {"collection":"Spacing","name":"space/4","type":"FLOAT","web":"var(--space-4)","value":4},
     {"collection":"Spacing","name":"space/8","type":"FLOAT","web":"var(--space-8)","value":8},

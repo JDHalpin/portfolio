@@ -2,7 +2,7 @@
  * Design tokens for jeffhalpin.com
  * GENERATED FILE. Do not edit by hand.
  * Source: Figma file vFzy38cYS83Xj5CCqdTvi4 (Jeff Halpin - XD Portfolio Design System), exported via Figma MCP
- * Exported: 2026-10-06
+ * Exported: 2026-10-07
  * Rebuild: node scripts/build-tokens.js
  */
 :root {
@@ -16,7 +16,6 @@
   --color-surface-muted: #DFE1E3; /* surface/muted */
   --color-surface-hover: #F7F7F7; /* surface/hover */
   --color-border-subtle: #F7F7F7; /* border/subtle */
-  --color-text-secondary: #DFE1E3; /* text/secondary */
   --color-text-on-accent: #FFFFFF; /* text/on-accent */
   --space-4: 4px; /* space/4 */
   --space-8: 8px; /* space/8 */
