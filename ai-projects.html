@@ -132,15 +132,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         </div>
       </article>
 
-      <!-- ==================== CARD 2: FIGMA DESIGN TOKEN SYNC ==================== -->
+      <!-- ==================== CARD 2: DESIGN SYSTEM LEGIBLE TO AI ==================== -->
       <article class="bg-surface-default border border-neutral-200 rounded-xl p-4 flex flex-col gap-2.5 cursor-pointer hover:shadow-lg transition-shadow" data-card="3">
-        <img src="images/figma_sync_screenshot.png" alt="Figma Design Token Sync Tool" class="w-full object-cover rounded flex-none">
-        <h3 class="text-2xl text-black font-normal leading-none">Figma Design Token Sync Tool</h3>
-        <p class="text-sm text-black leading-normal flex-grow">A UX-engineered automation that pulls color tokens from my Figma design system through the Figma REST API and writes them into the site's Tailwind configuration, eliminating manual transcription and the drift that comes with it. Built with Claude Code. Changes in Figma reach the site with a single command, with no plugin or third-party sync service. Next phase: moving the sync to Figma Variables and the Figma MCP server.</p>
+        <img src="images/ds_ai_card.png" alt="Figma variables, generated tokens.css and passing design checks" class="w-full object-cover rounded flex-none">
+        <h3 class="text-2xl text-black font-normal leading-none">Making My Design System Legible to AI</h3>
+        <p class="text-sm text-black leading-normal flex-grow">Working with Claude through the Figma MCP server, I turned 14 loose color styles and a drawn spacing chart into 19 named tokens, connected them to this site, fixed a WCAG AA contrast failure at the source, and added automated design checks on every push. Builds on Phase I, a Figma API color sync tool.</p>
         <div class="flex flex-wrap gap-2 mt-1">
-          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Figma API</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Figma MCP</span>
           <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Design Tokens</span>
-          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Claude Code</span>
+          <span class="text-xs text-black border border-neutral-200 rounded-full px-3 py-1">Claude</span>
         </div>
       </article>
 
@@ -227,9 +227,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       });
     });
 
-    // -------- CARD CLICK - Figma Sync links to its case study --------
+    // -------- CARD CLICK - design system case study --------
     document.querySelector('article[data-card="3"]')?.addEventListener('click', () => {
-      window.location.href = 'figma_sync.html';
+      window.location.href = 'Design-system-legible-to-AI.html';
     });
   </script>
 </body>
