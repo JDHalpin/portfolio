@@ -148,9 +148,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
         <div>
           <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
           <p class="text-base text-text-primary leading-relaxed mb-4">At every stage of this project, we are seeking to implement a seamless process that takes human input and delivers machine-readable, reproducible designs.</p>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Give Every Design Decision A Name Code Can Read</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Give Every Design Decision A Name Code Can Read</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">The fix was to encode every decision as data with a name, a purpose and a code equivalent, so that people and agents read the same thing.</p>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Spacing Became Tokens</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Spacing Became Tokens</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">I created eight number variables, space/4 through space/64. Claude then scoped each one to gap and padding, so it only appears where spacing belongs, and now uses my system of predictable syntax code is expecting.</p>
           <figure class="my-8">
             <img src="images/ds-ai-03-spacing-before-after.png" alt="Before and after: a drawn spacing chart of gray squares, and the same scale as eight Figma number variables" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
@@ -160,9 +160,9 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img src="images/ds-ai-04-code-syntax-detail.png" alt="Figma variable detail showing the web code syntax field filled in with a CSS custom property" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
             <figcaption class="text-sm text-text-primary mt-3 text-center">Each variable carries the name developers use, such as var(--space-16).</figcaption>
           </figure>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Fix the Name Not the Visual</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Fix the Name Not the Visual</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">Figma's code syntax field is what an agent writes when it turns a design into code. Left empty, Claude guesses or hardcodes 16px. Filled in, it writes my token. &ldquo;Accent / Primary&rdquo; became icon/primary, still black. Renaming in Figma doesn't break the link to the designs that use it, so all 16 icons kept their color and gained an honest name.</p>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Merge by Job, Not by Value</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Merge by Job, Not by Value</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">Fourteen overlapping color styles became 11 colors, each named for its job, like surface/default or button/hover. Two colors can share a value and still keep separate names if they might change separately later. 94 layers switched over with no visual change. The tradeoff is more names to learn.</p>
           <figure class="my-8">
             <img src="images/ds-ai-02-colors-before-after.png" alt="Before and after: 14 overlapping color styles, and 11 color variables named by job" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
@@ -172,7 +172,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             <img src="images/ds-ai-01-styles-before-after.png" alt="Figma local styles panel before and after the migration to variables" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
             <figcaption class="text-sm text-text-primary mt-3 text-center">The styles panel before and after the migration.</figcaption>
           </figure>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Fix Accessibility At The Source</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Fix Accessibility At The Source</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">My own buttons failed WCAG AA. The label was light gray on teal at 2.56:1, and 16px regular text needs 4.5:1. I have shipped dozens of products to comply with WCAG AA accessibility, and my portfolio still missed this. It is exactly the drift a design system is supposed to prevent.</p>
           <p class="text-base text-text-primary leading-relaxed mb-4">There were two honest fixes. Keep the teal and switch to dark labels, or darken the brand teal and keep white labels. I chose to darken the token. Claude searched for the lightest version of my teal that passes both as a button fill under white text and as text on my off-white background, which landed on &#35;068572. Hover now gets darker instead of lighter, because a lighter hover could never pass with white text.</p>
 
@@ -196,7 +196,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </table>
           </div>
           <p class="text-base text-text-primary leading-relaxed mb-4">The fix happened at the token level. I changed &ldquo;accent&rdquo; once, pointed &ldquo;button/default&rdquo; at it instead of a duplicate hex, and every chip, label and button followed without a single component edit.</p>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">One Source of Truth From Figma to the Live Site</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">One Source of Truth From Figma to the Live Site</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">jeffhalpin.com now takes every color from Figma by name. Claude reads my variables through MCP and writes them, with their code names and aliases, to a JSON export in the repo. A short Node script turns that export into tokens.css, and all 7 pages map their Tailwind colors to those tokens instead of to pasted hex values.</p>
 
           <!-- Token pipeline diagram -->
@@ -212,7 +212,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
             </ol>
             <p class="mt-2 rounded-lg border-2 border-accent p-3 text-center text-sm text-text-primary">Design checks run on every push</p>
           </figure>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Automatic Checks that Keep Us Honest</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Automatic Checks that Keep Us Honest</h4>
           <p class="text-base text-text-primary leading-relaxed mb-4">A cleanup only matters if it holds, so every push to the site now runs three design checks on GitHub.</p>
           <ol class="list-decimal pl-6 text-base text-text-primary leading-relaxed space-y-1 mb-4">
             <li>No hardcoded colors. Any hex or rgb value in a page fails the check and points to the line.</li>
@@ -221,7 +221,19 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           </ol>
           <p class="text-base text-text-primary leading-relaxed mb-4">To prove the checks work, we broke a copy of the site three ways. We pasted a hex value back into the contact page, hand-edited a token, and reverted the teal to its old value. The run reported 5 failures and exited with an error, and the old teal alone tripped three contrast failures. The accessibility fix cannot quietly regress.</p>
           <figure class="my-8">
-            <img src="images/ds-ai-05-failing-checks.png" alt="Terminal output from the design checks reporting 5 failures on a deliberately broken copy of the site" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <pre class="bg-text-primary text-text-on-accent rounded-xl p-5 text-xs md:text-sm leading-relaxed whitespace-pre-wrap break-words font-mono" aria-label="Design check output on a deliberately broken copy of the site">$ node scripts/lint-design.js
+
+ok  text-on-accent on button-hover: 5.27:1
+ok  text-on-accent on button-pressed: 7.61:1
+ok  text-primary on surface-default: 17.58:1
+
+<strong>5 design check failure(s):</strong>
+  &#10007; [hardcoded-color] contact.html:57 "&#35;FFFEF9"
+  &#10007; [token-drift] tokens.css differs from the Figma export
+  &#10007; [contrast] text-on-accent on button-default: 3.36:1 (needs 4.5:1)
+  &#10007; [contrast] text-on-accent on accent: 3.36:1 (needs 4.5:1)
+  &#10007; [contrast] accent on surface-default: 3.33:1 (needs 4.5:1)
+<strong>exit: 1</strong></pre>
             <figcaption class="text-sm text-text-primary mt-3 text-center">The deliberately broken copy: 5 failures and a non-zero exit.</figcaption>
           </figure>
           <p class="text-base text-text-primary leading-relaxed">Right now a failed check flags a bad push without blocking it, because GitHub Pages still publishes. Making it a hard gate is a small next step.</p>
@@ -246,7 +258,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
           <p class="text-base text-text-primary leading-relaxed mb-4">Treating an AI agent as a real consumer of my design system changed what &ldquo;done&rdquo; meant. A system is finished when it can be read, not just seen, for all users. Honest names, scoped tokens and one source of truth help the next designer as much as they help Claude.</p>
           <p class="text-base text-text-primary leading-relaxed mb-4">MCP made the work fast and auditable. Claude could count every use of a style across five pages before anything changed, move 94 layers in minutes, and prove the result with a second pass. That evidence is what let me approve changes to a file I care about.</p>
           <p class="text-base text-text-primary leading-relaxed mb-4">The judgment stayed human. Whether the black icons were intentional, which teal represents my brand, and when two identical values deserve two names were all my calls. Names proved the most fragile part. While capturing screenshots for this page, I accidentally renamed space/4 to space/var(--space-4). A future export would have shipped a broken token, and none of my three checks would have caught it.</p>
-          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">What&rsquo;s Next?</h4>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">What&rsquo;s Next?</h4>
           <ul class="list-disc pl-6 text-base text-text-primary leading-relaxed space-y-1">
             <li>Add a naming check so tokens like space/var(--space-4) fail before they ship</li>
             <li>Write variable descriptions, which Claude also reads through MCP</li>
