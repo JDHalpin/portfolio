@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Halpin - Making My Design System Legible to AI</title>
+  <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Kaisei+Opti:wght@400;500;700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    body {
+      font-family: 'Kaisei Opti', serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Generated tokens live in tokens.css (exported from Figma via MCP).
+            'accent': 'var(--color-accent)',
+            'text-primary': 'var(--color-text-primary)',
+            'text-on-accent': 'var(--color-text-on-accent)',
+            'icon-primary': 'var(--color-icon-primary)',
+            'surface-default': 'var(--color-surface-default)',
+            'surface-muted': 'var(--color-surface-muted)',
+            'surface-hover': 'var(--color-surface-hover)',
+            'border-subtle': 'var(--color-border-subtle)',
+            'button-default': 'var(--color-button-default)',
+            'button-hover': 'var(--color-button-hover)',
+            'button-pressed': 'var(--color-button-pressed)',
+          },
+          fontFamily: {
+            'kaisei': ['Kaisei Opti', 'serif'],
+            'crimson': ['Crimson Text', 'serif'],
+            'lato': ['Lato', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLH7LQ');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="bg-surface-default font-kaisei min-h-screen relative">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH7LQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- HEADER -->
+  <header class="bg-surface-default border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="ai-projects.html" class="text-sm text-black hover:text-accent transition-colors">AI Projects</a>
+        <a href="images/Jeff_Halpin_CV.pdf" target="_blank" rel="noopener" class="text-sm text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-surface-default w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="ai-projects.html" class="text-lg text-black hover:text-accent transition-colors">AI Projects</a>
+        <a href="images/Jeff_Halpin_CV.pdf" target="_blank" rel="noopener" class="text-lg text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto flex flex-col gap-6">
+      <h1 class="text-[32px] md:text-[40px] leading-[1.2] text-text-primary font-medium">Design Engineering: Making My Design System Legible to AI</h1>
+      <p class="text-lg md:text-2xl text-text-primary">I rebuilt my portfolio's design system so that an AI agent could read it, and in the process found and fixed an accessibility failure in my own components.</p>
+      <p class="text-lg md:text-2xl text-text-primary">Working with Claude through the Figma MCP server, I turned 14 loose color styles and a drawn spacing chart into 19 named tokens, connected them to jeffhalpin.com, and added automated checks that run on every push.</p>
+      <p class="text-sm italic text-text-primary">This project builds on Phase I, a Figma-to-code color sync tool I built in early 2026. <a href="figma_sync.html" class="text-accent underline hover:no-underline">Read the Phase I case study</a>.</p>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT & METADATA -->
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1119px] mx-auto flex flex-col md:flex-row md:justify-center gap-[32px] md:gap-[60px]">
+
+      <!-- Left: Main Content -->
+      <div class="md:w-[750px] md:px-[20px] flex flex-col gap-[24px] min-w-0">
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">The Challenge</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">In early 2026 I built a small sync tool to close the gap between my Figma design system and my front end HTML and CSS. It pulled published color styles through the Figma REST API and wrote them into the homepage's Tailwind config. It worked, but it only moved colors, only to one page, and it copied values rather than names. A change in Figma still meant hunting through markup for the hex values the tool never touched.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">As a result, Figma held 14 color styles for only 8 distinct colors. Off-white and Surface/Default were the same value under two names, and so were mid-gray and Text/Secondary.</p>
+          <ul class="list-disc pl-6 text-base text-text-primary leading-relaxed space-y-1 mb-4">
+            <li>The site repeated a copied color list in the head of all 7 pages, still naming those 14 styles.</li>
+            <li>The markup carried 62 hardcoded hex values. <code>bg-[&#35;FFFEF9]</code> alone appeared 55 times.</li>
+          </ul>
+          <p class="text-base text-text-primary leading-relaxed">I was heading the right direction, but in order to maintain a clear line of sight for me and for any designer or agent I would be working with, I needed to simplify and standardize my approach.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My Role</h3>
+          <p class="text-base text-text-primary leading-relaxed">Designer and design engineer. I made the design decisions and identified areas of focus. Claude ran the audits and the scripted changes (using Figma Skill), I reviewed each change before it ran.</p>
+        </div>
+
+        <figure>
+          <img src="images/eyedar_bpig_screen_01_lg.png" alt="" class="w-full rounded-xl">
+          <figcaption class="text-sm text-text-primary mt-3 text-center">Lorem ipsum dolor sit amet</figcaption>
+        </figure>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Research &amp; Discovery</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">I connected Claude to my design file through the Figma MCP server and asked it to read the system back to me. What a person understands at a glance, an agent often cannot.</p>
+          <ul class="list-disc pl-6 text-base text-text-primary leading-relaxed space-y-1 mb-4">
+            <li>My spacing scale was a picture. Eight gray squares with number labels. A designer reads &ldquo;16px.&rdquo; Claude read &ldquo;Rectangle 4, 16&times;16.&rdquo;</li>
+            <li>Most variant properties used Figma's default naming convention. &ldquo;Property 1=Hover&rdquo; tells an agent nothing about what the property controls. &ldquo;Chip&rdquo; and &ldquo;Header&rdquo; used real names like &ldquo;State&rdquo; and &ldquo;Device.&rdquo;</li>
+            <li>Color lived mostly in styles, not variables. A style named &ldquo;Surface/Default&rdquo; alone was applied about 80 times. Six color variables existed, but most of the design never used them.</li>
+          </ul>
+          <p class="text-base text-text-primary leading-relaxed mb-4">These minor inconsistencies are the stuff of nightmares when a user returns to a file after weeks on other work. In my case, my tendency to leave deprecated styles in my .fig files, is confusing to anyone picking up my file. Claude acted as a QC resource, which was impressive, and handled the cleanup and verification of syntax within my file.</p>
+          <p class="text-base text-text-primary leading-relaxed">The tools taught their own lesson too. One MCP call listed a single page in the file with no components, when a clear &ldquo;components&rdquo; page existed. As always, the user must verify the work of any partner, human or AI, before approvals.</p>
+        </div>
+
+        <!-- Pullquote -->
+        <blockquote class="pt-[48px] flex flex-col gap-4 text-center text-accent">
+          <p class="font-crimson font-semibold text-[36px] md:text-[52px] leading-none tracking-[0.02em]">&ldquo;The real problem is not whether machines think but whether men do.&rdquo;</p>
+          <footer class="text-2xl md:text-[32px] py-6">-B.F. Skinner</footer>
+        </blockquote>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">At every stage of this project, we are seeking to implement a seamless process that takes human input and delivers machine-readable, reproducible designs.</p>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Give Every Design Decision A Name Code Can Read</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">The fix was to encode every decision as data with a name, a purpose and a code equivalent, so that people and agents read the same thing.</p>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Spacing Became Tokens</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">I created eight number variables, space/4 through space/64. Claude then scoped each one to gap and padding, so it only appears where spacing belongs, and now uses my system of predictable syntax code is expecting.</p>
+          <figure class="my-8">
+            <img src="images/ds-ai-03-spacing-before-after.png" alt="Before and after: a drawn spacing chart of gray squares, and the same scale as eight Figma number variables" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <figcaption class="text-sm text-text-primary mt-3 text-center">The spacing scale before, as a drawing, and after, as eight Figma variables.</figcaption>
+          </figure>
+          <figure class="my-8">
+            <img src="images/ds-ai-04-code-syntax-detail.png" alt="Figma variable detail showing the web code syntax field filled in with a CSS custom property" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <figcaption class="text-sm text-text-primary mt-3 text-center">Each variable carries the name developers use, such as var(--space-16).</figcaption>
+          </figure>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Fix the Name Not the Visual</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Figma's code syntax field is what an agent writes when it turns a design into code. Left empty, Claude guesses or hardcodes 16px. Filled in, it writes my token. &ldquo;Accent / Primary&rdquo; became icon/primary, still black. Renaming in Figma doesn't break the link to the designs that use it, so all 16 icons kept their color and gained an honest name.</p>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Merge by Job, Not by Value</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Fourteen overlapping color styles became 11 colors, each named for its job, like surface/default or button/hover. Two colors can share a value and still keep separate names if they might change separately later. 94 layers switched over with no visual change. The tradeoff is more names to learn.</p>
+          <figure class="my-8">
+            <img src="images/ds-ai-02-colors-before-after.png" alt="Before and after: 14 overlapping color styles, and 11 color variables named by job" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <figcaption class="text-sm text-text-primary mt-3 text-center">Fourteen overlapping color styles became 11 colors named for their job.</figcaption>
+          </figure>
+          <figure class="my-8">
+            <img src="images/ds-ai-01-styles-before-after.png" alt="Figma local styles panel before and after the migration to variables" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <figcaption class="text-sm text-text-primary mt-3 text-center">The styles panel before and after the migration.</figcaption>
+          </figure>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Fix Accessibility At The Source</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">My own buttons failed WCAG AA. The label was light gray on teal at 2.56:1, and 16px regular text needs 4.5:1. I have shipped dozens of products to comply with WCAG AA accessibility, and my portfolio still missed this. It is exactly the drift a design system is supposed to prevent.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">There were two honest fixes. Keep the teal and switch to dark labels, or darken the brand teal and keep white labels. I chose to darken the token. Claude searched for the lightest version of my teal that passes both as a button fill under white text and as text on my off-white background, which landed on &#35;068572. Hover now gets darker instead of lighter, because a lighter hover could never pass with white text.</p>
+
+          <div class="overflow-x-auto mb-4">
+            <table class="w-full text-base text-text-primary leading-relaxed text-left border-collapse">
+              <caption class="sr-only">WCAG contrast ratios before and after the accent token change</caption>
+              <thead>
+                <tr class="border-b-2 border-text-primary">
+                  <th scope="col" class="py-2 pr-4 font-medium">Element</th>
+                  <th scope="col" class="py-2 pr-4 font-medium">Before</th>
+                  <th scope="col" class="py-2 font-medium">After</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr class="border-b border-surface-muted"><td class="py-2 pr-4">Button label, default</td><td class="py-2 pr-4">2.56:1</td><td class="py-2">4.56:1</td></tr>
+                <tr class="border-b border-surface-muted"><td class="py-2 pr-4">Button label, hover</td><td class="py-2 pr-4">1.91:1</td><td class="py-2">5.27:1</td></tr>
+                <tr class="border-b border-surface-muted"><td class="py-2 pr-4">Button label, pressed</td><td class="py-2 pr-4">4.02:1</td><td class="py-2">7.61:1</td></tr>
+                <tr class="border-b border-surface-muted"><td class="py-2 pr-4">Active chip label</td><td class="py-2 pr-4">3.36:1</td><td class="py-2">4.56:1</td></tr>
+                <tr class="border-b border-surface-muted"><td class="py-2 pr-4">Teal text on off-white</td><td class="py-2 pr-4">3.33:1</td><td class="py-2">4.52:1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="text-base text-text-primary leading-relaxed mb-4">The fix happened at the token level. I changed &ldquo;accent&rdquo; once, pointed &ldquo;button/default&rdquo; at it instead of a duplicate hex, and every chip, label and button followed without a single component edit.</p>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">One Source of Truth From Figma to the Live Site</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">jeffhalpin.com now takes every color from Figma by name. Claude reads my variables through MCP and writes them, with their code names and aliases, to a JSON export in the repo. A short Node script turns that export into tokens.css, and all 7 pages map their Tailwind colors to those tokens instead of to pasted hex values.</p>
+
+          <!-- Token pipeline diagram -->
+          <figure class="my-8" aria-label="Token pipeline: Figma variables, JSON export, tokens.css, 7 site pages, with design checks on every push">
+            <ol class="flex flex-col md:flex-row md:items-stretch gap-2 text-sm text-text-primary">
+              <li class="flex-1 rounded-lg bg-surface-muted p-4 text-center"><span class="block font-medium">Figma variables</span><span class="block mt-1">19 tokens with code names</span></li>
+              <li class="self-center text-accent text-xl rotate-90 md:rotate-0" aria-hidden="true">&rarr;</li>
+              <li class="flex-1 rounded-lg bg-surface-muted p-4 text-center"><span class="block font-medium">JSON export</span><span class="block mt-1">read through MCP</span></li>
+              <li class="self-center text-accent text-xl rotate-90 md:rotate-0" aria-hidden="true">&rarr;</li>
+              <li class="flex-1 rounded-lg bg-surface-muted p-4 text-center"><span class="block font-medium">tokens.css</span><span class="block mt-1">built by a Node script</span></li>
+              <li class="self-center text-accent text-xl rotate-90 md:rotate-0" aria-hidden="true">&rarr;</li>
+              <li class="flex-1 rounded-lg bg-surface-muted p-4 text-center"><span class="block font-medium">7 site pages</span><span class="block mt-1">Tailwind maps to tokens</span></li>
+            </ol>
+            <p class="mt-2 rounded-lg border-2 border-accent p-3 text-center text-sm text-text-primary">Design checks run on every push</p>
+          </figure>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">Automatic Checks that Keep Us Honest</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">A cleanup only matters if it holds, so every push to the site now runs three design checks on GitHub.</p>
+          <ol class="list-decimal pl-6 text-base text-text-primary leading-relaxed space-y-1 mb-4">
+            <li>No hardcoded colors. Any hex or rgb value in a page fails the check and points to the line.</li>
+            <li>No hand edits to tokens. The check rebuilds tokens.css from the Figma export and fails if the file was changed by hand.</li>
+            <li>Contrast holds. It recalculates every text and background token pair and fails anything under 4.5:1.</li>
+          </ol>
+          <p class="text-base text-text-primary leading-relaxed mb-4">To prove the checks work, we broke a copy of the site three ways. We pasted a hex value back into the contact page, hand-edited a token, and reverted the teal to its old value. The run reported 5 failures and exited with an error, and the old teal alone tripped three contrast failures. The accessibility fix cannot quietly regress.</p>
+          <figure class="my-8">
+            <img src="images/ds-ai-05-failing-checks.png" alt="Terminal output from the design checks reporting 5 failures on a deliberately broken copy of the site" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <figcaption class="text-sm text-text-primary mt-3 text-center">The deliberately broken copy: 5 failures and a non-zero exit.</figcaption>
+          </figure>
+          <p class="text-base text-text-primary leading-relaxed">Right now a failed check flags a bad push without blocking it, because GitHub Pages still publishes. Making it a hard gate is a small next step.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Outcome</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">By implementing AI-legible structure and naming conventions to my Figma file, I was now able to confidently manage an entire platform with conversational AI.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">My Figma approach was modernized and failsafes were put into place to ensure human and AI were on the same page:</p>
+          <ul class="list-disc pl-6 text-base text-text-primary leading-relaxed space-y-1 mb-4">
+            <li>19 tokens with code names</li>
+            <li>94 layers moved to variables with no visual change</li>
+            <li>WCAG AA color contrast across buttons, chips and accent text</li>
+            <li>creation of a token pipeline into production</li>
+            <li>establish three automated checks to ensure consistency prior to deployment.</li>
+          </ul>
+          <p class="text-base text-text-primary leading-relaxed">With these changes in place, design reviews and approvals were simplified.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Reflection</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Treating an AI agent as a real consumer of my design system changed what &ldquo;done&rdquo; meant. A system is finished when it can be read, not just seen, for all users. Honest names, scoped tokens and one source of truth help the next designer as much as they help Claude.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">MCP made the work fast and auditable. Claude could count every use of a style across five pages before anything changed, move 94 layers in minutes, and prove the result with a second pass. That evidence is what let me approve changes to a file I care about.</p>
+          <p class="text-base text-text-primary leading-relaxed mb-4">The judgment stayed human. Whether the black icons were intentional, which teal represents my brand, and when two identical values deserve two names were all my calls. Names proved the most fragile part. While capturing screenshots for this page, I accidentally renamed space/4 to space/var(--space-4). A future export would have shipped a broken token, and none of my three checks would have caught it.</p>
+          <h4 class="text-base text-text-primary font-normal mt-8 mb-4">What&rsquo;s Next?</h4>
+          <ul class="list-disc pl-6 text-base text-text-primary leading-relaxed space-y-1">
+            <li>Add a naming check so tokens like space/var(--space-4) fail before they ship</li>
+            <li>Write variable descriptions, which Claude also reads through MCP</li>
+            <li>Rename the remaining &ldquo;Property 1&rdquo; variant properties</li>
+            <li>Move the type scale from text styles to variables</li>
+            <li>Make the design checks a hard gate before deploy</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- Right: Metadata Sidebar -->
+      <div class="md:w-[225px] md:flex-shrink-0 flex flex-col gap-[24px] h-fit">
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Client</h4>
+          <p class="text-base text-text-primary">Self [jeffhalpin.com]</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Discipline</h4>
+          <p class="text-base text-text-primary">AI Design Engineering<br>Information Architecture<br>Content Strategy<br>Product Design</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Role</h4>
+          <p class="text-base text-text-primary">Design Engineer<br>Product Designer</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Year</h4>
+          <p class="text-base text-text-primary">2026</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Deliverables</h4>
+          <p class="text-base text-text-primary">IA Recommendations<br>Lightweight prototyping<br>Wireframes<br>Component Specifications</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BACK TO WORK -->
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-default border-t border-border-subtle px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+    <p>© 2026 Jeff Halpin</p>
+    <div class="flex items-center justify-center gap-6">
+      <a href="https://www.linkedin.com/in/jeffrey-halpin/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+      <a href="https://github.com/JDHalpin" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+</svg></a>
+      <a href="mailto:jeff.halpin@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg></a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
+
+  <script>
+    // Mobile menu logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    // Close lightbox on close button click
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    // Close lightbox on backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  </script>
+</body>
+</html>
