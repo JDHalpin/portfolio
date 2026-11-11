@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Jeff Halpin - A Companion App That Keeps Patients in Control</title>
+  <link rel="icon" type="image/x-icon" href="/projects/portfolio/favicon.ico?v=2" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@600&family=Kaisei+Opti:wght@400;500;700&family=Lato:wght@400;700&family=Playfair+Display:wght@400;700&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="tokens.css">
+  <style>
+    body {
+      font-family: 'Kaisei Opti', serif;
+    }
+  </style>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            // Generated tokens live in tokens.css (exported from Figma via MCP).
+            'accent': 'var(--color-accent)',
+            'text-primary': 'var(--color-text-primary)',
+            'text-on-accent': 'var(--color-text-on-accent)',
+            'icon-primary': 'var(--color-icon-primary)',
+            'surface-default': 'var(--color-surface-default)',
+            'surface-muted': 'var(--color-surface-muted)',
+            'surface-hover': 'var(--color-surface-hover)',
+            'border-subtle': 'var(--color-border-subtle)',
+            'button-default': 'var(--color-button-default)',
+            'button-hover': 'var(--color-button-hover)',
+            'button-pressed': 'var(--color-button-pressed)',
+          },
+          fontFamily: {
+            'kaisei': ['Kaisei Opti', 'serif'],
+            'crimson': ['Crimson Text', 'serif'],
+            'lato': ['Lato', 'sans-serif'],
+            'playfair': ['Playfair Display', 'serif'],
+            'poppins': ['Poppins', 'sans-serif'],
+          }
+        }
+      }
+    }
+  </script>
+  <!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-PLH7LQ');</script>
+<!-- End Google Tag Manager -->
+</head>
+<body class="bg-surface-default font-kaisei min-h-screen relative">
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PLH7LQ"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+  <!-- HEADER -->
+  <header class="bg-surface-default border-b-0 md:border-b md:border-neutral-200 sticky top-0 z-40 h-[60px]">
+    <div class="flex items-center justify-between gap-4 max-w-7xl mx-auto h-full px-4">
+      <a href="index.html" class="font-kaisei text-2xl text-black font-medium hover:text-accent transition-colors">Jeff Halpin</a>
+      <nav class="hidden md:flex items-center gap-6">
+        <a href="index.html#about" class="text-sm text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html#work" class="text-sm text-black hover:text-accent transition-colors">Work</a>
+        <a href="ai-projects.html" class="text-sm text-black hover:text-accent transition-colors">AI Projects</a>
+        <a href="images/Jeff_Halpin_CV_one-page_1015.pdf" target="_blank" rel="noopener" class="text-sm text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-sm text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+      <button id="menu-toggle" class="md:hidden w-[35px] h-[44px] flex flex-col items-center justify-center gap-[8px] p-2" aria-label="Toggle menu">
+        <span class="w-full h-[2px] bg-black"></span>
+        <span class="w-full h-[2px] bg-black"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 z-50 bg-black/50 md:hidden">
+    <div class="bg-surface-default w-4/5 h-full p-6 flex flex-col gap-6">
+      <button id="menu-close" class="self-end text-2xl" aria-label="Close menu">&times;</button>
+      <nav class="flex flex-col gap-4">
+        <a href="index.html#about" class="text-lg text-black hover:text-accent transition-colors">About</a>
+        <a href="index.html#work" class="text-lg text-black hover:text-accent transition-colors">Work</a>
+        <a href="ai-projects.html" class="text-lg text-black hover:text-accent transition-colors">AI Projects</a>
+        <a href="images/Jeff_Halpin_CV_one-page_1015.pdf" target="_blank" rel="noopener" class="text-lg text-black hover:text-accent transition-colors">Resume</a>
+        <a href="contact.html" class="text-lg text-black hover:text-accent transition-colors">Contact</a>
+      </nav>
+    </div>
+  </div>
+
+  <!-- HERO IMAGE (full-bleed) -->
+  <section>
+    <img src="images/aic-hero.png" alt="Two phone screens from an AI companion app concept, showing the assistant confirming reminders and then not listening" class="w-full max-w-[1440px] mx-auto">
+  </section>
+
+  <!-- PROJECT TITLE & SHORT DESCRIPTION -->
+  <section class="px-4 md:px-0 pt-[80px] pb-[48px]">
+    <div class="max-w-[1200px] mx-auto flex flex-col gap-6">
+      <h1 class="text-[32px] md:text-[40px] leading-[1.2] text-text-primary font-medium">A Companion App That Keeps Patients in Control</h1>
+      <p class="text-lg md:text-2xl text-text-primary">I designed the interaction model for a mobile companion app that helps older adults during recurring infusion therapy. The app brings together their treatment schedule, infusion log, support resources, playlists and an interactive patient community, the Kindness Feed.</p>
+      <p class="text-lg md:text-2xl text-text-primary">Patients decide whether to use AI at all, and how. The assistant checks in before it does anything, every action can be undone, and the screen always says whether it is listening.</p>
+      <p class="text-sm italic text-text-primary">Client and product details are anonymized. Agency concept, 2025. Screens redesigned in my own design system for this case study.</p>
+    </div>
+  </section>
+
+  <!-- PROJECT CONTENT & METADATA -->
+  <section class="px-4 md:px-0">
+    <div class="max-w-[1119px] mx-auto flex flex-col md:flex-row md:justify-center gap-[32px] md:gap-[60px]">
+
+      <!-- Left: Main Content -->
+      <div class="md:w-[750px] md:px-[20px] flex flex-col gap-[24px] min-w-0">
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">The Challenge</h3>
+          <p class="text-base text-text-primary leading-relaxed">The client asked for a companion app for patients on recurring infusions. These patients spend hours in a chair, often with a caregiver nearby, while managing schedules, side effects and a lot of uncertainty. Voice was not on the table. I pushed to include a voice-enabled assistant, and the client embraced it. The risk was an assistant that felt in charge, for people who already feel their treatment runs their calendar.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">My Role</h3>
+          <p class="text-base text-text-primary leading-relaxed">I was the sole UI and interaction designer. I interviewed the client&rsquo;s senior stakeholders and subject matter experts, then defined the content map, the screen flows, the assistant&rsquo;s conversations and every interaction state. On the original project, I collaborated with a senior product designer who applied the visual layer of color and graphic elements. For this case study I rebuilt the key screens in my own design system.</p>
+          <figure class="my-8">
+            <img src="images/aic-01-content-map.png" alt="Content map of the companion app showing its main sections and flows" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+            <figcaption class="text-sm text-text-primary mt-3 text-center">Working content map, reviewed with clients, regulatory and internal teams.</figcaption>
+          </figure>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Research &amp; Discovery</h3>
+          <p class="text-base text-text-primary leading-relaxed mb-4">I interviewed senior client stakeholders and subject matter experts about what the companion needed to include, and designed from the patient insights the client shared with us. Two themes shaped everything. Older adults wanted to feel in control, and anything that took effort would go unused.</p>
+          <p class="text-base text-text-primary leading-relaxed">The client&rsquo;s approach drew on self-determination theory, Edward Deci and Richard Ryan&rsquo;s model of motivation. People stay engaged when three needs are met: autonomy, competence and relatedness. I used those three needs as a test for every screen. I built the flows around one primary profile, an older adult who is comfortable with a phone but not with new technology.</p>
+        </div>
+
+        <!-- Pullquote -->
+        <blockquote class="pt-[48px] flex flex-col gap-4 text-center text-accent">
+          <p class="font-crimson font-semibold text-[36px] md:text-[52px] leading-none tracking-[0.02em]">Autonomy, competence, and relatedness are innate needs; satisfying all three predicts intrinsic motivation and well-being.</p>
+          <footer class="text-2xl md:text-[32px] py-6">Self-determination theory (Deci and Ryan)</footer>
+        </blockquote>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Key Design Decisions</h3>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Let patients choose their AI</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Onboarding offers three equal paths: talk with the assistant, type with it, or set things up with a simple form and no assistant at all. Nothing is preselected, so the app never nudges anyone toward AI, and the screen says the choice can be changed anytime. A link at the bottom lets a caregiver set the app up on someone&rsquo;s behalf. Whichever path they pick, patients can also fill in their infusion log through the assistant or by hand.</p>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Ask before acting, and make every action undoable</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">A patient says they have an infusion coming up but are not sure of the date. The assistant finds it, then asks whether to set a reminder instead of setting one on its own. Once the patient says yes, the reply is a confirmation card that lists both reminders, with Change and Undo right on it. The patient can see exactly what the AI did and reverse it in one tap.</p>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Inform patients when it is listening, in unambiguous language</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">The header reads &ldquo;Listening&hellip;&rdquo; while the assistant is active and &ldquo;Not listening&rdquo; once it stops. Starting again takes one clearly labeled button, Tap to talk. The state never depends on a color or an animation the patient has to interpret. A short line under the button reminds patients that voice can make mistakes, so they check important details.</p>
+          <figure class="my-8">
+            <img src="images/aic-02-screens.png" alt="Four phone screens showing the onboarding choice before and after a selection, the assistant confirming two reminders with Change and Undo, and the assistant not listening" class="w-full rounded-xl cursor-pointer hover:opacity-90 transition-opacity lightbox-trigger">
+          </figure>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Start from native patterns</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">For each UI state, I checked the native iOS components in Xcode before designing. Older patients already know these patterns from their own phones, and engineering gets screens that map to real platform controls. Icons are SF Symbols for the same reason.</p>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Design for older eyes and a busy treatment day</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Main text runs 18 to 22 points and every tap target is at least 48 points tall. Body text and the primary button meet WCAG AAA contrast, and every other text pairing clears AA. Every message is labeled You or Assistant, so nobody has to work out who said what from bubble position or color. A selected option shows a checkmark as well as a color change. Voice commands carry the core flows, and a preloaded music library plays during infusions with no internet connection.</p>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Extend the design system, don&rsquo;t fork it</h4>
+          <p class="text-base text-text-primary leading-relaxed mb-4">Rather than start a separate palette for this audience, I added a Companion mode to my existing color variables. It darkens the accent so white text reaches 7.6:1 contrast, adds a stronger border so card edges are visible, and introduces tokens for secondary text, selected surfaces and alerts. The same components render in either mode, so one system serves two very different audiences.</p>
+          <h4 class="text-xl text-accent font-medium mt-10 mb-3">Build within regulatory limits</h4>
+          <p class="text-base text-text-primary leading-relaxed">The Kindness Feed lets patients share encouragement using only pre-approved text and images, with a toggle between personal and community views. The assistant also offers to add a note for the patient&rsquo;s caregiver, which keeps the people around the patient part of their care.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Outcome</h3>
+          <p class="text-base text-text-primary leading-relaxed">The client paused the project indefinitely after the concept phase, so it never shipped. It produced a complete interaction model: a content map, end-to-end flows for onboarding, the assistant, logging and the community feed, and a reusable pattern for giving patients a real choice about AI. The redesigned screens add a token-driven component set built for accessibility from the start.</p>
+        </div>
+
+        <div>
+          <h3 class="text-2xl text-text-primary font-normal mb-4">Reflection</h3>
+          <p class="text-base text-text-primary leading-relaxed">Designing AI for people who are wary of it means making control obvious. The choice at onboarding, the undoable confirmation and the &ldquo;Not listening&rdquo; state are the decisions I would defend first. If the project resumed, I would test whether patients who start with the standard setup ever opt into the assistant later, and what prompts them to.</p>
+        </div>
+
+      </div>
+
+      <!-- Right: Metadata Sidebar -->
+      <div class="md:w-[225px] md:flex-shrink-0 flex flex-col gap-[24px] h-fit">
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Client</h4>
+          <p class="text-base text-text-primary">Healthcare agency client (anonymized)</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Discipline</h4>
+          <p class="text-base text-text-primary">Interaction Design<br>AI Experience Design<br>Design Systems</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Role</h4>
+          <p class="text-base text-text-primary">UI Designer<br>Interaction Designer</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Year</h4>
+          <p class="text-base text-text-primary">2025</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Deliverables</h4>
+          <p class="text-base text-text-primary">Stakeholder interviews<br>Content map<br>Screen flows<br>Onboarding and assistant flows<br>Redesigned key screens</p>
+        </div>
+        <div class="p-[10px] flex flex-col gap-[10px]">
+          <h4 class="text-[13px] font-medium text-accent uppercase tracking-[0.04em]">Tools</h4>
+          <p class="text-base text-text-primary">Figma<br>Figma variables<br>iOS 16 UI Kit<br>SF Symbols<br>Xcode (component reference)<br>ChatGPT (conversation and setup flow prototyping)</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- BACK TO WORK -->
+  <section class="px-4 md:px-0 py-8 mb-12">
+    <div class="max-w-[1200px] mx-auto">
+      <a href="index.html" class="inline-flex items-center gap-2 text-accent hover:underline font-lato">
+        ← Back to Work
+      </a>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="bg-surface-default border-t border-border-subtle px-4 pt-6 pb-16 md:pb-8 flex flex-col items-center justify-center gap-4 text-sm text-black text-center">
+    <p>© 2026 Jeff Halpin</p>
+    <div class="flex items-center justify-center gap-6">
+      <a href="https://www.linkedin.com/in/jeffrey-halpin/" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"/>
+</svg></a>
+      <a href="https://github.com/JDHalpin" target="_blank" rel="noopener noreferrer"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
+</svg></a>
+      <a href="mailto:jeff.halpin@gmail.com"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 16 16">
+  <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+</svg></a>
+    </div>
+  </footer>
+
+  <!-- LIGHTBOX MODAL -->
+  <div id="lightbox" class="hidden fixed inset-0 z-50 bg-black/80 flex items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white text-3xl hover:text-accent">&times;</button>
+    <img id="lightbox-img" src="" alt="" class="max-w-full max-h-[90vh] rounded-lg">
+  </div>
+
+  <script>
+    // Mobile menu logic
+    const menuToggle = document.getElementById('menu-toggle');
+    const menuClose = document.getElementById('menu-close');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle?.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      document.body.classList.add('overflow-hidden');
+    });
+
+    menuClose?.addEventListener('click', () => {
+      mobileMenu.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    mobileMenu?.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      });
+    });
+
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Open lightbox on image click
+    document.querySelectorAll('.lightbox-trigger').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        document.body.classList.add('overflow-hidden');
+      });
+    });
+
+    // Close lightbox on close button click
+    lightboxClose?.addEventListener('click', () => {
+      lightbox.classList.add('hidden');
+      document.body.classList.remove('overflow-hidden');
+    });
+
+    // Close lightbox on backdrop click
+    lightbox?.addEventListener('click', (e) => {
+      if (e.target === lightbox) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+
+    // Close lightbox on Escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        lightbox.classList.add('hidden');
+        document.body.classList.remove('overflow-hidden');
+      }
+    });
+  </script>
+</body>
+</html>
